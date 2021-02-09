@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;900&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap');
+
+//todo -- optimize google font import
+@font-face{
+  font-family: abyssopelagic;
+  src: url('./abyssopelagic.otf');
+}
+
+
+$ff-cinzel: 'Cinzel Decorative', cursive; //sans-serif
+$ff-raleway:  'Raleway', sans-serif;
+$ff-abyssopelagic:  abyssopelagic;
+$ff-inconsolata: 'Inconsolata', 'monospace'; //serif
+
+$fw-n: 400;
+$fw-b: 900;
+$fw-m: 700;
+
+$letter-spacing: .1em;
+
+@mixin getFont($fs: 2em, $ff: abyssopelagic, $ls:$letter-spacing,
+                $color: dark-gray, $tt: uppercase, $lh: 1) {
+
+  font-family: $ff;
+  font-size: $fs;
+  letter-spacing: $ls;
+  color: $color;
+  text-transform: $tt;
+  line-height: $lh;
+
+}
+

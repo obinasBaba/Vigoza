@@ -1,0 +1,11 @@
+@mixin commonBase($max-width: 50em){
+  width: 90%;
+  margin: 0 auto;
+  max-width: $max-width;
+}
+
+@mixin mediaQuery($width: 50em){
+  @media (min-width: $width) {
+    @content
+  }
+}

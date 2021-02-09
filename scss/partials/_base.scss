@@ -1,0 +1,36 @@
+@import "../modules/typography";
+@import "../modules/colors";
+@import "commons";
+
+:root{
+  box-sizing: border-box;
+}
+
+*, *::after, *::before{
+  box-sizing: inherit;
+}
+
+body{
+  color: $gray;
+  font-family: $ff-inconsolata;
+  line-height: 1.6;
+  font-size: .875rem;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+
+h1{
+  //color: $accent;
+  //line-height: 1;
+  //font-size: 3.125rem;
+}
+
+h1, h2, p{
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+

@@ -1,6 +1,4 @@
-@import "../modules/typography";
-@import "../modules/colors";
-@import "commons";
+
 
 :root{
   box-sizing: border-box;
@@ -11,10 +9,10 @@
 }
 
 body{
-  color: $gray;
   font-family: $ff-inconsolata;
-  line-height: 1.6;
-  font-size: .875rem;
+  line-height: 1.2;
+  font-size: calc(.875rem + 1vw);
+
 }
 
 img{
@@ -28,7 +26,7 @@ h1{
   //font-size: 3.125rem;
 }
 
-h1, h2, p{
+h1, h2, h3, p{
   margin-top: 0;
   margin-bottom: 1em;
 }

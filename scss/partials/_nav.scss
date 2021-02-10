@@ -1,3 +1,41 @@
-@import "../modules/colors";
-@import "../modules/typography";
-@import "commons";
+.pagination {
+  position: absolute;
+  left: 1em;
+  top: 50%;
+  line-height: 1;
+  transform: translateY(-50%);
+  z-index: 999;
+  text-transform: uppercase;
+
+  background: navajowhite;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  & > * {
+    margin: 0 0 1rem 0;
+  }
+
+  & > *:not([class*='dot']){
+    //margin-bottom: .7rem;
+  }
+
+  & .page-no{
+    margin-bottom: .7rem;
+  }
+}
+
+.dot{
+  width: 15px;
+  height: 15px;
+  border: thin solid crimson;
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: 100em;
+}
+
+
+
+

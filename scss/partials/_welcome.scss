@@ -1,3 +1,9 @@
-@import "../modules/typography";
-@import "../modules/colors";
-@import "commons";
+.welcome{
+  background-image: url("../img/hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+
+  position: relative;
+}

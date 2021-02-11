@@ -392,8 +392,8 @@ body {
   font-family: "Inconsolata", "monospace";
   line-height: 1.2;
   font-size: calc(.875rem + 1vw);
-  height: 300vh;
-  background: #000;
+  height: 400vh;
+  background: white;
   position: relative;
 }
 
@@ -563,7 +563,78 @@ a:active {
   z-index: 1;
 }
 
-.about-me {
+.service {
+  height: 100vh;
+  width: 100vw;
+  color: #b3b3b3;
+  background-image: url("../img/services_bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  grid-template-columns: 3em repeat(3, auto);
+  grid-auto-rows: min-content;
+  grid-template-areas: "head head   head     head" ".    .      list     list" ".    .      backend  backend" ".    web    web      .      " ".    .      mobile   mobile";
+}
+
+.headline {
+  grid-area: head;
+  align-self: center;
+  justify-self: center;
+  position: relative;
+  padding: 2em;
+  margin-top: 2em;
+  z-index: 1;
+}
+.headline .service__effect {
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 20%;
+  line-height: 0;
+  margin: 0;
+  display: inline;
+  font-size: 6.25em;
+  font-family: "poppins", sans-serif;
+  color: rgba(179, 179, 179, 0.07);
+  z-index: -1;
+  letter-spacing: 10px;
+}
+.headline h1 {
+  font-size: 1.875rem;
+  font-family: abyssopelagic;
+  letter-spacing: 10px;
+  font-weight: normal;
+  color: #ffffff;
+  margin: 0;
+  z-index: 2;
+}
+.headline h1::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 116%;
+  background: #FF4200;
+  margin-top: 0.5em;
+}
+
+.service__list {
+  grid-area: list;
+}
+
+.backend__dev {
+  grid-area: backend;
+}
+
+.web__design {
+  grid-area: web;
+}
+
+.mobile__dev {
+  grid-area: mobile;
+}
+
+.about__me {
   padding: 5em 1.4em 2em 1.5em;
   position: relative;
   background: white;
@@ -575,7 +646,7 @@ a:active {
   /* ABOUT TITLE */
   /* ABOUT PARAGRAPH */
 }
-.about-me .img-wrapper {
+.about__me .img-wrapper {
   grid-column: start/img-end;
   grid-row: 1/2;
   align-self: center;
@@ -587,7 +658,7 @@ a:active {
   height: 16em;
   width: 12em;
 }
-.about-me .img-wrapper::after {
+.about__me .img-wrapper::after {
   position: absolute;
   content: "";
   width: 1.5px;
@@ -596,12 +667,12 @@ a:active {
   background: #FF4200;
   transform: translateY(-50%);
 }
-.about-me .img-wrapper .about-img {
+.about__me .img-wrapper .about-img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
-.about-me .img-wrapper .img-overlay {
+.about__me .img-wrapper .img-overlay {
   position: absolute;
   background: rgba(255, 255, 255, 0.7);
   top: 0;
@@ -609,7 +680,7 @@ a:active {
   bottom: 0;
   right: 0;
 }
-.about-me .about-title {
+.about__me .about-title {
   grid-column: name-start/end;
   grid-row: 1/2;
   align-self: end;
@@ -620,16 +691,16 @@ a:active {
   letter-spacing: 6.4px;
   font-size: 1.87em;
 }
-.about-me .about-title span {
+.about__me .about-title span {
   color: #FF4200;
 }
-.about-me .about-paragraph {
+.about__me .about-paragraph {
   grid-column: start/end;
   grid-row: 2/3;
   padding-top: 1em;
   color: #737373;
 }
-.about-me .about-paragraph p {
+.about__me .about-paragraph p {
   margin: 0 0 1em 0;
 }
 
@@ -665,7 +736,7 @@ div[class^=effect] {
   transform: translateY(-54%);
   z-index: 999;
   text-transform: uppercase;
-  color: #333333;
+  color: #ffffff;
   text-align: center;
   display: flex;
   flex-flow: column;
@@ -674,20 +745,20 @@ div[class^=effect] {
 }
 .pagination__nav > * {
   margin: 0 0 1.3rem 0;
-  font-weight: bold;
+  font-weight: initial;
 }
 .pagination__nav .page__no {
   margin-bottom: 0.7rem;
   margin-left: -10px;
 }
 .pagination__nav .page__name {
-  font-size: 1.4em;
+  font-size: 1.1em;
   align-self: end;
 }
 
 .dot {
   padding: 0.5em;
-  background-color: #d6d6d6;
+  background-color: #737373;
   border-radius: 50%;
   align-self: center;
   margin-left: -15px;
@@ -704,7 +775,7 @@ div[class^=effect] {
   display: block;
   padding: 0.5em;
   border-radius: 50%;
-  background: #333333;
+  background: #ffffff;
 }
 .active span.line {
   height: 3.5625em;

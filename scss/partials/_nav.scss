@@ -8,7 +8,8 @@
   transform: translateY(-54%);
   z-index: 999;
   text-transform: uppercase;
-  color: $dark-gray;
+  //color: $dark-gray; //todo for home and about
+  color: $white; //todo for service
   text-align: center;
 
   display: flex;
@@ -18,7 +19,9 @@
 
   & > * {
     margin: 0 0 1.3rem 0;
-    font-weight: bold;
+    //font-weight: bold; //todo for about only
+
+    font-weight: initial;
   }
 
   & .page__no {
@@ -29,14 +32,15 @@
 
   & .page__name{
 
-    font-size: 1.4em;
+    //font-size: 1.4em; //todo for home and about
+    font-size: 1.1em;
     align-self: end;
   }
 }
 
 .dot {
   padding: .5em;
-  background-color: $light-light-gray;
+  background-color: $gray;
   border-radius: 50%;
   align-self: center;
   margin-left: -15px;
@@ -53,7 +57,10 @@
     display: block;
     padding: .5em;
     border-radius: 50%;
-    background: $dark-gray;
+
+
+    //background: $dark-gray;  //todo for home and about
+    background: $white;
 
   }
 

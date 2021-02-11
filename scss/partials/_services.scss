@@ -1,0 +1,83 @@
+.service {
+  height: 100vh;
+  width: 100vw;
+  color: $light-gray;
+
+  background-image: url("../img/services_bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: grid;
+  grid-template-columns: 3em repeat(3, auto);
+  grid-auto-rows: min-content;
+  grid-template-areas: 'head head   head     head'
+                       '.    .      list     list'
+                       '.    .      backend  backend'
+                       '.    web    web      .      '
+                       '.    .      mobile   mobile';
+}
+
+.headline {
+  grid-area: head;
+  align-self: center;
+  justify-self: center;
+
+  position: relative;
+  padding: 2em;
+  margin-top: 2em;
+  z-index: 1;
+
+  .service__effect{
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 20%;
+    line-height: 0;
+    margin: 0;
+    display: inline;
+
+    font-size: 6.25em;
+    font-family: $ff-poppins;
+    color: rgba($light-gray, .07);
+    z-index: -1;
+    letter-spacing: 10px;
+  }
+
+  h1 {
+    font-size: 1.875rem;
+    font-family: $ff-abyssopelagic;
+    letter-spacing: 10px;
+    //text-shadow: 0.1em 0.1em 0.3em #000;
+    font-weight: normal;
+    color: $white;
+    margin: 0;
+    z-index: 2;
+
+    &::after{
+      content: '';
+      display: block;
+      height: 2px;
+      width: 116%;
+      background: $accent;
+      margin-top: .5em;
+    }
+
+  }
+}
+
+.service__list {
+  grid-area: list;
+}
+
+.backend__dev {
+  grid-area: backend;
+}
+
+.web__design {
+  grid-area: web;
+}
+
+.mobile__dev {
+  grid-area: mobile;
+}

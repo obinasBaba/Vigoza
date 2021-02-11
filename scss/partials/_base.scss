@@ -12,7 +12,9 @@ body{
   font-family: $ff-inconsolata;
   line-height: 1.2;
   font-size: calc(.875rem + 1vw);
-  height: 200vh;
+  height: 300vh;
+
+  background: #000;
 
   position: relative;
 }

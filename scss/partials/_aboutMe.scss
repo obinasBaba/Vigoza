@@ -1,0 +1,91 @@
+.about-me{
+  padding: 5em 2em 2em 1.5em;
+  background: white;
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns:  [pag]3em
+                          [start]minmax(6em, 1fr)
+                          [name-start]minmax(6em, 1fr)
+                          [img-end]1fr
+                          [end];
+
+  .img-wrapper{
+    grid-column: start / img-end;
+    grid-row: 1 / 2;
+    align-self: center;
+    justify-self: end;
+    z-index: 1;
+
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    height: 16em;
+    width: 12em;
+
+    .about-img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .img-overlay{
+      position: absolute;
+      background: rgba($white, .7);
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+  }
+
+  .about-title{
+    grid-column: name-start / end;
+    grid-row: 1 / 2;
+    align-self: end;
+    justify-self: end;
+
+    z-index: 2;
+    font-family: $ff-poppins;
+    padding-left: 1.1em;
+    padding-bottom: .7em;
+    letter-spacing: 6.4px;
+    font-size: 1.87em;
+
+    span{
+      color: $accent;
+    }
+  }
+
+  .about-paragraph{
+    grid-column: start / end;
+    grid-row: 2 / 3;
+    padding-top: 1em;
+
+    p{
+      margin: 0 0 1em 0
+    }
+  }
+
+
+
+}
+
+
+
+
+
+div[class^='effect']{
+  display: none;
+}
+
+.effect-A{
+
+}
+
+.effect-about{
+
+}

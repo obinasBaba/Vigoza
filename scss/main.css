@@ -392,7 +392,8 @@ body {
   font-family: "Inconsolata", "monospace";
   line-height: 1.2;
   font-size: calc(.875rem + 1vw);
-  height: 200vh;
+  height: 300vh;
+  background: #000;
   position: relative;
 }
 
@@ -479,13 +480,13 @@ a:active {
   font-family: abyssopelagic;
   letter-spacing: 20px;
   margin: 0 0 0.2em;
-  color: white;
+  color: #ffffff;
 }
 .welcome-text p {
   margin: 0;
   letter-spacing: 3px;
   font-family: abyssopelagic;
-  color: white;
+  color: #ffffff;
 }
 .welcome-text :first-child + *::after {
   content: "";
@@ -534,7 +535,7 @@ a:active {
 }
 .scroll-down p {
   font-size: 0.9em;
-  color: white;
+  color: #ffffff;
   display: block;
   width: 10em;
 }
@@ -562,6 +563,67 @@ a:active {
   z-index: 1;
 }
 
+.about-me {
+  padding: 5em 2em 2em 1.5em;
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: [pag] 3em [start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 1fr [end];
+}
+.about-me .img-wrapper {
+  grid-column: start/img-end;
+  grid-row: 1/2;
+  align-self: center;
+  justify-self: end;
+  z-index: 1;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 16em;
+  width: 12em;
+}
+.about-me .img-wrapper .about-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.about-me .img-wrapper .img-overlay {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.about-me .about-title {
+  grid-column: name-start/end;
+  grid-row: 1/2;
+  align-self: end;
+  justify-self: end;
+  z-index: 2;
+  font-family: "poppins", sans-serif;
+  padding-left: 1.1em;
+  padding-bottom: 0.7em;
+  letter-spacing: 6.4px;
+  font-size: 1.87em;
+}
+.about-me .about-title span {
+  color: #FF4200;
+}
+.about-me .about-paragraph {
+  grid-column: start/end;
+  grid-row: 2/3;
+  padding-top: 1em;
+}
+.about-me .about-paragraph p {
+  margin: 0 0 1em 0;
+}
+
+div[class^=effect] {
+  display: none;
+}
+
 .pagination__nav {
   position: fixed;
   top: 50%;
@@ -572,7 +634,7 @@ a:active {
   transform: translateY(-54%);
   z-index: 999;
   text-transform: uppercase;
-  color: white;
+  color: #333333;
   text-align: center;
   display: flex;
   flex-flow: column;
@@ -581,6 +643,7 @@ a:active {
 }
 .pagination__nav > * {
   margin: 0 0 1.3rem 0;
+  font-weight: bold;
 }
 .pagination__nav .page__no {
   margin-bottom: 0.7rem;
@@ -593,7 +656,7 @@ a:active {
 
 .dot {
   padding: 0.5em;
-  background-color: #737373;
+  background-color: #d6d6d6;
   border-radius: 50%;
   align-self: center;
   margin-left: -15px;
@@ -610,7 +673,7 @@ a:active {
   display: block;
   padding: 0.5em;
   border-radius: 50%;
-  background: white;
+  background: #333333;
 }
 .active span.line {
   height: 3.5625em;

@@ -8,7 +8,7 @@
   transform: translateY(-54%);
   z-index: 999;
   text-transform: uppercase;
-  color: $white;
+  color: $dark-gray;
   text-align: center;
 
   display: flex;
@@ -18,14 +18,17 @@
 
   & > * {
     margin: 0 0 1.3rem 0;
+    font-weight: bold;
   }
 
   & .page__no {
+
     margin-bottom: .7rem;
     margin-left: -10px;
   }
 
   & .page__name{
+
     font-size: 1.4em;
     align-self: end;
   }
@@ -33,7 +36,7 @@
 
 .dot {
   padding: .5em;
-  background-color: $gray;
+  background-color: $light-light-gray;
   border-radius: 50%;
   align-self: center;
   margin-left: -15px;
@@ -50,7 +53,7 @@
     display: block;
     padding: .5em;
     border-radius: 50%;
-    background: $white;
+    background: $dark-gray;
 
   }
 

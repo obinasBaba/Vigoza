@@ -564,7 +564,7 @@ a:active {
 }
 
 .about-me {
-  padding: 5em 2em 2em 1.5em;
+  padding: 5em 1.4em 2em 1.5em;
   position: relative;
   background: white;
   width: 100vw;
@@ -572,6 +572,8 @@ a:active {
   overflow: hidden;
   display: grid;
   grid-template-columns: [pag] 3em [start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 1fr [end];
+  /* ABOUT TITLE */
+  /* ABOUT PARAGRAPH */
 }
 .about-me .img-wrapper {
   grid-column: start/img-end;
@@ -584,6 +586,15 @@ a:active {
   padding: 0;
   height: 16em;
   width: 12em;
+}
+.about-me .img-wrapper::after {
+  position: absolute;
+  content: "";
+  width: 1.5px;
+  height: 3.5em;
+  margin-left: 18%;
+  background: #FF4200;
+  transform: translateY(-50%);
 }
 .about-me .img-wrapper .about-img {
   object-fit: cover;
@@ -622,6 +633,7 @@ a:active {
   margin: 0 0 1em 0;
 }
 
+/* ABOUT EFFECT */
 div[class^=effect] {
   position: absolute;
   line-height: 0;

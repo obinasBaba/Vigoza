@@ -1,5 +1,5 @@
 .about-me{
-  padding: 5em 2em 2em 1.5em;
+  padding: 5em 1.4em 2em 1.5em;
   position: relative;
   background: white;
   width: 100vw;
@@ -23,9 +23,19 @@
     position: relative;
     margin: 0;
     padding: 0;
-
     height: 16em;
     width: 12em;
+
+    &::after{
+      position: absolute;
+      content: '';
+      width: 1.5px;
+      height: 3.5em;
+      margin-left: 18%;
+      background: $accent;
+
+      transform: translateY(-50%);
+    }
 
     .about-img{
       object-fit: cover;
@@ -44,6 +54,8 @@
 
   }
 
+  /* ABOUT TITLE */
+
   .about-title{
     grid-column: name-start / end;
     grid-row: 1 / 2;
@@ -61,6 +73,7 @@
     }
   }
 
+  /* ABOUT PARAGRAPH */
   .about-paragraph{
     grid-column: start / end;
     grid-row: 2 / 3;
@@ -71,11 +84,9 @@
       margin: 0 0 1em 0
     }
   }
-
-
-
 }
 
+/* ABOUT EFFECT */
 
 div[class^='effect']{
   position: absolute;
@@ -98,6 +109,4 @@ div[class^='effect']{
 
   top: 6%;
   right: -70%;
-
-
 }

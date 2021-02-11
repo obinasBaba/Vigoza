@@ -7,21 +7,55 @@
   height: 100vh;
   margin: 0;
 
+  overflow: hidden;
 
 
   position: relative;
   display: grid;
   grid-template-columns: 3em auto min-content;
-  grid-template-rows: auto;
-  grid-template-areas: '  .     heroText  social'
-                       'scroll  scroll    social';
+  grid-template-rows: min-content auto;
+  grid-template-areas: 'nav   nav   nav'
+                       ' .    hero  social';
+}
+
+.nav__bar{
+  grid-area: nav;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  .humberger{
+    margin: 0 0 0 auto;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    font-size: 3.3rem;
+
+
+    &::after{
+      content: '\2261';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      padding: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $light-light-gray;
+    }
+  }
 }
 
 .welcome-text {
-  grid-area: heroText;
+  grid-area: hero;
 
-  align-self: end;
-  justify-self: end;
+  align-self: center;
+  justify-self: center;
+  padding-left: 1em;
 
   h1{
     font-size: 3em;
@@ -34,6 +68,9 @@
 
   & p {
     margin: 0;
+    letter-spacing: 3px;
+    font-family: $ff-abyssopelagic;
+    color: $white;
   }
 
   :first-child + *{
@@ -64,7 +101,7 @@
 
 .social-icons {
   grid-area: social;
-  min-width: 3em;
+  width: 3em;
 
   display: flex;
   align-items: center;
@@ -78,12 +115,51 @@
 }
 
 .scroll-down {
-  grid-area: scroll;
-  display: none;
+  position: absolute;
+  bottom: 0;
+  left: -90px;
+  font-family: $ff-abyssopelagic;
+  letter-spacing: 4px;
+  transform: rotate(90deg);
+  display: flex;
+  width: 100%;
+
+  span{
+    padding: 1em;
+    display: block;
+  }
+
+  & p{
+    font-size: .9em;
+    color: $white;
+    display: block;
+    width: 10em;
+
+    &::after{
+      content: '';
+      display: block;
+      width: 200%;
+      height: 3px;
+      background: $gray;
+      margin-top: .5em;
+    }
+
+  }
 }
 
 .effect {
-  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 900;
+  font-family: $ff-poppins;
+  letter-spacing: 20px;
+  font-size: 13rem;
+  margin: 0;
+  line-height: .7;
+  color: rgba($white, .1);
+  text-indent: -66%;
+  z-index: 1;
 }
 
 

@@ -4,8 +4,8 @@
   font-family: $ff-abyssopelagic;
   letter-spacing: 2px;
   line-height: 1;
-  left: 1em;
-  transform: translateY(-64%);
+  left: .5em;
+  transform: translateY(-54%);
   z-index: 999;
   text-transform: uppercase;
   color: $white;
@@ -27,6 +27,7 @@
 
   & .page__name{
     font-size: 1.4em;
+    align-self: end;
   }
 }
 

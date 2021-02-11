@@ -8,7 +8,7 @@
  *    IE on Windows Phone and in iOS.
  */
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -432,17 +432,47 @@ a:active {
   color: #b3b3b3;
   height: 100vh;
   margin: 0;
+  overflow: hidden;
   position: relative;
   display: grid;
   grid-template-columns: 3em auto min-content;
-  grid-template-rows: auto;
-  grid-template-areas: "  .     heroText  social" "scroll  scroll    social";
+  grid-template-rows: min-content auto;
+  grid-template-areas: "nav   nav   nav" " .    hero  social";
+}
+
+.nav__bar {
+  grid-area: nav;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.nav__bar .humberger {
+  margin: 0 0 0 auto;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  font-size: 3.3rem;
+}
+.nav__bar .humberger::after {
+  content: "≡";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d6d6d6;
 }
 
 .welcome-text {
-  grid-area: heroText;
-  align-self: end;
-  justify-self: end;
+  grid-area: hero;
+  align-self: center;
+  justify-self: center;
+  padding-left: 1em;
 }
 .welcome-text h1 {
   font-size: 3em;
@@ -453,6 +483,9 @@ a:active {
 }
 .welcome-text p {
   margin: 0;
+  letter-spacing: 3px;
+  font-family: abyssopelagic;
+  color: white;
 }
 .welcome-text :first-child + *::after {
   content: "";
@@ -475,7 +508,7 @@ a:active {
 
 .social-icons {
   grid-area: social;
-  min-width: 3em;
+  width: 3em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -486,12 +519,47 @@ a:active {
 }
 
 .scroll-down {
-  grid-area: scroll;
-  display: none;
+  position: absolute;
+  bottom: 0;
+  left: -90px;
+  font-family: abyssopelagic;
+  letter-spacing: 4px;
+  transform: rotate(90deg);
+  display: flex;
+  width: 100%;
+}
+.scroll-down span {
+  padding: 1em;
+  display: block;
+}
+.scroll-down p {
+  font-size: 0.9em;
+  color: white;
+  display: block;
+  width: 10em;
+}
+.scroll-down p::after {
+  content: "";
+  display: block;
+  width: 200%;
+  height: 3px;
+  background: #737373;
+  margin-top: 0.5em;
 }
 
 .effect {
-  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 900;
+  font-family: "poppins", sans-serif;
+  letter-spacing: 20px;
+  font-size: 13rem;
+  margin: 0;
+  line-height: 0.7;
+  color: rgba(255, 255, 255, 0.1);
+  text-indent: -66%;
+  z-index: 1;
 }
 
 .pagination__nav {
@@ -500,8 +568,8 @@ a:active {
   font-family: abyssopelagic;
   letter-spacing: 2px;
   line-height: 1;
-  left: 1em;
-  transform: translateY(-64%);
+  left: 0.5em;
+  transform: translateY(-54%);
   z-index: 999;
   text-transform: uppercase;
   color: white;
@@ -520,6 +588,7 @@ a:active {
 }
 .pagination__nav .page__name {
   font-size: 1.4em;
+  align-self: end;
 }
 
 .dot {

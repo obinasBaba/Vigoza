@@ -1,8 +1,10 @@
 .about-me{
   padding: 5em 2em 2em 1.5em;
+  position: relative;
   background: white;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 
   display: grid;
   grid-template-columns:  [pag]3em
@@ -50,8 +52,7 @@
 
     z-index: 2;
     font-family: $ff-poppins;
-    padding-left: 1.1em;
-    padding-bottom: .7em;
+    padding: 0 0 1em .7em;
     letter-spacing: 6.4px;
     font-size: 1.87em;
 
@@ -64,6 +65,7 @@
     grid-column: start / end;
     grid-row: 2 / 3;
     padding-top: 1em;
+    color: $gray;
 
     p{
       margin: 0 0 1em 0
@@ -75,17 +77,27 @@
 }
 
 
-
-
-
 div[class^='effect']{
-  display: none;
+  position: absolute;
+  line-height: 0;
+  font-family: $ff-poppins;
 }
 
 .effect-A{
+  font-size: 27em;
+  color: rgba($light-light-gray, .3);
 
+  left: -23%;
+  bottom: 20%;
 }
 
 .effect-about{
+  font-size: 12em;
+  letter-spacing: 14px;
+  color: rgba($light-light-gray, .25);
+
+  top: 6%;
+  right: -70%;
+
 
 }

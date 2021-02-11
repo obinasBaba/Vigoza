@@ -565,9 +565,11 @@ a:active {
 
 .about-me {
   padding: 5em 2em 2em 1.5em;
+  position: relative;
   background: white;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   display: grid;
   grid-template-columns: [pag] 3em [start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 1fr [end];
 }
@@ -603,8 +605,7 @@ a:active {
   justify-self: end;
   z-index: 2;
   font-family: "poppins", sans-serif;
-  padding-left: 1.1em;
-  padding-bottom: 0.7em;
+  padding: 0 0 1em 0.7em;
   letter-spacing: 6.4px;
   font-size: 1.87em;
 }
@@ -615,13 +616,31 @@ a:active {
   grid-column: start/end;
   grid-row: 2/3;
   padding-top: 1em;
+  color: #737373;
 }
 .about-me .about-paragraph p {
   margin: 0 0 1em 0;
 }
 
 div[class^=effect] {
-  display: none;
+  position: absolute;
+  line-height: 0;
+  font-family: "poppins", sans-serif;
+}
+
+.effect-A {
+  font-size: 27em;
+  color: rgba(214, 214, 214, 0.3);
+  left: -23%;
+  bottom: 20%;
+}
+
+.effect-about {
+  font-size: 12em;
+  letter-spacing: 14px;
+  color: rgba(214, 214, 214, 0.25);
+  top: 6%;
+  right: -70%;
 }
 
 .pagination__nav {

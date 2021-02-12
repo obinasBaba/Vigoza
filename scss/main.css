@@ -420,8 +420,9 @@ h5 {
 h6 {
   font-size: 0.87em;
   line-height: 100%;
-  font-weight: bold;
+  font-weight: 900;
   letter-spacing: 3px;
+  margin-bottom: 0.8em;
 }
 
 a:link {
@@ -592,7 +593,7 @@ a:active {
   background-position: center;
   display: grid;
   row-gap: 1em;
-  grid-template-columns: 3em repeat(3, auto);
+  grid-template-columns: 4em repeat(3, auto);
   grid-auto-rows: min-content;
   grid-template-areas: "head head   head     head" ".    list   list     list" ".    .      backend  backend" ".    web    web      .      " ".    .      mobile   mobile";
 }
@@ -658,30 +659,50 @@ a:active {
 }
 
 .service__desc {
-  font-size: 0.87em;
+  font-size: 0.89em;
 }
 
 .desc__title {
-  font-size: 0.9em;
+  font-size: 0.92em;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
 }
 .desc__title::before {
+  position: absolute;
   content: "W";
   display: inline-block;
   font-family: "poppins", sans-serif;
   font-size: 3em;
-  color: #FF4200;
+  margin-left: -12%;
+  z-index: -1;
+  color: rgba(255, 66, 0, 0.53);
 }
 
 .backend__dev {
   grid-area: backend;
 }
+.backend__dev .desc__title::before {
+  content: "B";
+  margin-left: -8%;
+}
 
 .web__design {
   grid-area: web;
+  justify-self: end;
+  margin-bottom: 0.5em;
+}
+.web__design .desc__title::before {
+  content: "W";
+  margin-left: -19%;
 }
 
 .mobile__dev {
   grid-area: mobile;
+}
+.mobile__dev .desc__title::before {
+  content: "M";
+  margin-left: -10%;
 }
 
 .about__me {

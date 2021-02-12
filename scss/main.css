@@ -585,12 +585,13 @@ a:active {
   width: 100vw;
   color: #b3b3b3;
   overflow: hidden;
-  padding: 2em 0 0 0;
+  padding: 3em 0 0 0;
   background-image: url("../img/services_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   display: grid;
+  row-gap: 1em;
   grid-template-columns: 3em repeat(3, auto);
   grid-auto-rows: min-content;
   grid-template-areas: "head head   head     head" ".    list   list     list" ".    .      backend  backend" ".    web    web      .      " ".    .      mobile   mobile";
@@ -633,7 +634,7 @@ a:active {
   height: 2px;
   width: 116%;
   background: #FF4200;
-  margin-top: 0.5em;
+  margin-top: 0.3em;
 }
 
 .service__list {
@@ -654,6 +655,21 @@ a:active {
   width: 2px;
   height: 100%;
   background: #FF4200;
+}
+
+.service__desc {
+  font-size: 0.87em;
+}
+
+.desc__title {
+  font-size: 0.9em;
+}
+.desc__title::before {
+  content: "W";
+  display: inline-block;
+  font-family: "poppins", sans-serif;
+  font-size: 3em;
+  color: #FF4200;
 }
 
 .backend__dev {

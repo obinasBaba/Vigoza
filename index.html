@@ -120,28 +120,28 @@
 </section>
 
 <section class="portfolio">
-    <h1 class="portfolio__effect">P</h1>
+    <h1 class="portfolio__effect p">P</h1>
     <h1 class="portfolio__effect design">DESIGN</h1>
 
     <h1 class="portfolio__title">PORTFOLIO</h1>
 
-    <h2 class="selected_project_name">Backend Projects</h2>
+    <h2 class="selected_project_name z-depth-3">Backend Projects</h2>
 
-    <div class="project__wrapper">
-        <div class="featured__project"  tabindex="1">
+    <div class="project__wrapper ">
+        <div class="featured__project "  tabindex="1">
 
             <a href="#" class="github__star">star</a>
 
-            <div class="featured__front">
-                <img class="front__img" src="img/project/pexels-neo-2653362.jpg" alt="" >
+            <div class="featured__front ">
+                <img class="front__img " src="img/project/pexels-neo-2653362.jpg" alt="" >
 
                 <h3 class="project__name">Fidora</h3>
 
-                <div class="project__detail">
+                <div class="project__detail ">
 
-                    <a href="#!" class="github"></a>
+                    <a class="btn-floating pulse red"><i class="material-icons">menu</i></a>
 
-                    <div class="detail__images">
+                    <div class="detail__images  ">
                         <img src="img/project/vishnu-r-nair-1TFbqhRlCCc-unsplash.jpg" alt="">
                         <img src="img/project/blog.png" alt="">
                         <img src="img/project/muhannad-ajjan-sL2BRR1cuvM-unsplash.jpg" alt="">
@@ -156,12 +156,13 @@
                     dolo auctor. minimal project on student admin.
                 </p>
 
-                <button>Live Demo</button>
+                <a class="btn pulse">Live Demo<i class="material-icons">link</i></a>
+
 
                 <div class="featured_back_images">
-                    <img src="img/project/vishnu-r-nair-1TFbqhRlCCc-unsplash.jpg" alt="">
-                    <img src="img/project/blog.png" alt="">
-                    <img src="img/project/muhannad-ajjan-sL2BRR1cuvM-unsplash.jpg" alt="">
+                    <img class="materialboxed" src="img/project/vishnu-r-nair-1TFbqhRlCCc-unsplash.jpg" alt="">
+                    <img class="materialboxed" src="img/project/blog.png" alt="">
+                    <img class="materialboxed" src="img/project/muhannad-ajjan-sL2BRR1cuvM-unsplash.jpg" alt="">
                 </div>
 
             </div>
@@ -199,7 +200,24 @@
 </div>
 
 
+
 <!--JavaScript at end of body for optimized loading-->
 <script type="text/javascript" src="js/materialize.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        let instance = M.Tabs.init(
+            document.body.querySelector('ul.tabs'), {
+                swipeable: true
+            });
+
+        let elems = document.querySelectorAll('.materialboxed');
+        let instances = M.Materialbox.init(elems, {
+
+        });
+
+    })
+</script>
+
 </body>
 </html>

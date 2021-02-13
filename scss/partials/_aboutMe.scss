@@ -90,23 +90,25 @@
 
 div[class^='effect']{
   position: absolute;
-  line-height: 0;
   font-family: $ff-poppins;
 }
 
 .effect-A{
   font-size: 27em;
   color: rgba($light-light-gray, .3);
+  line-height: 70%;
+
 
   left: -23%;
-  bottom: 20%;
+  bottom: 0;
 }
 
 .effect-about{
-  font-size: 12em;
-  letter-spacing: 14px;
+  font-size: 10em;
+  letter-spacing: 8px;
+  line-height: 60%;
   color: rgba($light-light-gray, .25);
 
-  top: 10%;
-  right: -90%;
+  top: 0%;
+  left: -5%;
 }

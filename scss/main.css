@@ -622,10 +622,9 @@ a:active {
 }
 .headline .service__effect {
   position: absolute;
-  top: 50%;
-  bottom: 0;
+  top: 0;
   left: 9%;
-  line-height: 0;
+  line-height: 40%;
   margin: 0;
   display: inline;
   font-size: 6.25em;
@@ -792,23 +791,24 @@ a:active {
 /* ABOUT EFFECT */
 div[class^=effect] {
   position: absolute;
-  line-height: 0;
   font-family: "poppins", sans-serif;
 }
 
 .effect-A {
   font-size: 27em;
   color: rgba(214, 214, 214, 0.3);
+  line-height: 70%;
   left: -23%;
-  bottom: 20%;
+  bottom: 0;
 }
 
 .effect-about {
-  font-size: 12em;
-  letter-spacing: 14px;
+  font-size: 10em;
+  letter-spacing: 8px;
+  line-height: 60%;
   color: rgba(214, 214, 214, 0.25);
-  top: 10%;
-  right: -90%;
+  top: 0%;
+  left: -5%;
 }
 
 .portfolio {

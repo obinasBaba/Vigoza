@@ -156,7 +156,7 @@ h3 {
   flex-flow: column;
   align-items: center;
   gap: 1em;
-  transform: translateY(35%);
+  transform: translateY(35%) scale(0);
 
   .btn.pulse{
     display: flex;
@@ -180,8 +180,11 @@ h3 {
   .featured_back_images {
     display: grid;
     grid-template-columns: repeat(3, 100px);
-    //grid-auto-columns: auto auto auto;
     gap: .4em;
+
+    div#materialbox-overlay{
+        opacity: .86 !important;
+    }
 
     img {
       margin: 0 auto;
@@ -244,7 +247,8 @@ h3 {
 
     .featured__back {
       opacity: 1;
-      transform: translateY(0);
+
+      transform: translateY(0) scale(1);
       transition: transform 250ms,
       opacity 100ms linear;
     }

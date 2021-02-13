@@ -422,7 +422,7 @@ h3 {
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 h5 {
@@ -816,27 +816,38 @@ div[class^=effect] {
   text-align: center;
   color: #b3b3b3;
   padding: 0.5em;
-  display: grid;
-  grid-template-columns: [start] 3em [mid] 1fr [end] 2em [last];
-  grid-template-rows: 1fr min-content min-content 1fr min-content;
-  grid-auto-rows: auto;
   position: relative;
   overflow: hidden;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: [start] 3em [mid] 1fr [end] 1em [last];
+  grid-template-rows: 1fr 0.9fr min-content 1fr min-content;
+  grid-auto-rows: auto;
   background-image: url("../img/portfolio_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: center;
 }
 
 .portfolio__effect {
-  display: none;
-  position: relative;
+  position: absolute;
   top: 0;
-  right: 0;
-  line-height: 0;
+  right: -10%;
+  line-height: 80%;
   margin: 0;
   padding: 0;
   font-family: "poppins", sans-serif;
+  font-size: 26rem;
+  z-index: -11;
+  color: rgba(179, 179, 179, 0.1);
+}
+
+.portfolio__effect.design {
+  top: initial;
+  bottom: 0;
+  font-size: 10rem;
+  color: rgba(255, 66, 0, 0.1);
+  right: 10%;
 }
 
 .portfolio__title {
@@ -862,7 +873,7 @@ div[class^=effect] {
   justify-self: start;
   align-self: start;
   position: relative;
-  margin: 0 0 1em 1em;
+  margin: 1em 0 1em 1.3em;
   color: #b3b3b3;
 }
 .selected_project_name::before {
@@ -878,19 +889,17 @@ div[class^=effect] {
 }
 
 h3 {
-  margin: 0.5em 0;
+  margin: 0.5em 0 0;
 }
 
 .project__wrapper {
   grid-column: mid/end;
-  padding: 1em;
   display: flex;
   justify-content: center;
 }
 
 .featured__project {
   position: relative;
-  border: thin solid crimson;
   z-index: 0;
 }
 
@@ -907,11 +916,17 @@ h3 {
   text-align: left;
   z-index: 1;
 }
+.featured__front .project__name {
+  color: #b3b3b3;
+  text-shadow: 0.1em 0.1em 0.3em #000;
+  font-size: 1.7rem;
+}
 .featured__front .front__img {
-  width: 14em;
-  height: 13.5em;
+  width: 16em;
+  height: 16.5em;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 1.3rem;
+  transition: border-radius 250ms cubic-bezier(0.21, 1.1, 0.82, 1);
 }
 .featured__front .project__detail {
   display: flex;
@@ -925,8 +940,8 @@ h3 {
   gap: 5px;
 }
 .featured__front .detail__images img {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   object-fit: cover;
 }
 
@@ -943,16 +958,19 @@ h3 {
   transform: translateY(35%);
 }
 .featured__back .short_desc {
-  margin: 0;
+  margin: -0.3em 0 0 0;
+  text-align: left;
 }
 .featured__back .featured_back_images {
   display: flex;
-  gap: 10px;
+  gap: 0.4em;
+  margin-left: -6%;
 }
 .featured__back .featured_back_images img {
-  width: 50px;
-  height: 50px;
+  width: calc(106% / 3 - .4em);
+  height: 4.6em;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .featured__background {
@@ -961,9 +979,9 @@ h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #4e78a1;
+  background: rgba(255, 66, 0, 0.3);
   z-index: -1;
-  border-radius: 5px;
+  border-radius: 1.3rem;
   opacity: 0;
   transform: scale(0.2, 0.7);
   transition: 200ms;
@@ -976,7 +994,11 @@ h3 {
   transform: translate(160%, -79%);
 }
 .featured__project:focus .featured__front {
-  transform: translateY(-50%) scale(0.7);
+  transform: translateY(-45%) scale(0.6);
+}
+.featured__project:focus .featured__front .front__img {
+  border-radius: 50%;
+  transition: border-radius 250ms cubic-bezier(0.21, 1.1, 0.82, 1);
 }
 .featured__project:focus .featured__front .project__name {
   animation: gameName 250ms forwards;
@@ -984,6 +1006,7 @@ h3 {
 .featured__project:focus .featured__front .project__detail {
   transition: 300ms;
   opacity: 0;
+  transform: scale(0);
 }
 .featured__project:focus .featured__back {
   opacity: 1;

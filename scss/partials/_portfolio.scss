@@ -1,36 +1,45 @@
-.portfolio{
+.portfolio {
   height: 100vh;
   text-align: center;
   color: $light-gray;
   padding: .5em;
-
-  display: grid;
-  grid-template-columns: [start]3em [mid]1fr [end]2em [last];
-  grid-template-rows: 1fr min-content min-content 1fr min-content;
-  grid-auto-rows: auto;
-
-
   position: relative;
   overflow: hidden;
+  z-index: 0;
+
+  display: grid;
+  grid-template-columns: [start]3em [mid]1fr [end]1em [last];
+  grid-template-rows: 1fr .9fr min-content 1fr min-content;
+  grid-auto-rows: auto;
 
   background-image: url("../img/portfolio_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: center;
 }
 
-.portfolio__effect{
-  display: none;
-  position: relative;
+.portfolio__effect {
+  position: absolute;
   top: 0;
-  right: 0;
-  line-height: 0;
+  right: -10%;
+  line-height: 80%;
   margin: 0;
   padding: 0;
   font-family: $ff-poppins;
+  font-size: 26rem;
+  z-index: -11;
+  color: rgba($light-gray, .1);
 }
 
-.portfolio__title{
+.portfolio__effect.design {
+  top: initial;
+  bottom: 0;
+  font-size: 10rem;
+  color: rgba($accent, .1);
+  right: 10%;
+}
+
+.portfolio__title {
   grid-column: start / last;
   align-self: center;
   justify-self: center;
@@ -40,7 +49,7 @@
   letter-spacing: 10px;
   font-size: 1.875rem;
 
-  &::after{
+  &::after {
     content: '';
     display: block;
     height: 2px;
@@ -50,15 +59,15 @@
   }
 }
 
-.selected_project_name{
+.selected_project_name {
   grid-column: mid / end;
   justify-self: start;
   align-self: start;
   position: relative;
-  margin: 0 0 1em 1em;
+  margin: 1em 0 1em 1.3em;
   color: $light-gray;
 
-  &::before{
+  &::before {
     position: absolute;
     top: 0;
     left: -5px;
@@ -71,65 +80,75 @@
   }
 }
 
-h3{
-  margin: .5em 0;
+h3 {
+  margin: .5em 0 0;
 }
 
-.project__wrapper{
+.project__wrapper {
   grid-column: mid/ end;
 
-  padding: 1em;
+  //padding: 1em 0;
   display: flex;
   justify-content: center;
 }
 
-.featured__project{
+.featured__project {
   position: relative;
-  border: thin solid crimson;
   z-index: 0;
 }
 
-.github__star{
+.github__star {
   position: absolute;
   top: 0;
   right: 1em;
   z-index: 9999;
-  transition: transform 250ms cubic-bezier(.21, 1.1,.82,1.00);
+  transition: transform 250ms cubic-bezier(.21, 1.1, .82, 1.00);
 }
 
-.featured__front{
+.featured__front {
   transition: 250ms;
   text-align: left;
   z-index: 1;
 
-  .front__img{
-    width: 14em;
-    height: 13.5em;
-    object-fit: cover;
-    border-radius: 10px;
+  .project__name {
+    //color: rgba($accent, .8);
+    color: $light-gray;
+    text-shadow: 0.1em 0.1em 0.3em #000;
+    font-size: 1.7rem;
   }
 
-  .project__detail{
+  .front__img {
+    width: 16em;
+    height: 16.5em;
+    object-fit: cover;
+    border-radius: $mrgn;
+
+    transition: border-radius 250ms
+        cubic-bezier(.21, 1.1, .82, 1.00);
+
+  }
+
+  .project__detail {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .detail__images{
+  .detail__images {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
 
-    img{
-      width: 35px;
-      height: 35px;
+    img {
+      width: 40px;
+      height: 40px;
       object-fit: cover;
     }
   }
 }
 
-.featured__back{
+.featured__back {
   opacity: 0;
   position: absolute;
   bottom: 0;
@@ -141,31 +160,35 @@ h3{
   gap: 1em;
   transform: translateY(35%);
 
-  .short_desc{
-    margin: 0;
+  .short_desc {
+    margin: -.3em 0 0 0;
+    text-align: left;
   }
 
-  .featured_back_images{
+  .featured_back_images {
     display: flex;
-    gap: 10px;
+    gap: .4em;
+    margin-left: -6%;
 
-    img{
-      width: 50px;
-      height: 50px;
+    img {
+      width: calc(106% / 3 - .4em);
+      height: 4.6em;
       object-fit: cover;
+      border-radius: 8px;
     }
   }
 }
 
-.featured__background{
+.featured__background {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgb(78, 120, 161);
+  background: rgba($accent, .3);
   z-index: -1;
-  border-radius: 5px;
+  border-radius: $mrgn;
+
   opacity: 0;
 
   transform: scale(.2, .7);
@@ -173,45 +196,56 @@ h3{
 
 }
 
-.featured__project:focus{
-  //padding: 1em 0;
-  outline: none;
+.featured__project {
 
-  .github__star{
-    transform: translate(160%, -79%);
-  }
+  &:focus {
+    outline: none;
 
-  .featured__front{
-    transform: translateY(-50%) scale(.7);
-
-    .project__name{
-      animation: gameName 250ms forwards;
+    .github__star {
+      transform: translate(160%, -79%);
     }
-    .project__detail{
-      transition: 300ms;
-      opacity: 0;
+
+    .featured__front {
+      transform: translateY(-45%) scale(.6);
+
+      .front__img{
+        border-radius: 50%;
+        transition: border-radius 250ms
+        cubic-bezier(.21, 1.1, .82, 1.00);
+      }
+
+
+      .project__name {
+        animation: gameName 250ms forwards;
+        //margin-bottom: 0;
+      }
+
+      .project__detail {
+        transition: 300ms;
+        opacity: 0;
+        transform: scale(0);
+      }
     }
-  }
 
-  .featured__back{
-    opacity: 1;
-    transform: translateY(0);
-    transition: transform 250ms,
-    opacity 100ms linear;
-  }
+    .featured__back {
+      opacity: 1;
+      transform: translateY(0);
+      transition: transform 250ms,
+      opacity 100ms linear;
+    }
 
-  .featured__background{
-    transition:
-            transform 250ms cubic-bezier(.21, 1.1,.82,1.00),
-            opactiy 100ms linear;
+    .featured__background {
+      transition: transform 250ms cubic-bezier(.21, 1.1, .82, 1.00),
+      opactiy 100ms linear;
 
-    opacity: 1;
-    transform: scale(1.2, 1.1);
+      opacity: 1;
+      transform: scale(1.2, 1.1);
+    }
   }
 
 }
 
-.project__pagination{
+.project__pagination {
   grid-column: mid / end;
   align-self: center;
 
@@ -220,37 +254,35 @@ h3{
   margin: 0 auto;
 }
 
-.fab{
+.fab {
   grid-column: end / last;
 }
 
 
-
-
-
-@keyframes gameName{
-  0%{
+@keyframes gameName {
+  0% {
     text-align: left;
     opacity: 1;
   }
 
-  20%{
+  20% {
     text-align: left;
     opacity: .5;
   }
-  40%{
+  40% {
     text-align: left;
     opacity: 0;
-  }60%{
-     text-align: center;
-     opacity: 0;
-   }
-  80%{
+  }
+  60% {
+    text-align: center;
+    opacity: 0;
+  }
+  80% {
     text-align: center;
     opacity: .5;
     transform: scale(1);
   }
-  100%{
+  100% {
     text-align: center;
     opacity: 1;
     transform: scale(1.8);

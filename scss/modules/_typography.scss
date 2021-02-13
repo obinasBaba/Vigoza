@@ -17,6 +17,8 @@ $fw-n: 400;
 $fw-b: 900;
 $fw-m: 700;
 
+$mrgn: 1.3rem;
+
 $letter-spacing: .1em;
 
 @mixin getFont($fs: 2em, $ff: abyssopelagic, $ls:$letter-spacing,

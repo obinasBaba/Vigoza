@@ -127,52 +127,46 @@
 
     <h2 class="selected_project_name z-depth-3">Backend Projects</h2>
 
-    <div class="project__wrapper  ">
+    <div class="project__wrapper carousel carousel-slider ">
 
-<!--        <a class="carousel-item" href="#one!">-->
-<!--            <img src="img/project/reza-namdari-ZgZsKFnSbEA-unsplash.jpg">-->
-<!--        </a>-->
-        
-            <div class="featured__project"  tabindex="1">
+        <a class="carousel-item" href="#one!">
+            <img alt="img" src="img/project/reza-namdari-ZgZsKFnSbEA-unsplash.jpg">
+        </a>
 
-                <a href="#" class="github__star">star</a>
+        <div class="featured__project carousel-item" tabindex="1">
 
-                <div class="featured__front ">
-                    <img class="front__img-1 " src="img/project/pexels-neo-2653362.jpg" alt="" >
+            <a href="#" class="github__star">star</a>
 
-                    <h3 class="project__name">Fidora</h3>
+            <div class="featured__front ">
+                <img class="front__img-1 " src="img/project/pexels-neo-2653362.jpg" alt="">
 
-                    <img class="proj-img front__img-2" src="img/project/vishnu-r-nair-1TFbqhRlCCc-unsplash.jpg" alt="">
-                    <img class="proj-img front__img-3" src="img/project/blog.png" alt="">
-                    <img class="proj-img front__img-4" src="img/project/muhannad-ajjan-sL2BRR1cuvM-unsplash.jpg" alt="">
+                <h3 class="project__name">Fidora</h3>
 
-                    <div class="project__detail ">
-                        <!--                    <a class="btn-floating pulse red"><i class="material-icons">menu</i></a>-->
-                        <div class="detail__images  ">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="featured__back">
-                    <p class="short_desc">
-                        Vivamus sagittis lacus vel auue laort
-                        rutrum faucibus
-                        dolo auctor. minimal project on student admin.
-                    </p>
-
-                    <a class="btn pulse">Live Demo<i class="material-icons">link</i></a>
-
-
-                    <div class="featured_back_images">
-                        <img class="materialboxed" src="img/project/vishnu-r-nair-1TFbqhRlCCc-unsplash.jpg" alt="">
-                        <img class="materialboxed" src="img/project/blog.png" alt="">
-                        <img class="materialboxed" src="img/project/muhannad-ajjan-sL2BRR1cuvM-unsplash.jpg" alt="">
-                    </div>
-
-                </div>
-
-                <div class="featured__background"></div>
+                <img class="proj-img front__img-2" src="img/project/vishnu-r-nair-1TFbqhRlCCc-unsplash.jpg" alt="">
+                <img class="proj-img front__img-3" src="img/project/blog.png" alt="">
+                <img class="proj-img front__img-4" src="img/project/muhannad-ajjan-sL2BRR1cuvM-unsplash.jpg" alt="">
             </div>
+
+            <div class="featured__back">
+                <p class="short_desc">
+                    Vivamus sagittis lacus vel auue laort
+                    rutrum faucibus
+                    dolo auctor. minimal project on student admin.
+                </p>
+
+                <a class="btn pulse">Live Demo<i class="material-icons">link</i></a>
+
+
+                <div class="featured_back_images">
+                    <img class="materialboxed" src="img/project/vishnu-r-nair-1TFbqhRlCCc-unsplash.jpg" alt="">
+                    <img class="materialboxed" src="img/project/blog.png" alt="">
+                    <img class="materialboxed" src="img/project/muhannad-ajjan-sL2BRR1cuvM-unsplash.jpg" alt="">
+                </div>
+
+            </div>
+
+            <div class="featured__background"></div>
+        </div>
 
     </div>
 
@@ -223,10 +217,19 @@
 
         let carousel = document.querySelectorAll('.carousel');
         let carouselInstances = M.Carousel.init(carousel, {
-            fullWidth: false,
+            fullWidth: true,
             indicators: true,
             noWrap: true,
         });
+
+        const front = document.body.querySelector('.featured__front');
+        const back = document.body.querySelector('.featured__back');
+        back.style.bottom = front.getBoundingClientRect().bottom + ' px';
+        console.log(back.getBoundingClientRect())
+        console.log(front)
+
+        console.log(front.getBoundingClientRect());
+        console.log(front.getClientRects());
 
     })
 </script>

@@ -127,48 +127,53 @@
 
     <h2 class="selected_project_name z-depth-3">Backend Projects</h2>
 
-    <div class="project__wrapper ">
-        <div class="featured__project "  tabindex="1">
+    <div class="project__wrapper  ">
 
-            <a href="#" class="github__star">star</a>
+<!--        <a class="carousel-item" href="#one!">-->
+<!--            <img src="img/project/reza-namdari-ZgZsKFnSbEA-unsplash.jpg">-->
+<!--        </a>-->
+        
+            <div class="featured__project"  tabindex="1">
 
-            <div class="featured__front ">
-                <img class="front__img " src="img/project/pexels-neo-2653362.jpg" alt="" >
+                <a href="#" class="github__star">star</a>
 
-                <h3 class="project__name">Fidora</h3>
+                <div class="featured__front ">
+                    <img class="front__img-1 " src="img/project/pexels-neo-2653362.jpg" alt="" >
 
-                <div class="project__detail ">
+                    <h3 class="project__name">Fidora</h3>
 
-                    <a class="btn-floating pulse red"><i class="material-icons">menu</i></a>
+                    <img class="proj-img front__img-2" src="img/project/vishnu-r-nair-1TFbqhRlCCc-unsplash.jpg" alt="">
+                    <img class="proj-img front__img-3" src="img/project/blog.png" alt="">
+                    <img class="proj-img front__img-4" src="img/project/muhannad-ajjan-sL2BRR1cuvM-unsplash.jpg" alt="">
 
-                    <div class="detail__images  ">
-                        <img src="img/project/vishnu-r-nair-1TFbqhRlCCc-unsplash.jpg" alt="">
-                        <img src="img/project/blog.png" alt="">
-                        <img src="img/project/muhannad-ajjan-sL2BRR1cuvM-unsplash.jpg" alt="">
+                    <div class="project__detail ">
+                        <!--                    <a class="btn-floating pulse red"><i class="material-icons">menu</i></a>-->
+                        <div class="detail__images  ">
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="featured__back">
-                <p class="short_desc">
-                    Vivamus sagittis lacus vel auue laort
-                    rutrum faucibus
-                    dolo auctor. minimal project on student admin.
-                </p>
 
-                <a class="btn pulse">Live Demo<i class="material-icons">link</i></a>
+                <div class="featured__back">
+                    <p class="short_desc">
+                        Vivamus sagittis lacus vel auue laort
+                        rutrum faucibus
+                        dolo auctor. minimal project on student admin.
+                    </p>
+
+                    <a class="btn pulse">Live Demo<i class="material-icons">link</i></a>
 
 
-                <div class="featured_back_images">
-                    <img class="materialboxed" src="img/project/vishnu-r-nair-1TFbqhRlCCc-unsplash.jpg" alt="">
-                    <img class="materialboxed" src="img/project/blog.png" alt="">
-                    <img class="materialboxed" src="img/project/muhannad-ajjan-sL2BRR1cuvM-unsplash.jpg" alt="">
+                    <div class="featured_back_images">
+                        <img class="materialboxed" src="img/project/vishnu-r-nair-1TFbqhRlCCc-unsplash.jpg" alt="">
+                        <img class="materialboxed" src="img/project/blog.png" alt="">
+                        <img class="materialboxed" src="img/project/muhannad-ajjan-sL2BRR1cuvM-unsplash.jpg" alt="">
+                    </div>
+
                 </div>
 
+                <div class="featured__background"></div>
             </div>
 
-            <div class="featured__background"></div>
-        </div>
     </div>
 
     <div class="project__pagination">
@@ -214,6 +219,13 @@
         let elems = document.querySelectorAll('.materialboxed');
         let instances = M.Materialbox.init(elems, {
 
+        });
+
+        let carousel = document.querySelectorAll('.carousel');
+        let carouselInstances = M.Carousel.init(carousel, {
+            fullWidth: false,
+            indicators: true,
+            noWrap: true,
         });
 
     })

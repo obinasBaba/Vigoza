@@ -11,7 +11,7 @@
 
 
   grid-template-columns: [start]3em [mid]1fr [end]1em [last];
-  grid-template-rows: 1fr .9fr min-content 1fr min-content;
+  grid-template-rows: .7fr auto 2fr min-content min-content;
 
   background-image: url("../img/portfolio_bg.jpg");
   background-size: cover;
@@ -91,6 +91,9 @@ h3 {
   //padding: 1em 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  border: thin solid crimson;
 }
 
 .github__star {
@@ -103,46 +106,52 @@ h3 {
 
 .featured__front {
   transition: 250ms;
-  text-align: left;
   z-index: 1;
 
-  .front__img {
-    width: 16em;
-    height: 16em;
+  position: relative;
+  border: thin solid yellow;
+
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: [start]1fr [mid]1fr [last]1fr [end];
+  grid-template-rows: 4fr 1fr;
+
+
+  .front__img-1 {
+    grid-column: start / end;
     object-fit: cover;
     border-radius: $mrgn;
-
-    transition: border-radius 250ms
-    cubic-bezier(.21, 1.1, .82, 1.00);
+    transition: border-radius 250ms cubic-bezier(.21, 1.1, .82, 1.00);
   }
 
   .project__name {
     color: $light-gray;
     text-shadow: 0.1em 0.1em 0.3em #000;
     font-size: 1.7rem;
+    position: absolute;
+    top: 2%;
+    left: 5%;
   }
 
-  .project__detail {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: .6em;
-    padding: 0 .5em;
+  .proj-img{
+    grid-row: 2 / 3;
+    width: 100%;
+  }
+  .front__img-2{
+    grid: start / mid;
+  }
+  .proj-img-3{
+    grid: mid / last;
+  }
+  .proj-img-3{
+    grid: last / end;
   }
 
-  .detail__images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-
-    img {
-      width: 50px;
-      height: 50px;
-      object-fit: cover;
-      border-radius: $mrgn / 2;
-
-    }
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: $mrgn / 2;
   }
 }
 
@@ -215,23 +224,26 @@ h3 {
   position: relative;
   z-index: 0;
   width: 80%;
+  //height: 70%;
+
+  display: flex;
+  border: thin solid green;
 
   &:hover {
     outline: none;
 
-    .github__star {
-      transform: translate(160%, -79%);
+    .github__star { //todo- use js to move this
+      transform: translate(160%, -69%);
     }
 
     .featured__front {
-      transform: translateY(-45%) scale(.6);
+      transform: translateY(-45%) scale(0);
 
-      .front__img{
+      .front__img-1{
         border-radius: 50%;
         transition: border-radius 250ms
         cubic-bezier(.21, 1.1, .82, 1.00);
       }
-
 
       .project__name {
         animation: gameName 250ms forwards;

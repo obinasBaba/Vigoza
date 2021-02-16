@@ -686,19 +686,25 @@ a:active {
   padding: 2em 1em 2em 1em !important;
   position: relative !important;
 }
+.slider .indicators .indicator-item.active {
+  background-color: #FF4200;
+}
 
 .service__desc {
   font-size: 0.89em;
 }
 
 .desc__title {
-  font-size: 0.92em;
+  color: #d6d6d6;
+  text-shadow: 0.1em 0.1em 0.3em #000;
   position: relative;
+  font-weight: 700;
   z-index: 1;
   display: inline-block;
 }
 .desc__title::before {
   position: absolute;
+  text-shadow: initial;
   content: "W";
   display: inline-block;
   font-family: "poppins", sans-serif;
@@ -708,28 +714,12 @@ a:active {
   color: rgba(255, 66, 0, 0.53);
 }
 
-.backend__dev {
-  grid-area: backend;
-}
-.backend__dev .desc__title::before {
+.backend__dev.desc__title::before {
   content: "B";
   margin-left: -8%;
 }
 
-.web__design {
-  grid-area: web;
-  justify-self: end;
-  margin-bottom: 0.5em;
-}
-.web__design .desc__title::before {
-  content: "W";
-  margin-left: -19%;
-}
-
-.mobile__dev {
-  grid-area: mobile;
-}
-.mobile__dev .desc__title::before {
+.mobile__dev.desc__title::before {
   content: "M";
   margin-left: -10%;
 }

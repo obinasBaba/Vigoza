@@ -426,8 +426,7 @@ h2 {
 }
 
 h5 {
-  font-size: 1em;
-  font-weight: 900;
+  font-size: 1.2em;
   letter-spacing: 3px;
 }
 
@@ -607,9 +606,9 @@ a:active {
   display: grid;
   row-gap: 1em;
   grid-template-columns: 4em repeat(3, auto);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 2.2fr 4em;
   grid-auto-rows: min-content;
-  grid-template-areas: "head head   head     head" ".    list   list     list" ".    .      backend  backend" ".    web    web      .      " ".    .      mobile   mobile";
+  grid-template-areas: "head   head   head     head" ".    list   list     list" "slider  slider  slider  slider";
 }
 
 .headline {
@@ -650,21 +649,42 @@ a:active {
 .service__list {
   grid-area: list;
   justify-self: center;
-  align-self: center;
+  align-self: start;
+  font-family: "Inconsolata", "monospace";
+  padding: 0;
 }
 .service__list .selected {
   position: relative;
+  color: rgba(255, 66, 0, 0.8);
+  text-shadow: 0.1em 0.1em 0.3em #000;
+  font-weight: 600;
 }
 .service__list .selected::before {
   position: absolute;
   top: 0;
-  left: -5px;
+  left: -8px;
   bottom: 0;
   content: "";
   display: inline-block;
-  width: 2px;
+  width: 3px;
   height: 100%;
   background: #FF4200;
+}
+
+.slider {
+  grid-area: slider;
+  height: auto !important;
+}
+.slider .slides {
+  height: 90% !important;
+}
+.slider .slides img {
+  background-blend-mode: darken;
+  object-fit: cover;
+}
+.slider .indicators {
+  padding: 2em 1em 2em 1em !important;
+  position: relative !important;
 }
 
 .service__desc {

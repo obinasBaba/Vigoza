@@ -93,7 +93,7 @@
         <h5>MOBILE DEVELOPMENT</h5>
     </div>
 
-    <div class="service__desc backend__dev">
+    <!--<div class="service__desc backend__dev">
         <h6 class="desc__title">BACKEND DEVELOPMENT</h6>
         <p>Morbi leo risus, porta ac
             consectetur ac, vestibulum at eros.
@@ -115,6 +115,39 @@
             consectetur ac, vestibulum at eros.
             Aenean eu leo quam. Pellentesque
             ornare sem lacinia quam venenatis.</p>
+    </div>-->
+
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img alt="bg" src="img/project/blog.png">
+                <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img alt="bg" src="img/project/paul-esch-laurent-6MeMUw5KDss-unsplash.jpg">
+                <div class="caption left-align">
+                    <h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img alt="bg" src="img/project/vishnu-r-nair-1TFbqhRlCCc-unsplash.jpg">
+                <div class="caption right-align">
+                    <h3>Right Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img alt="bg" src="img/project/muhannad-ajjan-sL2BRR1cuvM-unsplash.jpg"> <!-- random image -->
+                <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+        </ul>
     </div>
 
 </section>
@@ -333,19 +366,23 @@
             noWrap: true,
         });
 
+        let slider = document.querySelectorAll('.slider');
+        let sliderInstances = M.Slider.init(slider, {
+            // height: '400px',
+        });
+
         const hamburger = document.body.querySelector('.nav__bar .humberger');
-        const slider =   document.body.querySelector('.slider__nav__wrapper')
+        const nav_slider =   document.body.querySelector('.slider__nav__wrapper')
 
         hamburger.addEventListener('click', e => {
-            slider.classList.add('show');
-            console.log(slider.classList, slider)
-            console.log( slider)
+            nav_slider.classList.add('show');
+            console.log(nav_slider.classList, nav_slider)
         })
 
-        slider.addEventListener('click' , e => {
-            if (e.target === slider || e.target.classList.contains('close-btn')){
-                console.log(slider.classList)
-                slider.classList.remove('show');
+        nav_slider.addEventListener('click' , e => {
+            if (e.target === nav_slider || e.target.classList.contains('close-btn')){
+                console.log(nav_slider.classList)
+                nav_slider.classList.remove('show');
             }
         })
 

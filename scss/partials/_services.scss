@@ -12,20 +12,21 @@
   display: grid;
   row-gap: 1em;
   grid-template-columns: 4em repeat(3, auto);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 2.2fr 4em;
   grid-auto-rows: min-content;
-  grid-template-areas: 'head head   head     head'
+  grid-template-areas: 'head   head   head     head'
                        '.    list   list     list'
-                       '.    .      backend  backend'
-                       '.    web    web      .      '
-                       '.    .      mobile   mobile';
+                       'slider  slider  slider  slider'
+
+                       //'.    .      backend  backend'
+                       //'.    web    web      .      '
+                       //'.    .      mobile   mobile';
 }
 
 .headline {
   grid-area: head;
   align-self: center;
   justify-self: center;
-
   position: relative;
   //margin-bottom: 2em;
   z-index: 1;
@@ -50,6 +51,7 @@
 
   h1 {
     font-size: 1.875rem;
+
     font-family: $ff-abyssopelagic;
     letter-spacing: 10px;
     color: $white;
@@ -69,26 +71,48 @@
 .service__list {
   grid-area: list;
   justify-self: center;
-  align-self: center;
-  //margin: 2em;
+  align-self: start;
+  font-family: $ff-inconsolata;
+  padding: 0 ;
 
   .selected{
     position: relative;
+    color: rgba($accent, .8);
+    text-shadow: 0.1em 0.1em 0.3em #000;
+    font-weight: 600;
 
     &::before{
       position: absolute;
       top: 0;
-      left: -5px;
+      left: -8px;
       bottom: 0;
       content: '';
       display: inline-block;
-
-      width: 2px;
+      width: 3px;
       height: 100%;
 
       background: $accent;
 
     }
+  }
+}
+
+.slider{
+  grid-area: slider;
+  height: auto !important;
+
+  .slides{
+    height: 90% !important;
+
+    img{
+      background-blend-mode: darken;
+      object-fit: cover;
+    }
+  }
+
+  .indicators{
+    padding: 2em 1em 2em 1em!important;
+    position: relative !important;
   }
 }
 

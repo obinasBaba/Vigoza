@@ -217,6 +217,67 @@
 
 </section>
 
+<section class="contact">
+
+    <div class="contact-div">
+        <h1 class="contact-headline">CONTACT</h1>
+
+        <div class="contact-methods">
+
+                <i class="material-icons">email</i>
+                <h2>E-Mail</h2>
+                <p>henokgetachew500@gmail.com</p>
+
+
+                <i class="material-icons">phone_android</i>
+                <h2>Phone</h2>
+                <p>+251 923 3655 39</p>
+
+
+               <i class="material-icons">add_location</i>
+                <h2>address</h2>
+                <p>Vigoza Inc.<br>
+                    Hawassa, post 434 <br>
+                    Ethiopia </p>
+
+        </div>
+
+        <div class="contact-effect">CONTACT</div>
+    </div>
+
+    <div class="map-div">
+        <form name="form" action="#">
+
+            <div class="input-field">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="first_name" type="text" class="validate">
+                <label for="first_name">First Name</label>
+            </div>
+
+            <div class="input-field">
+                <i class="material-icons prefix circle">email</i>
+                <input id="email" type="text" class="validate">
+                <label for="email">Email</label>
+            </div>
+
+            <div class="input-field">
+                <i class="material-icons prefix circle">developer_board</i>
+                <input id="topic" type="text" class="validate">
+                <label for="topic">Your Topic</label>
+            </div>
+
+            <div class="input-field">
+                <i class="material-icons prefix label-icon">mode_edit</i>
+                <textarea id="message" class="materialize-textarea" data-length="60"></textarea>
+                <label for="message">Message</label>
+            </div>
+
+
+            <button>Send Message</button>
+        </form>
+    </div>
+</section>
+
 <div class="pagination__nav">
     <h1 class="page__no">01</h1>
     <!--    <p class="page__name">About <br> Us</p>-->
@@ -258,14 +319,7 @@
             noWrap: true,
         });
 
-        const front = document.body.querySelector('.featured__front');
-        const back = document.body.querySelector('.featured__back');
-        back.style.bottom = front.getBoundingClientRect().bottom + ' px';
-        console.log(back.getBoundingClientRect())
-        console.log(front)
 
-        console.log(front.getBoundingClientRect());
-        console.log(front.getClientRects());
 
     })
 </script>

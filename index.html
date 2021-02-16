@@ -298,7 +298,7 @@
 <div class="slider__nav__wrapper">
     <div class="slider__nav">
        <div class="nav__wrapper">
-           <h1></h1>
+           <h1 class="close-btn"></h1>
            <h1>HOME</h1>
            <h1>WHO WE ARE</h1>
            <h1>SERVICES</h1>
@@ -333,6 +333,21 @@
             noWrap: true,
         });
 
+        const hamburger = document.body.querySelector('.nav__bar .humberger');
+        const slider =   document.body.querySelector('.slider__nav__wrapper')
+
+        hamburger.addEventListener('click', e => {
+            slider.classList.add('show');
+            console.log(slider.classList, slider)
+            console.log( slider)
+        })
+
+        slider.addEventListener('click' , e => {
+            if (e.target === slider || e.target.classList.contains('close-btn')){
+                console.log(slider.classList)
+                slider.classList.remove('show');
+            }
+        })
 
 
     })

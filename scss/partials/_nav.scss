@@ -12,7 +12,7 @@
   color: $white; //todo for service
   text-align: center;
 
-  display: flex;
+  display: none;
   flex-flow: column;
   align-items: center;
   justify-content: center;
@@ -68,6 +68,74 @@
     border-radius: initial;
     width: 3px;
     padding: 0;
+  }
+}
+
+.slider__nav__wrapper{
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: $white;
+  background: rgba($dark-gray, .7);
+
+  .slider__nav{
+    position: absolute;
+    right: 40%;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .nav__wrapper{
+    background: rgba($accent, .7);
+    //transform: translateX(100%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    gap: .7em;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+    & > h1{
+      padding-right: 1em;
+      letter-spacing: 4px;
+    }
+
+    & :last-child{
+      margin-bottom: auto;
+    }
+
+    & :first-child{
+      padding: .76em;
+      position: relative;
+      margin: .5em .5em auto .5em;
+
+      &:after , &:before{
+        content: '';
+        position: absolute;
+        background: rgba($white, .6);
+        width: 2px;
+        top: 0;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        transform: rotate(45deg);
+      }
+
+      &:before{
+        transform: rotate(-45deg);
+      }
+
+    }
   }
 }
 

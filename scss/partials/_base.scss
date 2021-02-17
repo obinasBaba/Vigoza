@@ -14,8 +14,10 @@ body{
   font-family: $ff-inconsolata;
   line-height: 1.2;
   font-size: calc(.875rem + 1vw);
+  @include mediaQuery(){
+    font-size: calc(.875rem + .4vw);
+  }
 
-  height: 500vh; //todo delete this
 
   background: white;
   max-width: 100vw;
@@ -24,8 +26,6 @@ body{
 
   position: relative;
 
-  //max-width: 100vw;
-  //overflow: hidden;
 }
 
 img{
@@ -36,7 +36,7 @@ img{
 h1{
   //color: $accent;
   //line-height: 1;
-  //font-size: 3.125rem;
+  font-size: 3.125em;
 
   font-family: $ff-abyssopelagic;
 }

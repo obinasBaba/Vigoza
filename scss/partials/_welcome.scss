@@ -111,32 +111,49 @@
 }
 
 .scroll-down {
-  border: thin solid crimson;
-
   position: absolute;
-  bottom: 0;
-  left: -90px;
+  bottom: calc(30% + 1vh);
+  left: 37%;
   font-family: $ff-abyssopelagic;
   letter-spacing: 4px;
   transform: rotate(90deg);
+  transform-origin: left;
   display: flex;
   width: 100%;
 
   span{
-    padding: 1em;
+    position: relative;
     display: block;
+    width: 1.7em;
+    height: 1em;
+    border: thin solid $gray;
+    border-radius: 150px;
+    align-self: flex-end;
+    margin-bottom: .1em;
+
+    &:after{
+      content: '';
+      position: absolute;
+      padding: .14em;
+      border-radius: 50%;
+      background: rgba($accent, .8);
+      top: 50%;
+      transform: translateY(-63%);
+      left: 20%;
+      animation: scrollAnim 1s infinite alternate both;
+    }
   }
 
   & p{
     font-size: .9em;
     color: $white;
     display: block;
-    width: 10em;
+    //width: 10em;
 
     &::after{
       content: '';
       display: block;
-      //width: 200%;
+      width: 200%;
       height: 3px;
       background: $gray;
       margin-top: .5em;
@@ -160,10 +177,15 @@
   z-index: 1;
 }
 
+@keyframes scrollAnim {
+  0% {
+    left: 20%;
+  }
 
-
-
-
+  100% {
+    left: 70%;
+  }
+}
 
 
 

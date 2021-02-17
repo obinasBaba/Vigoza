@@ -9,7 +9,7 @@
 
   display: grid;
   grid-template-columns: [start]3em [mid]1fr [end]1em [last];
-  grid-template-rows: .7fr auto 2fr min-content min-content;
+  grid-template-rows: 20% 20% 60%;
 
   background-image: url("../img/portfolio_bg.jpg");
   background-size: cover;
@@ -86,15 +86,18 @@ h3 {
 .project__wrapper {
   grid-column: mid/ end;
 
-  //padding: 1em 0;
+  padding: 1em 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: initial!important;
+  //height: initial!important;
+
+  border: thin solid crimson;
 
 }
 
 .github__star {
+  display: none;
   position: absolute;
   top: 0;
   right: 1em;
@@ -105,28 +108,28 @@ h3 {
 .featured__front {
   transition: 250ms;
   z-index: 1;
-  width: 80%;
-  min-height: 70%;
+  height: 100%;
+  border: 2px dashed blue;
 
   position: relative;
   display: grid;
+  justify-content: stretch;
+  align-content: space-between;
   grid-gap: 10px;
-  grid-template-columns: [start]1fr [mid]1fr [last]1fr [end];
-  grid-template-rows: 4fr 1fr;
+  grid-template-columns: [start]5em [mid]5em [last]5em [end];
+  grid-template-rows: 15em 4em;
 
   .front__img-1 {
     grid-column: start / end;
-    object-fit: cover;
-
     border-radius: $mrgn;
     transition: border-radius 250ms cubic-bezier(.21, 1.1, .82, 1.00);
   }
 
   .project__name {
+    position: absolute;
     color: $light-gray;
     text-shadow: 0.1em 0.1em 0.3em #000;
     font-size: 1.7rem;
-    position: absolute;
     top: 2%;
     left: 5%;
   }
@@ -136,13 +139,13 @@ h3 {
     width: 100%;
   }
   .front__img-2{
-    grid: start / mid;
+    //grid-column: start / mid;
   }
   .front__img-3{
-    grid: mid / last;
+    //grid-column: mid / last;
   }
   .front__img-4{
-    grid: last / end;
+    //grid-column: last / end;
   }
 
   img {
@@ -156,15 +159,20 @@ h3 {
 .featured__back {
   opacity: 0;
   position: absolute;
-  bottom: 15%;
-  width: 80%;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
   gap: 1em;
   transform: translateY(35%) scale(0);
 
-  .btn.pulse{
+  .btn  {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -178,41 +186,40 @@ h3 {
   }
 
   .short_desc {
+    grid-column: 1 / -1;
     margin: -.3em 0 0 0;
     text-align: left;
     font-size: .89em;
   }
 
-  .featured_back_images {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: .4em;
 
     div#materialbox-overlay{
         opacity: .86 !important;
     }
 
-    img {
-      margin: 0 auto;
-
+  img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: $mrgn / 2;
     }
-  }
+  //}
 }
 
 .featured__background {
   position: absolute;
-  height: 70%;
-  width: 80%;
-  background: rgba($accent, .3);
+  background-color: rgba($accent, .3);
+  border: thin solid yellow;
   z-index: -1;
   border-radius: $mrgn;
   opacity: 0;
   transform: scale(.2, .7);
   transition: 200ms;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
   & *{
     border-top-left-radius: $mrgn;
@@ -223,7 +230,6 @@ h3 {
     min-height: 45%;
     background-image: url('../img/project/karim-manjra-6ybGCLrzy_w-unsplash(1).jpg');
     background-size: cover;
-
     background-repeat: no-repeat;
     background-blend-mode: color-burn;
   }
@@ -240,11 +246,13 @@ h3 {
 
 .featured__project {
   position: relative;
+  width: 80%;
+  //min-height: 75%;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  //border: thin solid green;
+  border: thin solid green;
 
   &:hover {
     outline: none;
@@ -286,7 +294,7 @@ h3 {
       opactiy 100ms linear;
 
       opacity: 1;
-      transform: scale(1.2, 1.2);
+      transform: scale(1.1, 1.2);
     }
   }
 

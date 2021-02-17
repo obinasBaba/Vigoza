@@ -475,7 +475,8 @@ a:active {
   overflow: hidden;
   position: relative;
   display: grid;
-  grid-template-columns: 3em auto min-content;
+  justify-content: space-between;
+  grid-template-columns: 4.5em min-content 3em;
   grid-template-rows: min-content auto;
   grid-template-areas: "nav   nav   nav" " .    hero  social";
 }
@@ -511,8 +512,7 @@ a:active {
 .welcome-text {
   grid-area: hero;
   align-self: center;
-  justify-self: center;
-  padding-left: 1em;
+  justify-self: start;
 }
 .welcome-text h1 {
   font-size: 3em;
@@ -548,9 +548,10 @@ a:active {
 
 .social-icons {
   grid-area: social;
-  width: 3em;
+  justify-self: center;
+  align-self: center;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   flex-flow: column;
 }

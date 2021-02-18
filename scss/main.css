@@ -489,9 +489,10 @@ a:active {
     grid-row: 3/5;
     align-self: start;
     justify-self: start;
+    padding-left: 2em;
   }
   .welcome .welcome-text h1 {
-    font-size: calc(5.4em + 3vw);
+    font-size: calc(5em + 3vw);
     letter-spacing: 50px;
     margin: 0 0 0;
   }
@@ -807,20 +808,27 @@ a:active {
   overflow: hidden;
   display: grid;
   grid-template-columns: 3em repeat(7, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: 2em repeat(7, 1fr);
   /* ABOUT TITLE */
   /* ABOUT PARAGRAPH */
 }
 .about__me .img-wrapper {
   grid-column: 1/9;
-  grid-row: 1/5;
-  align-self: center;
+  grid-row: 2/5;
+  align-self: start;
   justify-self: center;
   z-index: 1;
   position: relative;
   margin: 0;
   padding: 0;
   width: calc(21.5em + 12vw);
+}
+@media (min-width: 50em) {
+  .about__me .img-wrapper {
+    align-self: center;
+    width: calc(25.5em + 12vw);
+    grid-row: 2/6;
+  }
 }
 .about__me .img-wrapper .mobile {
   display: none;
@@ -843,6 +851,12 @@ a:active {
   bottom: 0;
   right: 0;
 }
+@media (min-width: 50em) {
+  .about__me .img-wrapper .img-overlay {
+    background: rgba(255, 255, 255, 0.4);
+    top: 90%;
+  }
+}
 .about__me .about-title {
   grid-column: 2/8;
   grid-row: 4/6;
@@ -851,28 +865,51 @@ a:active {
   color: #FF4200;
   margin: 0;
   padding-top: 2em;
-  z-index: 2;
+  z-index: 0;
   font-family: "poppins", sans-serif;
   letter-spacing: 6.4px;
   font-size: 1.87em;
 }
+@media (min-width: 50em) {
+  .about__me .about-title {
+    padding-top: 2em;
+    color: rgba(255, 66, 0, 0.8);
+    grid-column: 3/6;
+    grid-row: 5/7;
+    align-self: end;
+    justify-self: start;
+    font-size: 2.87em;
+  }
+}
 .about__me .about-title span {
   display: block;
-  color: black;
+  color: #b3b3b3;
   padding-left: 3em;
   margin-top: 0.2em;
   position: relative;
 }
 .about__me .about-paragraph {
+  z-index: 2;
   text-align: center;
   align-self: center;
   grid-column: 1/9;
   grid-row: 5/9;
   padding: 0 1em 0 3em;
-  color: #737373;
+  color: #333333;
+}
+@media (min-width: 50em) {
+  .about__me .about-paragraph {
+    grid-column: 4/8;
+    grid-row: 5/8;
+    padding: 2em 0 0 3em;
+  }
+  .about__me .about-paragraph :last-child {
+    text-align: right;
+    margin: 2em 0 0.8em 0;
+  }
 }
 .about__me .about-paragraph p {
-  margin: 0 0 1em 0;
+  margin: 0 0 0.8em 0;
 }
 
 /* ABOUT EFFECT */
@@ -882,10 +919,10 @@ div[class^=effect] {
 }
 
 .effect-A {
-  font-size: 17em;
+  font-size: 22em;
   color: rgba(255, 66, 0, 0.2);
   line-height: 70%;
-  left: -2%;
+  right: -10%;
   bottom: -2%;
 }
 

@@ -10,18 +10,24 @@
   //grid-template-columns: ;
 
   grid-template-columns: 3em repeat(7, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: 2em repeat(7, 1fr);
 
   .img-wrapper {
     grid-column: 1 / 9;
-    grid-row: 1 / 5;
-    align-self: center;
+    grid-row: 2 / 5;
+    align-self: start;
     justify-self: center;
     z-index: 1;
     position: relative;
     margin: 0;
     padding: 0;
     width: calc(21.5em + 12vw);
+
+    @include mediaQuery(){
+      align-self: center;
+      width: calc(25.5em + 12vw);
+      grid-row: 2 / 6;
+    }
     //border: thin solid crimson;
 
     .mobile {
@@ -51,6 +57,10 @@
       position: absolute;
       //background: rgba($white, .0);
       top: 0;
+      @include mediaQuery(){
+        background: rgba($white, .4);
+        top: 90%;
+      }
       left: 0;
       bottom: 0;
       right: 0;
@@ -66,16 +76,26 @@
     color: $accent;
     margin: 0;
     padding-top: 2em;
-    z-index: 2;
+    z-index: 0;
     font-family: $ff-poppins;
     letter-spacing: 6.4px;
     font-size: 1.87em;
+
+    @include mediaQuery(){
+      padding-top: 2em;
+      color: rgba($accent, .8);
+      grid-column: 3 / 6;
+      grid-row: 5 / 7;
+      align-self: end;
+      justify-self: start;
+      font-size: 2.87em; //todo media
+    }
 
 
 
     span{
       display: block;
-      color: black;
+      color: rgba($light-gray, 1);
       padding-left: 3em;
       margin-top: .2em;
       position: relative;
@@ -84,15 +104,30 @@
 
   /* ABOUT PARAGRAPH */
   .about-paragraph {
+    z-index: 2;
+
     text-align: center;
     align-self: center;
     grid-column: 1 / 9;
     grid-row: 5 / 9;
     padding: 0 1em 0 3em;
-    color: $gray;
+    color: $dark-gray;
+
+    @include mediaQuery(){
+      grid-column: 4 / 8;
+      grid-row: 5 / 8;
+      padding: 2em 0 0 3em;
+
+      & :last-child{
+        text-align: right;
+        margin: 2em 0 .8em 0
+      }
+    }
+
+
 
     p {
-      margin: 0 0 1em 0
+      margin: 0 0 .8em 0
     }
   }
 }
@@ -105,10 +140,10 @@ div[class^='effect'] {
 }
 
 .effect-A {
-  font-size: 17em;
+  font-size: 22em;
   color: rgba($accent, .2);
   line-height: 70%;
-  left: -2%;  //todo media
+  right: -10%;
   bottom: -2%;
 }
 

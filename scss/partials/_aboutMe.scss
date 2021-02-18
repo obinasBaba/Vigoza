@@ -104,20 +104,18 @@ div[class^='effect'] {
 
 .effect-A {
   font-size: 27em;
-  color: rgba($light-light-gray, .3);
+  color: rgba($accent, .2);
   line-height: 70%;
-
-
   left: -23%;
   bottom: 0;
 }
 
 .effect-about {
-  font-size: 10em;
-  letter-spacing: 8px;
+  font-size: 14em;
+  letter-spacing: 1px;
   line-height: 60%;
-  color: rgba($light-light-gray, .25);
+  color: rgba($accent, .12);
 
   top: 0%;
-  left: -5%;
+  left: -10%;
 }

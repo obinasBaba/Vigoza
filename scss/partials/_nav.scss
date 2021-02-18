@@ -5,6 +5,9 @@
   letter-spacing: 2px;
   line-height: 1;
   left: .5em;
+  @include mediaQuery(){
+    left: 3%;
+  }
   transform: translateY(-54%);
   z-index: 999;
   text-transform: uppercase;

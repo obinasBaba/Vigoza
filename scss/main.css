@@ -453,11 +453,15 @@ a:link {
 }
 
 a:visited {
-  color: #FF4200;
+  color: #b3b3b3;
 }
 
 a:hover {
-  text-decoration: underline;
+  transition: 400ms;
+  color: rgba(255, 66, 0, 0.5);
+}
+a:hover::after {
+  text-decoration: none;
 }
 
 a:active {
@@ -475,14 +479,28 @@ a:active {
   overflow: hidden;
   position: relative;
   display: grid;
-  justify-content: space-between;
-  grid-template-columns: 4.5em min-content 3em;
-  grid-template-rows: min-content auto;
-  grid-template-areas: "nav   nav   nav" " .    hero  social";
+  justify-content: stretch;
+  grid-template-columns: 4.5em repeat(7, 1fr);
+  grid-template-rows: min-content repeat(7, 1fr);
+}
+@media (min-width: 43em) {
+  .welcome .welcome-text {
+    grid-column: 3/8;
+    grid-row: 3/5;
+    align-self: start;
+    justify-self: start;
+  }
+  .welcome .welcome-text h1 {
+    font-size: calc(5.4em + 3vw);
+    letter-spacing: 50px;
+    margin: 0 0 0;
+  }
 }
 
 .nav__bar {
   grid-area: nav;
+  grid-column: 1/-1;
+  grid-row: 1/2;
   background: transparent;
   display: flex;
   align-items: center;
@@ -512,13 +530,15 @@ a:active {
 .welcome-text {
   grid-area: hero;
   align-self: center;
-  justify-self: start;
+  justify-self: end;
+  grid-column: 2/8;
+  grid-row: 4/6;
 }
 .welcome-text h1 {
-  font-size: 3em;
+  font-size: calc(3em + 3vw);
   font-family: abyssopelagic;
   letter-spacing: 20px;
-  margin: 0 0 0.2em;
+  margin: 0 -9px 0.2em;
   color: #ffffff;
 }
 .welcome-text p {
@@ -533,14 +553,33 @@ a:active {
   width: 50%;
   height: 1px;
   background: #FF4200;
-  margin: 1em 0 0.3em;
+  margin: 0.5em 0 0.3em;
 }
 .welcome-text .read-more {
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  position: relative;
+}
+.welcome-text .read-more::before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 100%;
+  top: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: rgba(255, 66, 0, 0.8);
+}
+.welcome-text .read-more:hover::before {
+  transform: scaleX(1);
+  transition: transform 500ms;
 }
 .welcome-text .read-more::after {
-  content: "≡";
-  margin: 0 1em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-40%);
+  content: "🔗";
+  display: inline-block;
+  margin: 0 0.6em;
   width: 20px;
   height: 20px;
   color: #FF4200;
@@ -548,6 +587,8 @@ a:active {
 
 .social-icons {
   grid-area: social;
+  grid-row: 2/-1;
+  grid-column: 8/-1;
   justify-self: center;
   align-self: center;
   display: flex;
@@ -587,7 +628,7 @@ a:active {
   border-radius: 50%;
   background: rgba(255, 66, 0, 0.8);
   top: 50%;
-  transform: translateY(-63%);
+  transform: translateY(-53%);
   left: 20%;
   animation: scrollAnim 1s infinite alternate both;
 }
@@ -1290,6 +1331,11 @@ h3 {
   flex-flow: column;
   align-items: center;
   justify-content: center;
+}
+@media (min-width: 50em) {
+  .pagination__nav {
+    left: 3%;
+  }
 }
 .pagination__nav > * {
   margin: 0 0 1.3rem 0;

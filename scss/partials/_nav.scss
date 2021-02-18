@@ -110,7 +110,7 @@
   .slider__nav{
     overflow: hidden;
     position: absolute;
-    right: 40%;
+    right: 60%;
 
     top: 0;
     bottom: 0;
@@ -124,7 +124,8 @@
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: -1%;
+    text-align: right;
 
     display: flex;
     gap: .6em;
@@ -133,18 +134,46 @@
     justify-content: center;
 
     & > h1{
+      font-size: calc(1em + 2vw);
       opacity: 0;
-      padding-right: 1em;
+      padding-right: .7em;
       letter-spacing: 4px;
+      margin-bottom: .3em;
+      transition: 500ms ease-in-out;
+      cursor: pointer;
+
+      &:hover{
+        transition:  500ms ease-in-out;
+        transform:  scale(1.03);
+
+        text-shadow:
+                -1px -1px 0 white,
+                1px -1px 0 white,
+                -1px 1px 0 white,
+                1px 1px 0 white ;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s ease-in-out;
+      }
+
+    }
+
+    & :last-child{
+      margin-bottom: auto;
     }
 
     & :first-child{
       opacity: 1;
       padding: .76em;
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin: .5em .5em .5em .5em;
+      position: relative;
+      margin: .5em .7em auto .5em;
+
+      &:hover::after{
+        transform: rotate(45deg) scale(1.05);
+      }
+      &:hover::before{
+        transform: rotate(-45deg) scale(1.05);
+      }
 
       &:after , &:before{
         content: '';

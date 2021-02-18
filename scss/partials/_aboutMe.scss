@@ -1,5 +1,4 @@
-.about__me{
-  padding: 2.5em 1.4em 2em 1.5em;
+.about__me {
   position: relative;
   background: white;
   width: 100%;
@@ -7,27 +6,39 @@
   overflow: hidden;
 
   display: grid;
-  grid-template-columns:  [pag]3em [start]minmax(6em, 1fr)
-                          [name-start]minmax(6em, 1fr)
-                          [img-end]1fr
-                          [end];
+  //grid-row-gap: 1em;
+  //grid-template-columns: ;
 
-  .img-wrapper{
-    grid-column: start / img-end;
-    grid-row: 1 / 2;
+  grid-template-columns: 4em repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+
+  .img-wrapper {
+    grid-column: 1 / 9;
+    grid-row: 2 / 4;
     align-self: center;
-    justify-self: end;
+    justify-self: center;
     z-index: 1;
-
     position: relative;
     margin: 0;
     padding: 0;
-    height: 16em;
-    width: 12em;
+    width: 24.5em;
+    //border: thin solid crimson;
 
-    &::after{
+    .mobile {
+      display: none;
+    }
+    .desktop{
+      //display: none;
+    }
+    svg {
+      //z-index: 1;
+      height: auto;
+
+    }
+
+    &::after {
       position: absolute;
-      content: '';
+      //content: '';
       width: 1.5px;
       height: 3.5em;
       margin-left: 18%;
@@ -36,50 +47,48 @@
       transform: translateY(-50%);
     }
 
-    .about-img{
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-
-    .img-overlay{
+    .img-overlay {
       position: absolute;
-      background: rgba($white, .7);
+      //background: rgba($white, .0);
       top: 0;
       left: 0;
       bottom: 0;
       right: 0;
     }
-
   }
 
   /* ABOUT TITLE */
+  .about-title {
+    grid-column: 2 / 8;
+    grid-row: 4 / 5;
+    align-self: center;
+    justify-self: center;
+    color: $accent;
 
-  .about-title{
-    grid-column: name-start / end;
-    grid-row: 1 / 2;
-    align-self: end;
-    justify-self: end;
+    margin: 0;
 
     z-index: 2;
     font-family: $ff-poppins;
-    padding: 0 0 1em .7em;
     letter-spacing: 6.4px;
     font-size: 1.87em;
 
     span{
-      color: $accent;
+      display: block;
+      color: black;
+      padding-left: 3em;
+      margin-top: .2em;
     }
   }
 
   /* ABOUT PARAGRAPH */
-  .about-paragraph{
-    grid-column: start / end;
-    grid-row: 2 / 3;
-    padding-top: 1em;
+  .about-paragraph {
+    text-align: center;
+    grid-column: 1 / 9;
+    grid-row: 5 / 8;
+    padding: .5em 1em 2em 3em;
     color: $gray;
 
-    p{
+    p {
       margin: 0 0 1em 0
     }
   }
@@ -87,12 +96,12 @@
 
 /* ABOUT EFFECT */
 
-div[class^='effect']{
+div[class^='effect'] {
   position: absolute;
   font-family: $ff-poppins;
 }
 
-.effect-A{
+.effect-A {
   font-size: 27em;
   color: rgba($light-light-gray, .3);
   line-height: 70%;
@@ -102,7 +111,7 @@ div[class^='effect']{
   bottom: 0;
 }
 
-.effect-about{
+.effect-about {
   font-size: 10em;
   letter-spacing: 8px;
   line-height: 60%;

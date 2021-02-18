@@ -1,5 +1,5 @@
 .service {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   color: $light-gray;
   overflow: hidden !important;
@@ -12,18 +12,27 @@
   display: grid;
   row-gap: 1em;
   grid-template-columns: 4em repeat(3, auto);
-  grid-template-rows: 1fr 1fr 2.2fr 4em;
+  grid-template-rows: 1em 1fr 1fr 2.2fr 4em;
   grid-auto-rows: min-content;
-  grid-template-areas: 'head   head   head     head'
+  grid-template-areas: '  .      .      .      .'
+                       'head   head   head     head'
                        '.    list   list     list'
                        'slider  slider  slider  slider';
+
+  @include mediaQuery(){
+    grid-template-rows: 3em 2fr 1fr 1fr 1fr 1fr 5em;
+    grid-template-columns: 4em repeat(10, 1fr) auto;
+
+  }
 
 }
 
 .headline {
   grid-area: head;
+  grid-column: 4 / -1;
+
   align-self: center;
-  justify-self: center;
+  justify-self: start;
   position: relative;
   z-index: 1;
 
@@ -35,6 +44,10 @@
     left: 9%;
     //line-height: 40%;
     transform: scale(6) translate(42%, 5%);
+
+    @include mediaQuery(){
+      transform: scale( 12 ) translate(42%, 5%);
+    }
     margin: 0;
     display: inline;
 
@@ -51,7 +64,7 @@
     font-family: $ff-abyssopelagic;
     letter-spacing: 10px;
     color: $white;
-    margin: 0 1.5em 0 0;
+    margin: 0 1.5em 2em 0;
 
     &::after {
       content: '';
@@ -66,6 +79,13 @@
 
 .service__list {
   grid-area: list;
+  font-size: .9rem;
+
+  @include mediaQuery(){
+    grid-column: 2 / 5;
+    grid-row: 4 / 5;
+  }
+
   justify-self: center;
   align-self: start;
   font-family: $ff-inconsolata;
@@ -74,7 +94,6 @@
   .selected {
     position: relative;
     color: rgba($accent, .8);
-    text-shadow: 0.1em 0.1em 0.3em #000;
     font-weight: 600;
 
     &::before {
@@ -95,6 +114,17 @@
 
 .slider {
   grid-area: slider;
+  color: $accent;
+
+
+ @include mediaQuery(){
+   grid-column: 5 / 11;
+   grid-row: 3 / 7;
+   min-width: 450px;
+
+ }
+
+
   height: auto !important;
 
   .slides {
@@ -153,4 +183,13 @@
 .mobile__dev.desc__title::before {
   content: 'M';
   margin-left: -10%;
+}
+
+.slider_img_overlay{
+  background: rgba(#000, .7);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }

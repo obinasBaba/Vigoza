@@ -671,7 +671,7 @@ a:active {
   }
 }
 .service {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   color: #b3b3b3;
   overflow: hidden !important;
@@ -682,15 +682,22 @@ a:active {
   display: grid;
   row-gap: 1em;
   grid-template-columns: 4em repeat(3, auto);
-  grid-template-rows: 1fr 1fr 2.2fr 4em;
+  grid-template-rows: 1em 1fr 1fr 2.2fr 4em;
   grid-auto-rows: min-content;
-  grid-template-areas: "head   head   head     head" ".    list   list     list" "slider  slider  slider  slider";
+  grid-template-areas: "  .      .      .      ." "head   head   head     head" ".    list   list     list" "slider  slider  slider  slider";
+}
+@media (min-width: 50em) {
+  .service {
+    grid-template-rows: 3em 2fr 1fr 1fr 1fr 1fr 5em;
+    grid-template-columns: 4em repeat(10, 1fr) auto;
+  }
 }
 
 .headline {
   grid-area: head;
+  grid-column: 4/-1;
   align-self: center;
-  justify-self: center;
+  justify-self: start;
   position: relative;
   z-index: 1;
 }
@@ -706,12 +713,17 @@ a:active {
   z-index: -1;
   letter-spacing: 1.5px;
 }
+@media (min-width: 50em) {
+  .headline .service__effect {
+    transform: scale(12) translate(42%, 5%);
+  }
+}
 .headline h1 {
   font-size: 1.875rem;
   font-family: abyssopelagic;
   letter-spacing: 10px;
   color: #ffffff;
-  margin: 0 1.5em 0 0;
+  margin: 0 1.5em 2em 0;
 }
 .headline h1::after {
   content: "";
@@ -724,15 +736,21 @@ a:active {
 
 .service__list {
   grid-area: list;
+  font-size: 0.9rem;
   justify-self: center;
   align-self: start;
   font-family: "Inconsolata", "monospace";
   padding: 0;
 }
+@media (min-width: 50em) {
+  .service__list {
+    grid-column: 2/5;
+    grid-row: 4/5;
+  }
+}
 .service__list .selected {
   position: relative;
   color: rgba(255, 66, 0, 0.8);
-  text-shadow: 0.1em 0.1em 0.3em #000;
   font-weight: 600;
 }
 .service__list .selected::before {
@@ -749,7 +767,15 @@ a:active {
 
 .slider {
   grid-area: slider;
+  color: #FF4200;
   height: auto !important;
+}
+@media (min-width: 50em) {
+  .slider {
+    grid-column: 5/11;
+    grid-row: 3/7;
+    min-width: 450px;
+  }
 }
 .slider .slides {
   height: 90% !important;
@@ -798,6 +824,15 @@ a:active {
 .mobile__dev.desc__title::before {
   content: "M";
   margin-left: -10%;
+}
+
+.slider_img_overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .about__me {

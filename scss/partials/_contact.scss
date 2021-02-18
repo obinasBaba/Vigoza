@@ -2,10 +2,18 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  //justify-content: center;
+  //align-items: center;
 
   height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+
+  @include mediaQuery(){
+    flex-flow: row;
+  }
+
 }
 
 .contact-div {
@@ -14,12 +22,28 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  flex-grow: 2;
+  flex-grow: 5;
   width: 100%;
 
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: .7fr 2fr;
+  grid-template-rows: .8fr 2fr;
+
+  @include mediaQuery(){
+    width: 70%;
+    grid-template-columns: 1fr 1fr 1fr .6fr;
+    grid-template-rows: .3fr .4fr;
+
+    .contact-headline{
+      grid-column: 2 / 5;
+    }
+    .contact-methods{
+      grid-column: 2 / 5;
+      justify-self: center;
+      grid-row: 2 / 3;
+    }
+  }
+
   justify-items: center;
   align-items: center;
   position: relative;
@@ -32,6 +56,7 @@
 
 .contact-headline {
   grid-column: 1 / 3;
+  justify-self: center;
   margin: .5em 0 0 0;
 
   letter-spacing: 10px;
@@ -50,13 +75,14 @@
 
 .contact-methods {
   grid-column: 2 / 3;
+  justify-self: start;
+  grid-row: 2 / 3;
   height: 100%;
-  padding: 1em;
-  margin-right: 1em;
+
   color: $light-gray;
   display: grid;
   grid-template-columns: min-content min-content;
-  column-gap: 2em;
+  column-gap: 1.4em;
   row-gap: 0;
 
   & > * {

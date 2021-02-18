@@ -46,7 +46,8 @@
     transform: scale(6) translate(42%, 5%);
 
     @include mediaQuery(){
-      transform: scale( 12 ) translate(42%, 5%);
+      transform: scale( 7 ) translate(42%, 5%);
+      letter-spacing: 10px;
     }
     margin: 0;
     display: inline;

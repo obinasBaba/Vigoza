@@ -134,16 +134,16 @@
     justify-content: center;
 
     & > h1{
-      font-size: calc(1em + 2vw);
+      font-size: calc(1em + 1vw);
       opacity: 0;
       padding-right: .7em;
       letter-spacing: 4px;
-      margin-bottom: .3em;
-      transition: 500ms ease-in-out;
+      margin-bottom: .5em;
+      transition: 300ms ease-in-out;
       cursor: pointer;
 
       &:hover{
-        transition:  500ms ease-in-out;
+        transition:  300ms ease-in-out;
         transform:  scale(1.03);
 
         text-shadow:
@@ -151,9 +151,9 @@
                 1px -1px 0 white,
                 -1px 1px 0 white,
                 1px 1px 0 white ;
-        -webkit-transition: all .5s;
-        -moz-transition: all .5s;
-        -o-transition: all .5s ease-in-out;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -o-transition: all .3s ease-in-out;
       }
 
     }

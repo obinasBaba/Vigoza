@@ -779,7 +779,7 @@ a:active {
   }
 }
 .slider .slides {
-  height: 90% !important;
+  height: 100% !important;
 }
 .slider .slides img {
   background-blend-mode: darken;
@@ -1339,6 +1339,10 @@ h3 {
   column-gap: 1.4em;
   row-gap: 0;
 }
+.contact-methods .material-icons {
+  height: 25px;
+  width: 25px;
+}
 .contact-methods > * {
   margin: 0;
 }
@@ -1363,15 +1367,37 @@ h3 {
   grid-template-columns: 5em auto 1em;
   width: 100%;
 }
+@media (min-width: 40em) {
+  .map-div {
+    grid-template-columns: 3em auto 1em;
+  }
+  .map-div form {
+    max-width: 70%;
+    align-self: flex-end;
+    margin-bottom: 3em;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 1em !important;
+  }
+  .map-div form .name .last_name {
+    display: block !important;
+  }
+}
 .map-div form {
   color: black;
   grid-column: 2/3;
   padding: 0.5em 0 0 0;
   /* label underline focus color */
 }
+.map-div form .name {
+  display: flex;
+  gap: 25px;
+}
+.map-div form .name .last_name {
+  display: none;
+}
 .map-div form button {
   border: none;
-  padding: 0.8em 0.5em;
+  padding: 0.5em 2em;
   background: #737373;
   color: #ffffff;
   font-family: "Inconsolata", "monospace";
@@ -1385,7 +1411,7 @@ h3 {
   background: #FF4200;
   top: 35%;
   bottom: 0;
-  left: 30%;
+  left: 20%;
   right: 0;
   transition: 250ms cubic-bezier(0.01, 1.1, 0.68, 1.26);
 }
@@ -1527,21 +1553,21 @@ h3 {
   justify-content: center;
 }
 .slider__nav__wrapper .nav__wrapper > h1 {
-  font-size: calc(1em + 2vw);
+  font-size: calc(1em + 1vw);
   opacity: 0;
   padding-right: 0.7em;
   letter-spacing: 4px;
-  margin-bottom: 0.3em;
-  transition: 500ms ease-in-out;
+  margin-bottom: 0.5em;
+  transition: 300ms ease-in-out;
   cursor: pointer;
 }
 .slider__nav__wrapper .nav__wrapper > h1:hover {
-  transition: 500ms ease-in-out;
+  transition: 300ms ease-in-out;
   transform: scale(1.03);
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s ease-in-out;
 }
 .slider__nav__wrapper .nav__wrapper :last-child {
   margin-bottom: auto;

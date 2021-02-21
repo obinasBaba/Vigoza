@@ -17,21 +17,21 @@
 <body>
 
 
-
 <div class="welcome">
 
-    <nav class="nav__bar">
+    <div class="nav__bar">
         <img src="img/logo.png" alt="logo">
         <a href="#" class="humberger"></a>
-    </nav>
+    </div>
 
     <section class="welcome-text">
         <h1>VIGOZA</h1>
         <p>Powered By Vigoza Stuido</p>
-        <a href="#" class="read-more">READ MORE</a>
+        <a href="#" class="read-more">Read More</a>
     </section>
 
     <section class="social-icons">
+<!--        <img src="img/twitter.svg" alt="twitter">-->
         <i class="small material-icons">facebook</i>
         <i class="small material-icons">code</i>
         <i class="small material-icons">link</i>
@@ -39,8 +39,8 @@
     </section>
 
     <section class="scroll-down">
-        <span class="mouse">O</span>
-        <p>SCROLL DOWN</p>
+        <span class="mouse"></span>
+        <p> SCROLL DOWN</p>
     </section>
 
     <section class="effect">
@@ -53,24 +53,56 @@
     <div class="effect-about">ABOUT</div>
 
     <div class="img-wrapper">
-        <img class="about-img" alt="my Photo" src="img/about-pic.jpg">
+        <!--        mobile version-->
+        <!--     <svg class="bars mobile" width="100%" height="100%" viewBox="0 0 1000 562.5"
+                  preserveAspectRatio="xMinYMin meet">
+                 <defs>
+                     <pattern id="pattern-602e027102108" patternUnits="userSpaceOnUse" width="100%" height="100%">
+                         <image class="stretch-x"
+                                xlink:href="https://s32500.pcdn.co/wp-content/uploads/quotes-phrases-project-portfolio-management-1024x576.jpg"
+                                width="100%" height="100%"></image>
+                     </pattern>
+                 </defs>
+                 <g style="fill: url(#pattern-602e027102108);">
+                     <path d="M0,0 h892 a8,8 0 0 1 8,8 v118.625 a8,8 0 0 1 -8,8 h-892 v-134.625"></path>
+                     <path d="M0,142.625 h792 a8,8 0 0 1 8,8 v118.625 a8,8 0 0 1 -8,8 h-792 v-134.625"></path>
+                     <path d="M0,285.25 h742 a8,8 0 0 1 8,8 v118.625 a8,8 0 0 1 -8,8 h-742 v-134.625"></path>
+                     <path d="M0,427.875 h842 a8,8 0 0 1 8,8 v118.625 a8,8 0 0 1 -8,8 h-842 v-134.625"></path>
+                 </g>
+             </svg>-->
+        <svg class="bars desktop" width="100%" height="100%" viewBox="0 0 1000 562.5"
+             preserveAspectRatio="xMinYMin meet">
+            <defs>
+                <pattern id="pattern-602e0271028d1" patternUnits="userSpaceOnUse" width="100%" height="100%">
+                    <image class="stretch-x"
+                           xlink:href="img/about.jpg"
+                           width="100%" height="100%"></image>
+                </pattern>
+            </defs>
+            <g style="fill: url(#pattern-602e0271028d1);">
+                <path d="M8,0 h884 a8,8 0 0 1 8,8 v90.1 a8,8 0 0 1 -8,8 h-884 a8,8 0 0 1 -8,-8 v-90.1 a8,8 0 0 1 8,-8"></path>
+                <path d="M108,114.1 h884 a8,8 0 0 1 8,8 v90.1 a8,8 0 0 1 -8,8 h-884 a8,8 0 0 1 -8,-8 v-90.1 a8,8 0 0 1 8,-8"></path>
+                <path d="M58,228.2 h784 a8,8 0 0 1 8,8 v90.1 a8,8 0 0 1 -8,8 h-784 a8,8 0 0 1 -8,-8 v-90.1 a8,8 0 0 1 8,-8"></path>
+                <path d="M158,342.3 h734 a8,8 0 0 1 8,8 v90.1 a8,8 0 0 1 -8,8 h-734 a8,8 0 0 1 -8,-8 v-90.1 a8,8 0 0 1 8,-8"></path>
+                <path d="M8,456.4 h934 a8,8 0 0 1 8,8 v90.1 a8,8 0 0 1 -8,8 h-934 a8,8 0 0 1 -8,-8 v-90.1 a8,8 0 0 1 8,-8"></path>
+            </g>
+        </svg>
         <div class="img-overlay"></div>
     </div>
 
-    <h1 class="about-title">
-        <span>CREATIVE</span><br>STUDIO</h1>
+    <h1 class="about-title">CREATIVE<br><span>STUDIO </span></h1>
 
     <div class="about-paragraph">
 
 
-        <p>Donec sed odio dui. Etiam porta sem malesuada
+        <p class="flow-text">Donec sed odio dui. Etiam porta sem malesuada
             magna mollis euismod. Aenean eu leo quam. Pellentesque ornare
             sem lacinia quam venenatis vestibulum.
             Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas
             faucibus mollis interdum.
         </p>
 
-        <p>Donec seNullam id dolor id
+        <p class="flow-text">Donec seNullam id dolor id
             nibh ultricies vehicula ut id elit.
             Maecenas faucibus mollis interdum.
         </p>
@@ -89,32 +121,46 @@
 
     <div class="service__list">
         <h5>BACKEND DEVELOPMENT</h5>
-        <h5 class="selected" >WEB DESIGN</h5>
+        <h5 class="selected">WEB DESIGN</h5>
         <h5>MOBILE DEVELOPMENT</h5>
     </div>
 
-    <div class="service__desc backend__dev">
-        <h6 class="desc__title">BACKEND DEVELOPMENT</h6>
-        <p>Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-            Aenean eu leo quam. Pellentesque
-            ornare sem lacinia quam venenatis.</p>
-    </div>
-
-    <div class="service__desc web__design">
-        <h6 class="desc__title">WEB DESIGN</h6>
-        <p>Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-            Aenean eu leo quam. Pellentesque
-            ornare sem lacinia quam venenatis.</p>
-    </div>
-
-    <div class="service__desc mobile__dev">
-        <h6 class="desc__title">MOBILE DEVELOPMENT</h6>
-        <p>Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-            Aenean eu leo quam. Pellentesque
-            ornare sem lacinia quam venenatis.</p>
+    <div class="slider ">
+        <ul class="slides z-depth-3">
+            <li>
+                <img alt="bg" src="img/project/blog.png">
+                <div class="slider_img_overlay"></div>
+                <div class="caption center-align">
+                    <h5 class="desc__title backend__dev">BACKEND DEVELOPMENT</h5>
+                    <p>Morbi leo risus, porta ac
+                        consectetur ac, vestibulum at eros.
+                        Aenean eu leo quam. Pellentesque
+                        ornare sem lacinia quam venenatis.</p>
+                </div>
+            </li>
+            <li>
+                <div class="slider_img_overlay"></div>
+                <img alt="bg" src="img/project/paul-esch-laurent-6MeMUw5KDss-unsplash.jpg">
+                <div class="caption left-align">
+                    <h5 class="desc__title web__design">WEB DESIGN</h5>
+                    <p>Morbi leo risus, porta ac
+                        consectetur ac, vestibulum at eros.
+                        Aenean eu leo quam. Pellentesque
+                        ornare sem lacinia quam venenatis.</p>
+                </div>
+            </li>
+            <li>
+                <div class="slider_img_overlay"></div>
+                <img alt="bg" src="img/project/vishnu-r-nair-1TFbqhRlCCc-unsplash.jpg">
+                <div class="caption right-align">
+                    <h5 class="desc__title mobile__dev">MOBILE DEVELOPMENT</h5>
+                    <p>Morbi leo risus, porta ac
+                        consectetur ac, vestibulum at eros.
+                        Aenean eu leo quam. Pellentesque
+                        ornare sem lacinia quam venenatis.</p>
+                </div>
+            </li>
+        </ul>
     </div>
 
 </section>
@@ -163,7 +209,7 @@
 
             <div class="featured__background">
                 <div class="img-wrapper">
-<!--                    <img src="img/project/karim-manjra-6ybGCLrzy_w-unsplash(1).jpg" alt="">-->
+                    <!--                    <img src="img/project/karim-manjra-6ybGCLrzy_w-unsplash(1).jpg" alt="">-->
                     <div class="img-overlay"></div>
                 </div>
             </div>
@@ -224,56 +270,64 @@
 
         <div class="contact-methods">
 
-                <i class="material-icons">email</i>
-                <h2>E-Mail</h2>
-                <p>henokgetachew500@gmail.com</p>
+            <!--                <i class="material-icons">email</i>-->
+            <img alt="svg" class="material-icons" src="img/github.svg">
+            <h2>E-Mail</h2>
+            <p>henok50@gmail.com</p>
 
+            <!--                <i class="material-icons">phone_android</i>-->
+            <img alt="svg" class="material-icons" src="img/github.svg">
+            <h2>Phone</h2>
+            <p>+251 923 3655 39</p>
 
-                <i class="material-icons">phone_android</i>
-                <h2>Phone</h2>
-                <p>+251 923 3655 39</p>
-
-
-               <i class="material-icons">add_location</i>
-                <h2>address</h2>
-                <p>Vigoza Inc.<br>
-                    Hawassa, post 434 <br>
-                    Ethiopia </p>
-
+            <i class="material-icons">add_location</i>
+            <img alt="svg" class="material-icons" src="img/github.svg">
+            <h2>address</h2>
+            <p>Vigoza Inc.<br>
+                Hawassa, post 434 <br>
+                Ethiopia </p>
         </div>
 
         <div class="contact-effect">CONTACT</div>
     </div>
 
-    <div class="map-div">
-        <form name="form" action="#">
+    <div class="map-div ">
+        <form class="z-depth-2" name="form" action="#">
+
+           <div class="name">
+               <div class="input-field">
+                   <!--                <i class="material-icons prefix">account_circle</i>-->
+                   <input id="first_name" type="text" class="validate">
+                   <label for="first_name">First Name</label>
+               </div>
+
+               <div class="input-field last_name">
+                   <!--                <i class="material-icons prefix">account_circle</i>-->
+                   <input id="last_name" type="text" class="validate">
+                   <label for="last_name">Last Name</label>
+               </div>
+           </div>
 
             <div class="input-field">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="first_name" type="text" class="validate">
-                <label for="first_name">First Name</label>
-            </div>
-
-            <div class="input-field">
-                <i class="material-icons prefix circle">email</i>
+<!--                <i class="material-icons prefix circle">email</i>-->
                 <input id="email" type="text" class="validate">
                 <label for="email">Email</label>
             </div>
 
             <div class="input-field">
-                <i class="material-icons prefix circle">developer_board</i>
+<!--                <i class="material-icons prefix circle">developer_board</i>-->
                 <input id="topic" type="text" class="validate">
                 <label for="topic">Your Topic</label>
             </div>
 
             <div class="input-field">
-                <i class="material-icons prefix label-icon">mode_edit</i>
+<!--                <i class="material-icons prefix label-icon">mode_edit</i>-->
                 <textarea id="message" class="materialize-textarea" data-length="60"></textarea>
                 <label for="message">Message</label>
             </div>
 
 
-            <button>Send Message</button>
+            <button>Send</button>
         </form>
     </div>
 </section>
@@ -297,34 +351,31 @@
 
 <div class="slider__nav__wrapper">
     <div class="slider__nav">
-       <div class="nav__wrapper">
-           <h1 class="close-btn"></h1>
-           <h1>HOME</h1>
-           <h1>WHO WE ARE</h1>
-           <h1>SERVICES</h1>
-           <h1>PROJECTS</h1>
-           <h1>ARTICLES</h1>
-           <h1>CONTACT</h1>
-       </div>
+        <div class="nav__wrapper">
+            <h1 class="close-btn"></h1>
+            <h1>HOME</h1>
+            <h1>WHO WE ARE</h1>
+            <h1>SERVICES</h1>
+            <h1>PROJECTS</h1>
+            <h1>ARTICLES</h1>
+            <h1>CONTACT</h1>
+        </div>
     </div>
 </div>
-
 
 
 <!--JavaScript at end of body for optimized loading-->
 <script type="text/javascript" src="js/materialize.min.js"></script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', ()=>{
+    document.addEventListener('DOMContentLoaded', () => {
         let instance = M.Tabs.init(
             document.body.querySelector('ul.tabs'), {
                 swipeable: true
             });
 
         let elems = document.querySelectorAll('.materialboxed');
-        let instances = M.Materialbox.init(elems, {
-
-        });
+        let instances = M.Materialbox.init(elems, {});
 
         let carousel = document.querySelectorAll('.carousel');
         let carouselInstances = M.Carousel.init(carousel, {
@@ -333,19 +384,23 @@
             noWrap: true,
         });
 
+        let slider = document.querySelectorAll('.slider');
+        let sliderInstances = M.Slider.init(slider, {
+            // height: '400px',
+        });
+
         const hamburger = document.body.querySelector('.nav__bar .humberger');
-        const slider =   document.body.querySelector('.slider__nav__wrapper')
+        const nav_slider = document.body.querySelector('.slider__nav__wrapper')
 
         hamburger.addEventListener('click', e => {
-            slider.classList.add('show');
-            console.log(slider.classList, slider)
-            console.log( slider)
+            nav_slider.classList.add('show');
+            console.log(nav_slider.classList, nav_slider)
         })
 
-        slider.addEventListener('click' , e => {
-            if (e.target === slider || e.target.classList.contains('close-btn')){
-                console.log(slider.classList)
-                slider.classList.remove('show');
+        nav_slider.addEventListener('click', e => {
+            if (e.target === nav_slider || e.target.classList.contains('close-btn')) {
+                console.log(nav_slider.classList)
+                nav_slider.classList.remove('show');
             }
         })
 

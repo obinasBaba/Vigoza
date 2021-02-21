@@ -1,34 +1,50 @@
-.about__me{
-  padding: 2.5em 1.4em 2em 1.5em;
+.about__me {
   position: relative;
   background: white;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   overflow: hidden;
 
   display: grid;
-  grid-template-columns:  [pag]3em
-                          [start]minmax(6em, 1fr)
-                          [name-start]minmax(6em, 1fr)
-                          [img-end]1fr
-                          [end];
+  //grid-row-gap: 1em;
+  //grid-template-columns: ;
 
-  .img-wrapper{
-    grid-column: start / img-end;
-    grid-row: 1 / 2;
-    align-self: center;
-    justify-self: end;
+  grid-template-columns: 3em repeat(7, 1fr);
+  grid-template-rows: 2em repeat(7, 1fr);
+
+  .img-wrapper {
+    grid-column: 1 / 9;
+    grid-row: 2 / 5;
+    align-self: start;
+    justify-self: center;
     z-index: 1;
-
     position: relative;
     margin: 0;
     padding: 0;
-    height: 16em;
-    width: 12em;
+    width: calc(21.5em + 12vw);
 
-    &::after{
+    @include mediaQuery(){
+      align-self: center;
+      width: calc(25.5em + 12vw);
+      grid-row: 2 / 6;
+    }
+    //border: thin solid crimson;
+
+    .mobile {
+      display: none;
+    }
+    .desktop{
+      //display: none;
+    }
+    svg {
+      //z-index: 1;
+      height: auto;
+
+    }
+
+    &::after {
       position: absolute;
-      content: '';
+      //content: '';
       width: 1.5px;
       height: 3.5em;
       margin-left: 18%;
@@ -37,78 +53,106 @@
       transform: translateY(-50%);
     }
 
-    .about-img{
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-
-    .img-overlay{
+    .img-overlay {
       position: absolute;
-      background: rgba($white, .7);
+      //background: rgba($white, .0);
       top: 0;
+      @include mediaQuery(){
+        background: rgba($white, .4);
+        top: 90%;
+      }
       left: 0;
       bottom: 0;
       right: 0;
     }
-
   }
 
   /* ABOUT TITLE */
-
-  .about-title{
-    grid-column: name-start / end;
-    grid-row: 1 / 2;
-    align-self: end;
-    justify-self: end;
-
-    z-index: 2;
+  .about-title {
+    grid-column: 2 / 8;
+    grid-row: 4 / 6;
+    align-self: start;
+    justify-self: center;
+    color: $accent;
+    margin: 0;
+    padding-top: 2em;
+    z-index: 0;
     font-family: $ff-poppins;
-    padding: 0 0 1em .7em;
     letter-spacing: 6.4px;
     font-size: 1.87em;
 
+    @include mediaQuery(){
+      padding-top: 2em;
+      color: rgba($accent, .8);
+      grid-column: 3 / 6;
+      grid-row: 5 / 7;
+      align-self: end;
+      justify-self: center;
+      font-size: 2.27em; //todo media
+    }
+
+
+
     span{
-      color: $accent;
+      display: block;
+      color: rgba($light-gray, 1);
+      padding-left: 3em;
+      margin-top: .2em;
+      position: relative;
     }
   }
 
   /* ABOUT PARAGRAPH */
-  .about-paragraph{
-    grid-column: start / end;
-    grid-row: 2 / 3;
-    padding-top: 1em;
-    color: $gray;
+  .about-paragraph {
+    z-index: 2;
 
-    p{
-      margin: 0 0 1em 0
+    text-align: center;
+    align-self: center;
+    grid-column: 1 / 9;
+    grid-row: 5 / 9;
+    padding: 0 1em 0 3em;
+    color: $dark-gray;
+
+    @include mediaQuery(){
+      grid-column: 4 / 8;
+      grid-row: 5 / 8;
+      padding: 2em 0 0 3em;
+
+      & :last-child{
+        text-align: right;
+        margin: 2em 0 .8em 0
+      }
+    }
+
+
+
+    p {
+      margin: 0 0 .8em 0
     }
   }
 }
 
 /* ABOUT EFFECT */
 
-div[class^='effect']{
+div[class^='effect'] {
   position: absolute;
   font-family: $ff-poppins;
 }
 
-.effect-A{
-  font-size: 27em;
-  color: rgba($light-light-gray, .3);
+.effect-A {
+  font-size: 22em;
+  color: rgba($accent, .1);
   line-height: 70%;
-
-
-  left: -23%;
-  bottom: 0;
+  right: 7%;
+  bottom: -4%;
 }
 
-.effect-about{
-  font-size: 10em;
-  letter-spacing: 8px;
+.effect-about {
+  font-size: 24em;
+  letter-spacing: 1px;
   line-height: 60%;
-  color: rgba($light-light-gray, .25);
+  color: rgba($accent, .12);
 
-  top: 0%;
-  left: -5%;
+  top: 7%;
+  left: -13%;
 }

@@ -15,7 +15,7 @@ body{
   line-height: 1.2;
   font-size: calc(.875rem + 1vw);
   @include mediaQuery(){
-    font-size: calc(.875rem + .4vw);
+    font-size: calc(.875rem + .2vw);
   }
 
 
@@ -85,7 +85,7 @@ a:visited {
 }
 a:hover {
   transition:  400ms;
-  color: rgba($accent, .5);
+  color: rgba($accent, 1);
 
   &::after{
     text-decoration: none;

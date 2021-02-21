@@ -10,7 +10,7 @@
   background-position: center;
 
   display: grid;
-  row-gap: 1em;
+  //row-gap: 1em;
   grid-template-columns: 4em repeat(3, auto);
   grid-template-rows: 1em 1fr 1fr 2.2fr 4em;
   grid-auto-rows: min-content;
@@ -20,7 +20,7 @@
                        'slider  slider  slider  slider';
 
   @include mediaQuery(){
-    grid-template-rows: 3em 2fr 1fr 1fr 1fr 1fr 5em;
+    grid-template-rows: 2em 2fr 1fr 1fr 1fr 1fr 5em;
     grid-template-columns: 4em repeat(10, 1fr) auto;
 
   }

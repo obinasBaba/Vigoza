@@ -36,6 +36,7 @@
   & .page__name{
 
     //font-size: 1.4em; //todo for home and about
+    font-weight: 700;
     align-self: end;
   }
 }
@@ -140,6 +141,7 @@
       letter-spacing: 4px;
       margin-bottom: .5em;
       transition: 300ms ease-in-out;
+      font-weight: 900;
       cursor: pointer;
 
       &:hover{

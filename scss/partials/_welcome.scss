@@ -14,8 +14,15 @@
   grid-template-columns: 4em repeat(6, 1fr) 3em .3em;
   grid-template-rows: min-content repeat(7, 1fr);
 
+  @include mediaQuery(35em){
+    .welcome-text{
+      h1{
+        font-size: calc(5em + 4vw);
+      }
+    }
+  }
 
-  @include mediaQuery($width: 43em){
+  @include mediaQuery($width: 50em){
 
     grid-template-columns: 4em repeat(6, 1fr) 3em 1.3em;
 
@@ -90,7 +97,7 @@
 .welcome-text {
   grid-area: hero;
   align-self: center;
-  justify-self: end;
+  justify-self: center;
   grid-column: 2 / 8;
   grid-row: 4 / 6;
 
@@ -98,7 +105,7 @@
     font-size: calc(3em + 3vw);
     font-family: $ff-abyssopelagic;
     letter-spacing: 20px;
-    margin: 0 -13px .2em 0;
+    margin: 0 -17px .2em 0;
     color: $white;
 
   }

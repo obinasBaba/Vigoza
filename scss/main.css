@@ -401,6 +401,31 @@ body {
   padding: 0;
   position: relative;
 }
+@media (min-width: 20em) {
+  body {
+    font-size: calc(.875rem + .8vw);
+  }
+}
+@media (min-width: 30em) {
+  body {
+    font-size: calc(.875rem + .6vw);
+  }
+}
+@media (min-width: 35em) {
+  body {
+    font-size: calc(.875rem + .5vw);
+  }
+}
+@media (min-width: 40em) {
+  body {
+    font-size: calc(.875rem + .4vw);
+  }
+}
+@media (min-width: 45em) {
+  body {
+    font-size: calc(.875rem + .3vw);
+  }
+}
 @media (min-width: 50em) {
   body {
     font-size: calc(.875rem + .2vw);
@@ -486,7 +511,12 @@ a:active {
   grid-template-columns: 4em repeat(6, 1fr) 3em 0.3em;
   grid-template-rows: min-content repeat(7, 1fr);
 }
-@media (min-width: 43em) {
+@media (min-width: 35em) {
+  .welcome .welcome-text h1 {
+    font-size: calc(5em + 4vw);
+  }
+}
+@media (min-width: 50em) {
   .welcome {
     grid-template-columns: 4em repeat(6, 1fr) 3em 1.3em;
   }
@@ -551,7 +581,7 @@ a:active {
 .welcome-text {
   grid-area: hero;
   align-self: center;
-  justify-self: end;
+  justify-self: center;
   grid-column: 2/8;
   grid-row: 4/6;
 }
@@ -559,7 +589,7 @@ a:active {
   font-size: calc(3em + 3vw);
   font-family: "abyssopelagicregular";
   letter-spacing: 20px;
-  margin: 0 -13px 0.2em 0;
+  margin: 0 -17px 0.2em 0;
   color: #ffffff;
 }
 .welcome-text p {
@@ -1503,6 +1533,7 @@ h3 {
   margin-left: -10px;
 }
 .pagination__nav .page__name {
+  font-weight: 700;
   align-self: end;
 }
 
@@ -1591,6 +1622,7 @@ h3 {
   letter-spacing: 4px;
   margin-bottom: 0.5em;
   transition: 300ms ease-in-out;
+  font-weight: 900;
   cursor: pointer;
 }
 .slider__nav__wrapper .nav__wrapper > h1:hover {

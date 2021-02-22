@@ -11,7 +11,7 @@
   position: relative;
   display: grid;
   justify-content: stretch;
-  grid-template-columns: 4.5em repeat(7, 1fr);
+  grid-template-columns: 4em repeat(7, 1fr) 1em;
   grid-template-rows: min-content repeat(7, 1fr);
 
 
@@ -70,8 +70,8 @@
 .welcome-text {
   grid-area: hero;
   align-self: center;
-  justify-self: end;
-  //border: thick solid yellow;
+  justify-self: center;
+  border: thick solid yellow;
   grid-column: 2 / 8;
   grid-row: 4 / 6;
 
@@ -79,7 +79,7 @@
     font-size: calc(3em + 3vw);
     font-family: $ff-abyssopelagic;
     letter-spacing: 20px;
-    margin: 0 -9px .2em;
+    margin: 0 -13px .2em 0;
     color: $white;
 
   }
@@ -95,7 +95,7 @@
     &::after {
       content: '';
       display: block;
-      width: 50%;
+      width: 40%;
       height: 1px;
       background: $accent;
       margin: .5em 0 .3em;
@@ -143,7 +143,7 @@
 
 .social-icons {
   grid-area: social;
-  grid-row: 2 / -1;
+  grid-row: 1 / 5;
   grid-column: 8 / -1;
 
 
@@ -155,6 +155,10 @@
   align-items: start;
   justify-content: center;
   flex-flow: column;
+
+  & :last-child{
+    margin-bottom: 0em;
+  }
 
   > * {
     margin-bottom: 1em;

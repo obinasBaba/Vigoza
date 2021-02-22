@@ -910,7 +910,7 @@ a:active {
   overflow: hidden;
   display: grid;
   grid-template-columns: 3em repeat(7, 1fr);
-  grid-template-rows: 2.3em repeat(3, auto) 3em;
+  grid-template-rows: 3em repeat(3, min-content) 3em;
   /* ABOUT TITLE */
   /* ABOUT PARAGRAPH */
 }
@@ -973,6 +973,7 @@ a:active {
   justify-self: center;
   color: #FF4200;
   margin: 0;
+  padding-top: 1em;
   z-index: 0;
   font-family: "poppins", sans-serif;
   letter-spacing: 6.4px;
@@ -1002,7 +1003,7 @@ a:active {
   align-self: center;
   grid-column: 1/9;
   grid-row: 4/5;
-  padding: 0 1em 0 3em;
+  padding: 0.3em 1em 0 3em;
   color: #333333;
 }
 .about__me .about-paragraph :last-child {

@@ -477,10 +477,13 @@ a:active {
   position: relative;
   display: grid;
   justify-content: stretch;
-  grid-template-columns: 4em repeat(7, 1fr) 1em;
+  grid-template-columns: 4em repeat(6, 1fr) 3em 0.3em;
   grid-template-rows: min-content repeat(7, 1fr);
 }
 @media (min-width: 43em) {
+  .welcome {
+    grid-template-columns: 4em repeat(6, 1fr) 3em 1.3em;
+  }
   .welcome .welcome-text {
     grid-column: 3/8;
     grid-row: 3/5;
@@ -493,16 +496,30 @@ a:active {
     letter-spacing: 50px;
     margin: 0 0 0;
   }
+  .welcome .social-icons {
+    grid-row: 1/9;
+  }
 }
 
 .nav__bar {
   grid-area: nav;
-  grid-column: 1/-1;
+  grid-column: 1/9;
   grid-row: 1/2;
   background: transparent;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
+  margin: 0;
+}
+.nav__bar > img {
+  margin: 1em 1em 1em 0.6em;
+}
+.nav__bar > h1 {
+  margin: 0.1em 0 0 0;
+  font-size: 0.7em;
+  letter-spacing: 8px;
+  font-weight: 900;
+  color: #ffffff;
 }
 .nav__bar .humberger {
   margin: 0 0 0 auto;
@@ -529,7 +546,6 @@ a:active {
   grid-area: hero;
   align-self: center;
   justify-self: center;
-  border: thick solid yellow;
   grid-column: 2/8;
   grid-row: 4/6;
 }
@@ -586,8 +602,8 @@ a:active {
 
 .social-icons {
   grid-area: social;
-  grid-row: 1/5;
-  grid-column: 8/-1;
+  grid-row: 1/8;
+  grid-column: 8/9;
   justify-self: center;
   align-self: center;
   display: flex;
@@ -643,7 +659,7 @@ a:active {
 .scroll-down p::after {
   content: "";
   display: block;
-  width: 210%;
+  width: 610%;
   height: 3px;
   background: #737373;
   margin-left: -12px;
@@ -652,8 +668,8 @@ a:active {
 
 .effect {
   position: absolute;
-  bottom: 0%;
-  left: 1%;
+  bottom: 1%;
+  left: 0%;
   font-weight: 900;
   font-family: "poppins", sans-serif;
   letter-spacing: 20px;
@@ -1463,7 +1479,7 @@ h3 {
 }
 @media (min-width: 50em) {
   .pagination__nav {
-    left: 3%;
+    left: 2.2%;
   }
 }
 .pagination__nav > * {

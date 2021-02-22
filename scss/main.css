@@ -655,7 +655,7 @@ a:active {
 }
 
 .scroll-down {
-  font-size: calc(.875rem + .6vw);
+  font-size: calc(.8em + 2vw);
   position: absolute;
   bottom: calc(30% + 4vw);
   left: 37%;
@@ -671,7 +671,7 @@ a:active {
   display: block;
   width: 1.7em;
   height: 1em;
-  border: thin solid #737373;
+  border: 2px solid #737373;
   border-radius: 150px;
   align-self: flex-end;
   margin-bottom: 0.1em;
@@ -688,7 +688,7 @@ a:active {
   animation: scrollAnim 1s infinite alternate both;
 }
 .scroll-down p {
-  font-size: calc(.4em + .5vw);
+  font-size: calc(.4em + .3vw);
   color: #ffffff;
   display: block;
   margin-left: 1em;
@@ -705,6 +705,11 @@ a:active {
 @media (min-width: 50em) {
   .scroll-down p::after {
     margin-bottom: 0.15em;
+  }
+}
+@media (min-width: 50em) {
+  .scroll-down {
+    font-size: calc(.8em + .9vw);
   }
 }
 

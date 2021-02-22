@@ -196,7 +196,7 @@
 
 .scroll-down {
 
-  font-size: calc(.875rem + .6vw);
+  font-size: calc(.8em + 2vw);
   position: absolute;
   bottom: calc(30% + 4vw);
   left: 37%;
@@ -213,7 +213,7 @@
     display: block;
     width: 1.7em;
     height: 1em;
-    border: thin solid $gray;
+    border: 2px solid $gray;
     border-radius: 150px;
     align-self: flex-end;
     margin-bottom: .1em;
@@ -232,7 +232,7 @@
   }
 
   & p{
-    font-size: calc(.4em + .5vw);
+    font-size: calc(.4em + .3vw);
     color: $white;
     display: block;
     //width: 10em;
@@ -253,6 +253,10 @@
 
     }
 
+  }
+
+  @include mediaQuery(){
+    font-size: calc(.8em + .9vw);
   }
 }
 

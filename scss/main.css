@@ -9,7 +9,6 @@
  */
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap");
-@import url("http://fonts.cdnfonts.com/css/abyssopelagic");
 html {
   line-height: 1.15;
   /* 1 */
@@ -377,6 +376,13 @@ template {
   display: none;
 }
 
+@font-face {
+  font-family: "abyssopelagicregular";
+  src: url("../scss/modules/font/abyssopelagic-webfont.eot");
+  src: url("../scss/modules/font/abyssopelagic-webfont.eot?#iefix") format("embedded-opentype"), url("../scss/modules/font/abyssopelagic-webfont.woff2") format("woff2"), url("../scss/modules/font/abyssopelagic-webfont.woff") format("woff"), url("../scss/modules/font/abyssopelagic.otf") format("otf"), url("../scss/modules/font/abyssopelagic-webfont.ttf") format("truetype"), url("../scss/modules/font/abyssopelagic-webfont.svg#abyssopelagicregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   box-sizing: border-box;
 }
@@ -408,7 +414,7 @@ img {
 
 h1 {
   font-size: 3.125em;
-  font-family: "abyssopelagic", sans-serif;
+  font-family: "abyssopelagicregular";
 }
 
 p {
@@ -545,13 +551,13 @@ a:active {
 .welcome-text {
   grid-area: hero;
   align-self: center;
-  justify-self: center;
+  justify-self: end;
   grid-column: 2/8;
   grid-row: 4/6;
 }
 .welcome-text h1 {
   font-size: calc(3em + 3vw);
-  font-family: "abyssopelagic", sans-serif;
+  font-family: "abyssopelagicregular";
   letter-spacing: 20px;
   margin: 0 -13px 0.2em 0;
   color: #ffffff;
@@ -559,7 +565,7 @@ a:active {
 .welcome-text p {
   margin: 0;
   letter-spacing: 3px;
-  font-family: "abyssopelagic", sans-serif;
+  font-family: "abyssopelagicregular";
   color: #ffffff;
 }
 .welcome-text :first-child + *::after {
@@ -624,7 +630,7 @@ a:active {
   bottom: calc(30% + 4vw);
   left: 37%;
   right: 4%;
-  font-family: "abyssopelagic", sans-serif;
+  font-family: "abyssopelagicregular";
   letter-spacing: 4px;
   transform: rotate(90deg);
   transform-origin: left;
@@ -745,7 +751,7 @@ a:active {
 }
 .headline h1 {
   font-size: 1.875rem;
-  font-family: "abyssopelagic", sans-serif;
+  font-family: "abyssopelagicregular";
   letter-spacing: 10px;
   color: #ffffff;
   margin: 0 1.5em 2em 0;
@@ -1469,7 +1475,7 @@ h3 {
 .pagination__nav {
   position: fixed;
   top: 50%;
-  font-family: "abyssopelagic", sans-serif;
+  font-family: "abyssopelagicregular";
   letter-spacing: 2px;
   line-height: 1;
   left: 0.5em;

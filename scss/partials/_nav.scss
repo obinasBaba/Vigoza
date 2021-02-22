@@ -134,6 +134,20 @@
     align-items: flex-end;
     justify-content: center;
 
+    & :nth-of-type(2){
+      position: relative;
+      &:before{
+        content: '';
+        position: absolute;
+        display: block;
+        background: white;
+        width: 1px;
+        height: 400%;
+        left: 30%;
+        bottom: 145%;
+      }
+    }
+
     & > h1{
       font-size: calc(1em + 1vw);
       opacity: 0;
@@ -162,13 +176,29 @@
 
     & :last-child{
       margin-bottom: auto;
+      position: relative;
+
+      &:after{
+        content: '';
+        position: absolute;
+        display: block;
+        background: white;
+        width: 1px;
+        height: 400%;
+        left: 50%;
+        top: 135%;
+      }
     }
+
+
 
     & :first-child{
       opacity: 1;
-      padding: .76em;
+      padding: .9em;
       position: relative;
-      margin: .5em .7em auto .5em;
+      margin: .5em 2em auto .5em;
+
+
 
       &:hover::after{
         transform: rotate(45deg) scale(1.05);
@@ -180,8 +210,8 @@
       &:after , &:before{
         content: '';
         position: absolute;
-        background: rgba($white, .6);
-        width: 2px;
+        background: rgba($white, .8);
+        width: 3px;
         top: 0;
         left: 50%;
         right: 50%;

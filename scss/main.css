@@ -518,7 +518,7 @@ a:active {
   margin: 0.1em 0 0 0;
   font-size: 0.7em;
   letter-spacing: 8px;
-  font-weight: 900;
+  font-weight: 500;
   color: #ffffff;
 }
 .nav__bar .humberger {
@@ -619,8 +619,9 @@ a:active {
 }
 
 .scroll-down {
+  font-size: calc(.875rem + .6vw);
   position: absolute;
-  bottom: calc(30% + 1vh);
+  bottom: calc(30% + 4vw);
   left: 37%;
   right: 4%;
   font-family: "abyssopelagic", sans-serif;
@@ -651,7 +652,7 @@ a:active {
   animation: scrollAnim 1s infinite alternate both;
 }
 .scroll-down p {
-  font-size: 0.7em;
+  font-size: calc(.4em + .5vw);
   color: #ffffff;
   display: block;
   margin-left: 1em;
@@ -662,8 +663,13 @@ a:active {
   width: 610%;
   height: 3px;
   background: #737373;
-  margin-left: -12px;
-  margin-bottom: 0.1em;
+  margin-left: -1em;
+  margin-bottom: 0.33em;
+}
+@media (min-width: 50em) {
+  .scroll-down p::after {
+    margin-bottom: 0.15em;
+  }
 }
 
 .effect {
@@ -1467,7 +1473,7 @@ h3 {
   letter-spacing: 2px;
   line-height: 1;
   left: 0.5em;
-  transform: translateY(-54%);
+  transform: translateY(-47%);
   z-index: 999;
   text-transform: uppercase;
   color: #ffffff;
@@ -1523,7 +1529,7 @@ h3 {
 }
 
 .slider__nav__wrapper {
-  transition: transform 0ms;
+  transition: transform 50ms;
   transform-origin: right;
   transform: scaleX(0);
   z-index: 99999;
@@ -1537,10 +1543,11 @@ h3 {
 }
 .slider__nav__wrapper.show {
   transform: scaleX(1);
+  transition: transform 250ms;
 }
 .slider__nav__wrapper.show .nav__wrapper {
   transition: transform 450ms cubic-bezier(0.99, -0.05, 0.58, 1);
-  transition-delay: 200ms;
+  transition-delay: 300ms;
   transform: translateX(0);
 }
 .slider__nav__wrapper.show .nav__wrapper > h1 {
@@ -1551,13 +1558,13 @@ h3 {
 .slider__nav__wrapper .slider__nav {
   overflow: hidden;
   position: absolute;
-  right: 60%;
+  right: 55vw;
   top: 0;
   bottom: 0;
   left: 0;
 }
 .slider__nav__wrapper .nav__wrapper {
-  background: rgba(255, 66, 0, 0.7);
+  background: rgba(219, 57, 0, 0.8);
   transform: translateX(100%);
   position: absolute;
   top: 0;
@@ -1574,7 +1581,7 @@ h3 {
 .slider__nav__wrapper .nav__wrapper > h1 {
   font-size: calc(1em + 1vw);
   opacity: 0;
-  padding-right: 0.7em;
+  padding-right: 1.3em;
   letter-spacing: 4px;
   margin-bottom: 0.5em;
   transition: 300ms ease-in-out;

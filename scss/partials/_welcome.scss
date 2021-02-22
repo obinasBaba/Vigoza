@@ -60,7 +60,7 @@
     margin: .1em 0 0 0;
     font-size: .7em;
     letter-spacing: 8px;
-    font-weight: 900;
+    font-weight: 500;
     color: $white;
   }
 
@@ -189,8 +189,9 @@
 
 .scroll-down {
 
+  font-size: calc(.875rem + .6vw);
   position: absolute;
-  bottom: calc(30% + 1vh);
+  bottom: calc(30% + 4vw);
   left: 37%;
   right: 4%;
   font-family: $ff-abyssopelagic;
@@ -224,7 +225,7 @@
   }
 
   & p{
-    font-size: .7em;
+    font-size: calc(.4em + .5vw);
     color: $white;
     display: block;
     //width: 10em;
@@ -236,8 +237,12 @@
       width: 610%;
       height: 3px;
       background: $gray;
-      margin-left: -12px;
-      margin-bottom: .1em;
+      margin-left: -1em;
+      margin-bottom: .33em;
+
+      @include mediaQuery(){
+        margin-bottom: .15em;
+      }
 
     }
 

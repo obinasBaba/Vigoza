@@ -10,18 +10,18 @@
   //grid-template-columns: ;
 
   grid-template-columns: 3em repeat(7, 1fr);
-  grid-template-rows: 3em repeat(6, 1fr) 2em;
+  grid-template-rows: 2.3em repeat(3, auto) 3em;
 
   @include mediaQuery(){
-    grid-template-rows: 2em repeat(7, 1fr);
+    grid-template-rows: 2em repeat(6, 1fr) 3em;
     grid-template-columns: 2em repeat(7, 1fr);
 
   }
 
   .img-wrapper {
     grid-column: 1 / -1;
-    grid-row: 2 / 6;
-    align-self: start;
+    grid-row: 2 / 3;
+    align-self: center;
     justify-self: center;
     z-index: 1;
     position: relative;
@@ -74,7 +74,7 @@
   /* ABOUT TITLE */
   .about-title {
     grid-column: 2 / 8;
-    grid-row: 4 / 5;
+    grid-row: 3 / 4;
     align-self: end;
     justify-self: center;
     color: $accent;
@@ -112,7 +112,7 @@
     text-align: center;
     align-self: center;
     grid-column: 1 / 9;
-    grid-row: 5 / 8;
+    grid-row: 4 / 5;
     padding: 0 1em 0 3em;
     color: $dark-gray;
 

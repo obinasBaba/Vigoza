@@ -9,6 +9,7 @@
  */
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap");
+@import url("http://fonts.cdnfonts.com/css/abyssopelagic");
 html {
   line-height: 1.15;
   /* 1 */
@@ -376,10 +377,6 @@ template {
   display: none;
 }
 
-@font-face {
-  font-family: abyssopelagic;
-  src: url("./abyssopelagic.otf");
-}
 :root {
   box-sizing: border-box;
 }
@@ -411,7 +408,7 @@ img {
 
 h1 {
   font-size: 3.125em;
-  font-family: abyssopelagic;
+  font-family: "abyssopelagic", sans-serif;
 }
 
 p {
@@ -480,7 +477,7 @@ a:active {
   position: relative;
   display: grid;
   justify-content: stretch;
-  grid-template-columns: 4.5em repeat(7, 1fr);
+  grid-template-columns: 4em repeat(7, 1fr) 1em;
   grid-template-rows: min-content repeat(7, 1fr);
 }
 @media (min-width: 43em) {
@@ -531,27 +528,28 @@ a:active {
 .welcome-text {
   grid-area: hero;
   align-self: center;
-  justify-self: end;
+  justify-self: center;
+  border: thick solid yellow;
   grid-column: 2/8;
   grid-row: 4/6;
 }
 .welcome-text h1 {
   font-size: calc(3em + 3vw);
-  font-family: abyssopelagic;
+  font-family: "abyssopelagic", sans-serif;
   letter-spacing: 20px;
-  margin: 0 -9px 0.2em;
+  margin: 0 -13px 0.2em 0;
   color: #ffffff;
 }
 .welcome-text p {
   margin: 0;
   letter-spacing: 3px;
-  font-family: abyssopelagic;
+  font-family: "abyssopelagic", sans-serif;
   color: #ffffff;
 }
 .welcome-text :first-child + *::after {
   content: "";
   display: block;
-  width: 50%;
+  width: 40%;
   height: 1px;
   background: #FF4200;
   margin: 0.5em 0 0.3em;
@@ -588,7 +586,7 @@ a:active {
 
 .social-icons {
   grid-area: social;
-  grid-row: 2/-1;
+  grid-row: 1/5;
   grid-column: 8/-1;
   justify-self: center;
   align-self: center;
@@ -596,6 +594,9 @@ a:active {
   align-items: start;
   justify-content: center;
   flex-flow: column;
+}
+.social-icons :last-child {
+  margin-bottom: 0em;
 }
 .social-icons > * {
   margin-bottom: 1em;
@@ -606,7 +607,7 @@ a:active {
   bottom: calc(30% + 1vh);
   left: 37%;
   right: 4%;
-  font-family: abyssopelagic;
+  font-family: "abyssopelagic", sans-serif;
   letter-spacing: 4px;
   transform: rotate(90deg);
   transform-origin: left;
@@ -722,7 +723,7 @@ a:active {
 }
 .headline h1 {
   font-size: 1.875rem;
-  font-family: abyssopelagic;
+  font-family: "abyssopelagic", sans-serif;
   letter-spacing: 10px;
   color: #ffffff;
   margin: 0 1.5em 2em 0;
@@ -1446,7 +1447,7 @@ h3 {
 .pagination__nav {
   position: fixed;
   top: 50%;
-  font-family: abyssopelagic;
+  font-family: "abyssopelagic", sans-serif;
   letter-spacing: 2px;
   line-height: 1;
   left: 0.5em;

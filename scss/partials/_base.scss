@@ -14,6 +14,28 @@ body{
   font-family: $ff-inconsolata;
   line-height: 1.2;
   font-size: calc(.875rem + 1vw);
+
+
+  @include mediaQuery(20em){
+    font-size: calc(.875rem + .8vw);
+  }
+
+  @include mediaQuery(30em){
+    font-size: calc(.875rem + .6vw);
+  }
+
+  @include mediaQuery(35em){
+    font-size: calc(.875rem + .5vw);
+  }
+
+  @include mediaQuery(40em){
+    font-size: calc(.875rem + .4vw);
+  }
+
+  @include mediaQuery(45em){
+    font-size: calc(.875rem + .3vw);
+  }
+
   @include mediaQuery(){
     font-size: calc(.875rem + .2vw);
   }

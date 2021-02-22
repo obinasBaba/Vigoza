@@ -514,6 +514,7 @@ a:active {
 @media (min-width: 35em) {
   .welcome .welcome-text h1 {
     font-size: calc(5em + 4vw);
+    letter-spacing: 30px;
   }
 }
 @media (min-width: 50em) {
@@ -554,7 +555,7 @@ a:active {
   margin: 0.1em 0 0 0;
   font-size: 0.7em;
   letter-spacing: 8px;
-  font-weight: 500;
+  font-weight: 900;
   color: #ffffff;
 }
 .nav__bar .humberger {
@@ -588,7 +589,7 @@ a:active {
 .welcome-text h1 {
   font-size: calc(3em + 3vw);
   font-family: "abyssopelagicregular";
-  letter-spacing: 20px;
+  letter-spacing: 24px;
   margin: 0 -17px 0.2em 0;
   color: #ffffff;
 }
@@ -699,12 +700,12 @@ a:active {
   width: 610%;
   height: 3px;
   background: #737373;
-  margin-left: -1em;
-  margin-bottom: 0.33em;
+  margin-left: -1.1em;
+  margin-bottom: 0.55em;
 }
 @media (min-width: 50em) {
   .scroll-down p::after {
-    margin-bottom: 0.15em;
+    margin-bottom: 0.33em;
   }
 }
 @media (min-width: 50em) {

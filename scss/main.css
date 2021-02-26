@@ -1634,16 +1634,16 @@ h3 {
 }
 .slider__nav__wrapper .nav__wrapper :nth-of-type(2) {
   position: relative;
-}
-.slider__nav__wrapper .nav__wrapper :nth-of-type(2):before {
-  content: "";
-  position: absolute;
-  display: block;
-  background: white;
-  width: 1px;
-  height: 400%;
-  left: 30%;
-  bottom: 145%;
+  /*&:before{
+    content: '';
+    position: absolute;
+    display: block;
+    background: white;
+    width: 1px;
+    height: 400%;
+    left: 30%;
+    bottom: 145%;
+  }*/
 }
 .slider__nav__wrapper .nav__wrapper > h1 {
   font-size: calc(1em + 1vw);
@@ -1666,16 +1666,16 @@ h3 {
 .slider__nav__wrapper .nav__wrapper :last-child {
   margin-bottom: auto;
   position: relative;
-}
-.slider__nav__wrapper .nav__wrapper :last-child:after {
-  content: "";
-  position: absolute;
-  display: block;
-  background: white;
-  width: 1px;
-  height: 400%;
-  left: 50%;
-  top: 135%;
+  /*&:after{
+    content: '';
+    position: absolute;
+    display: block;
+    background: white;
+    width: 1px;
+    height: 400%;
+    left: 50%;
+    top: 135%;
+  }*/
 }
 .slider__nav__wrapper .nav__wrapper :first-child {
   opacity: 1;

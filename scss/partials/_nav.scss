@@ -136,7 +136,7 @@
 
     & :nth-of-type(2){
       position: relative;
-      &:before{
+      /*&:before{
         content: '';
         position: absolute;
         display: block;
@@ -145,7 +145,7 @@
         height: 400%;
         left: 30%;
         bottom: 145%;
-      }
+      }*/
     }
 
     & > h1{
@@ -178,7 +178,7 @@
       margin-bottom: auto;
       position: relative;
 
-      &:after{
+      /*&:after{
         content: '';
         position: absolute;
         display: block;
@@ -187,7 +187,7 @@
         height: 400%;
         left: 50%;
         top: 135%;
-      }
+      }*/
     }
 
 

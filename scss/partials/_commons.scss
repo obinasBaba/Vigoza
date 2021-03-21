@@ -9,3 +9,8 @@
     @content
   }
 }
+@mixin maxMediaQuery($width: 50em){
+  @media (max-width: $width) {
+    @content
+  }
+}

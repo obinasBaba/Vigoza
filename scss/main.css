@@ -1556,6 +1556,7 @@ h3 {
   cursor: pointer;
   max-width: 100px;
   transition: opacity 600ms;
+  transition-delay: 120ms;
 }
 
 .dot.active {
@@ -1565,6 +1566,7 @@ h3 {
   align-items: center;
   justify-content: center;
   margin-bottom: 0;
+  transition-delay: 0ms;
 }
 .dot.active > * {
   margin: 0 0 1.3rem 0;

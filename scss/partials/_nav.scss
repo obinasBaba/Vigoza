@@ -40,6 +40,8 @@
   max-width: 100px;
 
   transition: opacity 600ms;
+  transition-delay: 120ms;
+
 }
 
 .dot.active {
@@ -49,6 +51,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 0;
+  transition-delay: 0ms;
 
   & > * {
     margin: 0 0 1.3rem 0;

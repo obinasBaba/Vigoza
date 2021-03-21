@@ -509,7 +509,7 @@ a:active {
   display: grid;
   justify-content: stretch;
   grid-template-columns: 4em repeat(6, 1fr) 3em 0.3em;
-  grid-template-rows: min-content repeat(7, 1fr);
+  grid-template-rows: 2fr min-content repeat(7, 1fr);
 }
 @media (min-width: 35em) {
   .welcome .welcome-text h1 {
@@ -536,47 +536,6 @@ a:active {
   .welcome .social-icons {
     grid-row: 1/9;
   }
-}
-
-.nav__bar {
-  grid-area: nav;
-  grid-column: 1/9;
-  grid-row: 1/2;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-}
-.nav__bar > img {
-  margin: 1em 1em 1em 0.6em;
-}
-.nav__bar > h1 {
-  margin: 0.1em 0 0 0;
-  font-size: 0.7em;
-  letter-spacing: 8px;
-  font-weight: 900;
-  color: #ffffff;
-}
-.nav__bar .humberger {
-  margin: 0 0 0 auto;
-  position: relative;
-  width: 50px;
-  height: 50px;
-  font-size: 3.3rem;
-}
-.nav__bar .humberger::after {
-  content: "≡";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #d6d6d6;
 }
 
 .welcome-text {
@@ -689,10 +648,11 @@ a:active {
   animation: scrollAnim 1s infinite alternate both;
 }
 .scroll-down p {
-  font-size: calc(.4em + .3vw);
+  font-size: calc(.3em + .3vw);
   color: #ffffff;
   display: block;
   margin-left: 1em;
+  letter-spacing: 4px;
 }
 .scroll-down p::after {
   content: "";
@@ -705,7 +665,7 @@ a:active {
 }
 @media (min-width: 50em) {
   .scroll-down p::after {
-    margin-bottom: 0.33em;
+    margin-bottom: 0.53em;
   }
 }
 @media (min-width: 50em) {
@@ -1620,6 +1580,51 @@ h3 {
   border-radius: initial;
   width: 3px;
   padding: 0;
+}
+
+.nav__bar {
+  transition: top 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 0 1em;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.nav__bar > img {
+  margin: 1em 1em 1em 0.6em;
+}
+.nav__bar > h1 {
+  margin: 0.1em 0 0 0;
+  font-size: 0.7em;
+  letter-spacing: 8px;
+  font-weight: 900;
+  color: #ffffff;
+}
+.nav__bar .humberger {
+  margin: 0 0 0 auto;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  font-size: 3.3rem;
+}
+.nav__bar .humberger::after {
+  content: "≡";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 66, 0, 0.7);
 }
 
 .slider__nav__wrapper {

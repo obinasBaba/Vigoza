@@ -1525,41 +1525,25 @@ h3 {
   font-family: "abyssopelagicregular";
   letter-spacing: 2px;
   line-height: 1;
-  left: 0.5em;
   transform: translateY(-47%);
   z-index: 999;
   text-transform: uppercase;
   color: #ffffff;
-  text-align: center;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
 }
-@media (min-width: 50em) {
-  .pagination__nav {
-    left: 2.2%;
-  }
-}
 .pagination__nav > * {
   margin: 0 0 1.3rem 0;
   font-weight: initial;
-}
-.pagination__nav .page__no {
-  margin-bottom: 0.7rem;
-  margin-left: -10px;
-}
-.pagination__nav .page__name {
-  font-weight: 700;
-  align-self: end;
 }
 
 .dot {
   padding: 0.5em;
   background-color: #737373;
   border-radius: 50%;
-  align-self: center;
-  margin-left: -15px;
+  cursor: pointer;
 }
 
 .dot.active {
@@ -1567,15 +1551,41 @@ h3 {
   display: flex;
   flex-flow: column;
   align-items: center;
-  gap: 0.5em;
+  justify-content: center;
+  margin-bottom: 0;
 }
-.dot.active span {
-  display: block;
-  padding: 0.5em;
+.dot.active > * {
+  margin: 0 0 1.3rem 0;
+}
+.dot.active .page__name {
+  gap: 10px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+@media (min-width: 50em) {
+  .dot.active .page__name {
+    flex-flow: row;
+    transform: translateX(calc(50% - .5em));
+    gap: 15px;
+  }
+}
+.dot.active .page__name p {
+  font-weight: 700;
+  align-self: end;
+  letter-spacing: 3px;
+  display: inline;
+  margin: 0;
+}
+.dot.active .page__name span {
+  height: 1em;
+  width: 1em;
   border-radius: 50%;
   background: #ffffff;
+  display: inline-block;
 }
 .dot.active span.line {
+  background: #ffffff;
   height: 3.5625em;
   border-radius: initial;
   width: 3px;

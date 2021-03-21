@@ -4,40 +4,24 @@
   font-family: $ff-abyssopelagic;
   letter-spacing: 2px;
   line-height: 1;
-  left: .5em;
   @include mediaQuery(){
-    left: 2.2%;
+
   }
   transform: translateY(-47%);
   z-index: 999;
   text-transform: uppercase;
-  //color: $dark-gray; //todo for home and about
   color: $white; //todo for service
-  text-align: center;
 
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
 
+
+
   & > * {
     margin: 0 0 1.3rem 0;
-    //font-weight: bold; //todo for about only
-
     font-weight: initial;
-  }
-
-  & .page__no {
-
-    margin-bottom: .7rem;
-    margin-left: -10px;
-  }
-
-  & .page__name{
-
-    //font-size: 1.4em; //todo for home and about
-    font-weight: 700;
-    align-self: end;
   }
 }
 
@@ -45,29 +29,52 @@
   padding: .5em;
   background-color: $gray;
   border-radius: 50%;
-  align-self: center;
-  margin-left: -15px;
+  //margin-left: -15px;
+  cursor: pointer;
 }
 
-.dot.active{
+.dot.active {
   background: transparent;
   display: flex;
   flex-flow: column;
   align-items: center;
-  gap: .5em;
+  justify-content: center;
+  margin-bottom: 0;
 
-  & span{
-    display: block;
-    padding: .5em;
-    border-radius: 50%;
-
-
-    //background: $dark-gray;  //todo for home and about
-    background: $white;
-
+  & > * {
+    margin: 0 0 1.3rem 0;
   }
 
-  & span.line{
+  .page__name {
+    gap: 10px;
+    display: flex;
+    flex-flow: column;
+    @include mediaQuery(){
+      flex-flow: row;
+      transform: translateX(calc(50% - .5em));
+      gap: 15px;
+    }
+    align-items: center;
+
+    p {
+      font-weight: 700;
+      align-self: end;
+      letter-spacing: 3px;
+      display: inline;
+      margin: 0;
+    }
+
+    span {
+      height: 1em;
+      width: 1em;
+      border-radius: 50%;
+      background: $white;
+      display: inline-block;
+    }
+  }
+
+  & span.line {
+    background: $white;
     height: 3.5625em;
     border-radius: initial;
     width: 3px;
@@ -75,24 +82,24 @@
   }
 }
 
-.slider__nav__wrapper{
+.slider__nav__wrapper {
   transition: transform 50ms;
 
   transform-origin: right;
   transform: scaleX(0);
 
-  &.show{
+  &.show {
     transform: scaleX(1);
     transition: transform 250ms;
 
 
-    .nav__wrapper{
-      transition: transform 450ms cubic-bezier(0.99,-0.05, 0.58, 1);
+    .nav__wrapper {
+      transition: transform 450ms cubic-bezier(0.99, -0.05, 0.58, 1);
       transition-delay: 300ms;
       transform: translateX(0);
 
-      & > h1{
-        transition: opacity 650ms cubic-bezier(0.99,-0.05, 0.58, 1);
+      & > h1 {
+        transition: opacity 650ms cubic-bezier(0.99, -0.05, 0.58, 1);
         transition-delay: 200ms;
 
         opacity: 1;
@@ -109,7 +116,7 @@
   color: $white;
   background: rgba($dark-gray, .7);
 
-  .slider__nav{
+  .slider__nav {
     overflow: hidden;
     position: absolute;
     right: 55vw;
@@ -118,8 +125,8 @@
     left: 0;
   }
 
-  .nav__wrapper{
-    background:  darken( rgba($accent, .8) , 7);
+  .nav__wrapper {
+    background: darken(rgba($accent, .8), 7);
     transform: translateX(100%);
     position: absolute;
     top: 0;
@@ -134,7 +141,7 @@
     align-items: flex-end;
     justify-content: center;
 
-    & :nth-of-type(2){
+    & :nth-of-type(2) {
       position: relative;
       /*&:before{
         content: '';
@@ -148,7 +155,7 @@
       }*/
     }
 
-    & > h1{
+    & > h1 {
       font-size: calc(1em + 1vw);
       opacity: 0;
       padding-right: 1.3em;
@@ -158,15 +165,14 @@
       font-weight: 900;
       cursor: pointer;
 
-      &:hover{
-        transition:  300ms ease-in-out;
-        transform:  scale(1.03);
+      &:hover {
+        transition: 300ms ease-in-out;
+        transform: scale(1.03);
 
-        text-shadow:
-                -1px -1px 0 white,
-                1px -1px 0 white,
-                -1px 1px 0 white,
-                1px 1px 0 white ;
+        text-shadow: -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         -o-transition: all .3s ease-in-out;
@@ -174,7 +180,7 @@
 
     }
 
-    & :last-child{
+    & :last-child {
       margin-bottom: auto;
       position: relative;
 
@@ -191,23 +197,22 @@
     }
 
 
-
-    & :first-child{
+    & :first-child {
       opacity: 1;
       padding: .9em;
       position: relative;
       margin: .5em 2em auto .5em;
 
 
-
-      &:hover::after{
+      &:hover::after {
         transform: rotate(45deg) scale(1.05);
       }
-      &:hover::before{
+
+      &:hover::before {
         transform: rotate(-45deg) scale(1.05);
       }
 
-      &:after , &:before{
+      &:after, &:before {
         content: '';
         position: absolute;
         background: rgba($white, .8);
@@ -219,7 +224,7 @@
         transform: rotate(45deg);
       }
 
-      &:before{
+      &:before {
         transform: rotate(-45deg);
       }
 

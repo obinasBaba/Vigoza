@@ -9,8 +9,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
-    <link rel="stylesheet" href="font/stylesheet.css" type="text/css"/>
+    <link rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
     <link rel="stylesheet" href="scss/main.css">
 </head>
 <body>
@@ -369,6 +368,7 @@
 
 
     <div class="dot"></div>
+
     <div class="dot active">
         <h1 class="page__no">03</h1>
         <div class="page__name">
@@ -377,6 +377,7 @@
         </div>
         <span class="line"></span>
     </div>
+
     <div class="dot"></div>
     <div class="dot"></div>
     <div class="dot"></div>
@@ -401,46 +402,7 @@
 <!--JavaScript at end of body for optimized loading-->
 <script type="text/javascript" src="js/materialize.min.js"></script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        let instance = M.Tabs.init(
-            document.body.querySelector('ul.tabs'), {
-                swipeable: true
-            });
-
-        let elems = document.querySelectorAll('.materialboxed');
-        let instances = M.Materialbox.init(elems, {});
-
-        let carousel = document.querySelectorAll('.carousel');
-        let carouselInstances = M.Carousel.init(carousel, {
-            fullWidth: true,
-            indicators: true,
-            noWrap: true,
-        });
-
-        let slider = document.querySelectorAll('.slider');
-        let sliderInstances = M.Slider.init(slider, {
-            // height: '400px',
-        });
-
-        const hamburger = document.body.querySelector('.nav__bar .humberger');
-        const nav_slider = document.body.querySelector('.slider__nav__wrapper')
-
-        hamburger.addEventListener('click', e => {
-            nav_slider.classList.add('show');
-            console.log(nav_slider.classList, nav_slider)
-        })
-
-        nav_slider.addEventListener('click', e => {
-            if (e.target === nav_slider || e.target.classList.contains('close-btn')) {
-                console.log(nav_slider.classList)
-                nav_slider.classList.remove('show');
-            }
-        })
-
-
-    })
-</script>
+<script type="module" src="js/nav.js"></script>
 
 </body>
 </html>

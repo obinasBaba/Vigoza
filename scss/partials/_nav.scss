@@ -38,6 +38,8 @@
   cursor: pointer;
 
   max-width: 100px;
+
+  transition: opacity 600ms;
 }
 
 .dot.active {
@@ -53,7 +55,6 @@
   }
 
   .page__name {
-    gap: 10px;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -72,14 +73,12 @@
       height: 2em;
       width: 100px;
 
-      transition: transform 1s ease-in-out;
 
       .name__track{
         height: 100%;
         width: 100%;
         position: relative;
-        transition: transform 1s ease-in-out;
-
+        transition: transform 1000ms ease-in-out;
       }
 
 
@@ -95,7 +94,6 @@
         bottom: 0;
         top: 0;
         padding-top: 6px;
-        transition: transform 1s ease-in-out;
 
       }
     }

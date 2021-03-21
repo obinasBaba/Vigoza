@@ -4,16 +4,13 @@ let track = navDots.querySelector('.name__track');
 const singleNameSize = track.getBoundingClientRect();
 const trackHeight = singleNameSize.height;
 
-const trackChildren = Array.from(track.children);
+let trackChildren = Array.from(track.children);
 trackChildren.forEach((name, index) => {
     name.style.top = (trackHeight * index) + `px`;
 })
 
 const slideTo = (track, current, target) => {
-    console.log(target.style.top);
-    track.style.transform = "translateY(-" + (target.style.top) + "  )";
-    current.classList.remove("current-slide");
-    target.classList.add("current-slide");
+    track.style.transform = "translateY(-" + (target.style.top) + ")";
 };
 
 
@@ -26,31 +23,43 @@ navDots.addEventListener('click', evt => {
     const activeDot = navDots.querySelector('.dot.active');
     let clickedDot = evt.target;
 
-    const activeTrackName =
-        trackChildren.find(elems => elems.classList.contains('active_name'))
+
+    activeDot.style.opacity = '0';
+    clickedDot.style.opacity = '0'
+
     const clickedIndex = Array.from(navDots.children).indexOf(clickedDot) ;
 
-    slideTo(track, activeTrackName, trackChildren[clickedIndex]);
+    const insertElements = () => {
 
- /*   Array.from(activeDot.children)
-        .forEach((child, index) => {
-            if (child.classList.contains('page__no'))
-                child.textContent = `0${clickedIndex + 1}`;
+        Array.from(activeDot.children)
+            .forEach((child, index) => {
+                if (child.classList.contains('page__no'))
+                    child.textContent = `0${clickedIndex + 1}`;
 
-            // if(child.classList.contains('page__name'))
-            //     child.lastElementChild.textContent = clickedDot.dataset.name;
+                activeDot.removeChild(child);
+                clickedDot.appendChild(child);
+            })
 
-            activeDot.removeChild(child);
-            clickedDot.appendChild(child);
-        })
+        clickedDot.classList.add('active');
+        activeDot.classList.remove('active');
 
-    clickedDot.classList.add('active');
-    activeDot.classList.remove('active');*/
+        activeDot.style.opacity = '1';
+        clickedDot.style.opacity = '1'
+
+        activeDot.removeEventListener('transitionend', insertElements)
+    }
+    activeDot.addEventListener('transitionend', insertElements )
 
 
+    const activeTrackName =
+        trackChildren.find(elems => elems.classList.contains('active_name'))
+
+
+   setTimeout(() => {
+       slideTo(track, activeTrackName, trackChildren[clickedIndex]);
+   }, 0)
 
 })
-
 
 
 

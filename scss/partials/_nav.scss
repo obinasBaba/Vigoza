@@ -37,7 +37,7 @@
   //margin-left: -15px;
   cursor: pointer;
 
-  max-width: 80px;
+  max-width: 100px;
 }
 
 .dot.active {
@@ -56,21 +56,48 @@
     gap: 10px;
     display: flex;
     flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+
     @include mediaQuery(){
       flex-flow: row;
       transform: translateX(calc(50% - .5em));
       gap: 15px;
     }
-    align-items: center;
 
-    p {
-      font-weight: 700;
-      align-self: end;
-      letter-spacing: 3px;
-      display: inline;
-      margin: 0;
-      white-space: nowrap;
-      border: thin solid crimson;
+    .page_name_wrapper{
+      overflow: hidden;
+      position: relative;
+      height: 2em;
+      width: 100px;
+
+      transition: transform 1s ease-in-out;
+
+      .name__track{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        transition: transform 1s ease-in-out;
+
+      }
+
+
+      p {
+        font-weight: 700;
+        align-self: end;
+        letter-spacing: 3px;
+        display: inline;
+        margin: 0;
+        white-space: nowrap;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        padding-top: 6px;
+        transition: transform 1s ease-in-out;
+
+      }
     }
 
     span {
@@ -149,20 +176,6 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-
-    & :nth-of-type(2) {
-      position: relative;
-      /*&:before{
-        content: '';
-        position: absolute;
-        display: block;
-        background: white;
-        width: 1px;
-        height: 400%;
-        left: 30%;
-        bottom: 145%;
-      }*/
-    }
 
     & > h1 {
       font-size: calc(1em + 1vw);

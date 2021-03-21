@@ -1554,7 +1554,7 @@ h3 {
   background-color: #737373;
   border-radius: 50%;
   cursor: pointer;
-  max-width: 80px;
+  max-width: 100px;
 }
 
 .dot.active {
@@ -1573,6 +1573,7 @@ h3 {
   display: flex;
   flex-flow: column;
   align-items: center;
+  justify-content: center;
 }
 @media (min-width: 50em) {
   .dot.active .page__name {
@@ -1581,14 +1582,32 @@ h3 {
     gap: 15px;
   }
 }
-.dot.active .page__name p {
+.dot.active .page__name .page_name_wrapper {
+  overflow: hidden;
+  position: relative;
+  height: 2em;
+  width: 100px;
+  transition: transform 1s ease-in-out;
+}
+.dot.active .page__name .page_name_wrapper .name__track {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1s ease-in-out;
+}
+.dot.active .page__name .page_name_wrapper p {
   font-weight: 700;
   align-self: end;
   letter-spacing: 3px;
   display: inline;
   margin: 0;
   white-space: nowrap;
-  border: thin solid crimson;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  padding-top: 6px;
+  transition: transform 1s ease-in-out;
 }
 .dot.active .page__name span {
   height: 1em;
@@ -1654,19 +1673,6 @@ h3 {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-}
-.slider__nav__wrapper .nav__wrapper :nth-of-type(2) {
-  position: relative;
-  /*&:before{
-    content: '';
-    position: absolute;
-    display: block;
-    background: white;
-    width: 1px;
-    height: 400%;
-    left: 30%;
-    bottom: 145%;
-  }*/
 }
 .slider__nav__wrapper .nav__wrapper > h1 {
   font-size: calc(1em + 1vw);

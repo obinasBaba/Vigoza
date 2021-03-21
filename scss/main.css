@@ -1534,6 +1534,16 @@ h3 {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 34.375em) {
+  .pagination__nav {
+    display: none;
+  }
+}
+@media (min-width: 50em) {
+  .pagination__nav {
+    left: 0.5%;
+  }
+}
 .pagination__nav > * {
   margin: 0 0 1.3rem 0;
   font-weight: initial;
@@ -1544,6 +1554,7 @@ h3 {
   background-color: #737373;
   border-radius: 50%;
   cursor: pointer;
+  max-width: 80px;
 }
 
 .dot.active {
@@ -1576,6 +1587,8 @@ h3 {
   letter-spacing: 3px;
   display: inline;
   margin: 0;
+  white-space: nowrap;
+  border: thin solid crimson;
 }
 .dot.active .page__name span {
   height: 1em;

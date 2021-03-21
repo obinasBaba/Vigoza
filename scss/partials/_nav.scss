@@ -1,11 +1,16 @@
 .pagination__nav {
+
+  @include maxMediaQuery(34.375em){
+    display: none;
+  }
+
   position: fixed;
   top: 50%;
   font-family: $ff-abyssopelagic;
   letter-spacing: 2px;
   line-height: 1;
   @include mediaQuery(){
-
+    left: .5%;
   }
   transform: translateY(-47%);
   z-index: 999;
@@ -31,6 +36,8 @@
   border-radius: 50%;
   //margin-left: -15px;
   cursor: pointer;
+
+  max-width: 80px;
 }
 
 .dot.active {
@@ -62,6 +69,8 @@
       letter-spacing: 3px;
       display: inline;
       margin: 0;
+      white-space: nowrap;
+      border: thin solid crimson;
     }
 
     span {

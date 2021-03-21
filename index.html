@@ -11,6 +11,7 @@
     <!--Import materialize.css-->
     <link rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
     <link rel="stylesheet" href="scss/main.css">
+
 </head>
 <body>
 
@@ -264,8 +265,8 @@
 
 <section class="blog">
     <h1 class="blog__headline">Recent Blog</h1>
-<!--    <h1 class="blog__effect">Blog</h1>-->
-<!--    <h1 class="blog__effect">B </h1>-->
+    <!--    <h1 class="blog__effect">Blog</h1>-->
+    <!--    <h1 class="blog__effect">B </h1>-->
 
     <div class="featured_blog">
         <img class="blog_img" src="img/project/paul-esch-laurent-6MeMUw5KDss-unsplash.jpg" alt="">
@@ -367,21 +368,20 @@
     <!--    <p class="page__name">Home</p>-->
 
 
-    <div class="dot"></div>
-
-    <div class="dot active">
-        <h1 class="page__no">03</h1>
+    <div data-name="welcome" class="dot active">
+        <h1 class="page__no">01</h1>
         <div class="page__name">
             <span></span>
-            <p >service</p>
+            <p>welcome</p>
         </div>
         <span class="line"></span>
     </div>
 
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
+    <div data-name="About us" class="dot"></div>
+    <div data-name="Services" class="dot"></div>
+    <div data-name="Portfolio" class="dot"></div>
+    <div data-name="blog" class="dot"></div>
+    <div data-name="contact" class="dot"></div>
 </div>
 
 <div class="slider__nav__wrapper">
@@ -401,8 +401,11 @@
 
 <!--JavaScript at end of body for optimized loading-->
 <script type="text/javascript" src="js/materialize.min.js"></script>
-
+<script type="module" src="js/initializeComponent.js"></script>
+//wait until HTML is ready
+<script type="module" src="js/sliderNav.js"></script>
 <script type="module" src="js/nav.js"></script>
+
 
 </body>
 </html>

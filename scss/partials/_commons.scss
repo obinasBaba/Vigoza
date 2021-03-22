@@ -9,6 +9,14 @@
     @content
   }
 }
+
+@mixin mediaQuery($width: 50em){
+  @media (min-width: $width) {
+    @content
+  }
+}
+
+
 @mixin maxMediaQuery($width: 50em){
   @media (max-width: $width) {
     @content

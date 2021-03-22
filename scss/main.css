@@ -511,13 +511,13 @@ a:active {
   grid-template-columns: 4em repeat(6, 1fr) 3em 0.3em;
   grid-template-rows: 2fr min-content repeat(7, 1fr);
 }
-@media (min-width: 35em) {
+@media (min-width: 41em) {
   .welcome .welcome-text h1 {
-    font-size: calc(5em + 4vw);
+    font-size: calc(5em + 1vw);
     letter-spacing: 30px;
   }
 }
-@media (min-width: 50em) {
+@media (min-width: 52em) {
   .welcome {
     grid-template-columns: 4em repeat(6, 1fr) 3em 1.3em;
   }
@@ -1494,14 +1494,9 @@ h3 {
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 34.375em) {
+@media (max-width: 33em) {
   .pagination__nav {
     display: none;
-  }
-}
-@media (min-width: 50em) {
-  .pagination__nav {
-    left: 0.5%;
   }
 }
 .pagination__nav > * {
@@ -1514,7 +1509,6 @@ h3 {
   background-color: #737373;
   border-radius: 50%;
   cursor: pointer;
-  max-width: 100px;
   transition: opacity 600ms;
 }
 
@@ -1525,6 +1519,7 @@ h3 {
   align-items: center;
   justify-content: center;
   margin-bottom: 0;
+  max-width: 100px;
 }
 .dot.active > * {
   margin: 0 0 1.3rem 0;
@@ -1534,23 +1529,22 @@ h3 {
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  gap: 15px;
 }
 @media (min-width: 50em) {
   .dot.active .page__name {
     flex-flow: row;
     transform: translateX(calc(50% - .5em));
-    gap: 15px;
   }
 }
 .dot.active .page__name .page_name_wrapper {
   overflow: hidden;
   position: relative;
   height: 2em;
-  width: 100px;
 }
 .dot.active .page__name .page_name_wrapper .name__track {
   height: 100%;
-  width: 100%;
+  width: 86px;
   position: relative;
   transition: transform 1000ms ease-in-out;
 }
@@ -1559,13 +1553,13 @@ h3 {
   align-self: end;
   letter-spacing: 3px;
   display: inline;
-  margin: 0;
   white-space: nowrap;
   position: absolute;
   left: 0;
   bottom: 0;
   top: 0;
   padding-top: 6px;
+  padding-left: 3px;
 }
 .dot.active .page__name span {
   height: 1em;
@@ -1590,6 +1584,7 @@ h3 {
   right: 0;
   z-index: 999;
   padding: 0 1em;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
@@ -1605,6 +1600,12 @@ h3 {
   letter-spacing: 8px;
   font-weight: 900;
   color: #ffffff;
+  display: none;
+}
+@media (min-width: 25em) {
+  .nav__bar > h1 {
+    display: initial;
+  }
 }
 .nav__bar .humberger {
   margin: 0 0 0 auto;

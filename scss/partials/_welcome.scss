@@ -14,20 +14,18 @@
   grid-template-columns: 4em repeat(6, 1fr) 3em .3em;
   grid-template-rows: 2fr min-content repeat(7, 1fr);
 
-  @include mediaQuery(35em){
+  @include mediaQuery(41em){
     .welcome-text{
       h1{
-        font-size: calc(5em + 4vw);
+        font-size: calc(5em + 1vw);
         letter-spacing: 30px;
-
       }
     }
   }
 
-  @include mediaQuery($width: 50em){
+  @include mediaQuery($width: 52em){
 
     grid-template-columns: 4em repeat(6, 1fr) 3em 1.3em;
-
 
     .welcome-text{
       grid-column: 3 / 8;

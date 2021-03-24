@@ -4,19 +4,24 @@ let instance = M.Tabs.init(
     });
 
 let elems = document.querySelectorAll('.materialboxed');
-let instances = M.Materialbox.init(elems, {});
+let instances = M.Materialbox.init(elems, {}, true, false, 'photototo');
+
+// let img = document.body.querySelector('.pro_img_one .materialboxed')
+// M.Materialbox.init(img, {}, true, false, 'caption')
+
 
 let carousel = document.querySelectorAll('.carousel');
 let carouselInstances = M.Carousel.init(carousel, {
     fullWidth: true,
     indicators: true,
-    noWrap: true,
+    // noWrap: true,
 });
 
-let slider = document.querySelectorAll('.slider');
-let sliderInstances = M.Slider.init(slider, {
+let serviceSlider = document.querySelector('.service .slider');
+let serviceSliderInstances = M.Slider.init(serviceSlider, {
     // height: '400px',
 });
+
 
 
 

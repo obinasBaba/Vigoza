@@ -12,22 +12,20 @@
   display: grid;
   justify-content: stretch;
   grid-template-columns: 4em repeat(6, 1fr) 3em .3em;
-  grid-template-rows: min-content repeat(7, 1fr);
+  grid-template-rows: 2fr min-content repeat(7, 1fr);
 
-  @include mediaQuery(35em){
+  @include mediaQuery(41em){
     .welcome-text{
       h1{
-        font-size: calc(5em + 4vw);
+        font-size: calc(5em + 1vw);
         letter-spacing: 30px;
-
       }
     }
   }
 
-  @include mediaQuery($width: 50em){
+  @include mediaQuery($width: 52em){
 
     grid-template-columns: 4em repeat(6, 1fr) 3em 1.3em;
-
 
     .welcome-text{
       grid-column: 3 / 8;
@@ -50,51 +48,6 @@
   }
 }
 
-.nav__bar{
-  grid-area: nav;
-  grid-column: 1 / 9;
-  grid-row: 1 / 2;
-
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-
-  & > img{
-    margin: 1em 1em 1em .6em;
-  }
-
-  & > h1{
-    margin: .1em 0 0 0;
-    font-size: .7em;
-    letter-spacing: 8px;
-    font-weight: 900;
-    color: $white;
-  }
-
-  .humberger{
-    margin: 0 0 0 auto;
-    position: relative;
-    width: 50px;
-    height: 50px;
-    font-size: 3.3rem;
-
-    &::after{
-      content: '\2261';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: $light-light-gray;
-    }
-  }
-}
 
 .welcome-text {
   grid-area: hero;
@@ -234,11 +187,12 @@
   }
 
   & p{
-    font-size: calc(.4em + .3vw);
+    font-size: calc(.3em + .3vw);
     color: $white;
     display: block;
     //width: 10em;
     margin-left: 1em;
+    letter-spacing: 4px;
 
     &::after{
       content: '';
@@ -250,7 +204,7 @@
       margin-bottom: .55em;
 
       @include mediaQuery(){
-        margin-bottom: .33em;
+        margin-bottom: .53em;
       }
 
     }

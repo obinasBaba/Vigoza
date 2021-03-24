@@ -1,6 +1,6 @@
 .pagination__nav {
 
-  @include maxMediaQuery(34.375em){
+  @include maxMediaQuery(33em){
     display: none;
   }
 
@@ -8,14 +8,15 @@
   top: 50%;
   font-family: $ff-abyssopelagic;
   letter-spacing: 2px;
+  font-size: calc(.875rem + .07vw);
   line-height: 1;
   @include mediaQuery(){
-    left: .5%;
+    //left: .5%;
   }
   transform: translateY(-47%);
   z-index: 999;
   text-transform: uppercase;
-  color: $white; //todo for service
+  color: $light-light-gray; //todo for service
 
   display: flex;
   flex-flow: column;
@@ -36,9 +37,8 @@
   border-radius: 50%;
   //margin-left: -15px;
   cursor: pointer;
-
-  max-width: 100px;
-
+  //max-width: 100px;
+  //border: thin solid white;
   transition: opacity 600ms;
   transition-delay: 120ms;
 
@@ -62,24 +62,23 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    gap: 15px;
 
 
     @include mediaQuery(){
       flex-flow: row;
       transform: translateX(calc(50% - .5em));
-      gap: 15px;
     }
 
     .page_name_wrapper{
       overflow: hidden;
       position: relative;
       height: 2em;
-      width: 100px;
 
 
       .name__track{
         height: 100%;
-        width: 100%;
+        width: 90px;
         position: relative;
         transition: transform 1000ms ease-in-out;
       }
@@ -90,13 +89,13 @@
         align-self: end;
         letter-spacing: 3px;
         display: inline;
-        margin: 0;
         white-space: nowrap;
         position: absolute;
         left: 0;
         bottom: 0;
         top: 0;
         padding-top: 6px;
+        padding-left: 3px;
 
       }
     }
@@ -118,6 +117,62 @@
     padding: 0;
   }
 }
+
+.nav__bar{
+  transition: top 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 0 1em;
+  width: 100%;
+
+  background-color: rgba(black , .06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+
+  & > img{
+    margin: 1em 1em 1em .6em;
+  }
+
+  & > h1{
+    margin: .1em 0 0 0;
+    font-size: .7em;
+    letter-spacing: 8px;
+    font-weight: 900;
+    color: $white;
+    display: none;
+    @include mediaQuery(25em){
+      display: initial;
+    }
+  }
+
+  .humberger{
+    margin: 0 0 0 auto;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    font-size: 3.3rem;
+
+    &::after{
+      content: '\2261';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba($accent, .7);
+    }
+  }
+}
+
 
 .slider__nav__wrapper {
   transition: transform 50ms;

@@ -8,6 +8,7 @@
   top: 50%;
   font-family: $ff-abyssopelagic;
   letter-spacing: 2px;
+  font-size: calc(.875rem + .07vw);
   line-height: 1;
   @include mediaQuery(){
     //left: .5%;
@@ -15,7 +16,7 @@
   transform: translateY(-47%);
   z-index: 999;
   text-transform: uppercase;
-  color: $white; //todo for service
+  color: $light-light-gray; //todo for service
 
   display: flex;
   flex-flow: column;
@@ -75,7 +76,7 @@
 
       .name__track{
         height: 100%;
-        width: 86px;
+        width: 90px;
         position: relative;
         transition: transform 1000ms ease-in-out;
       }
@@ -125,7 +126,7 @@
   padding: 0 1em;
   width: 100%;
 
-  background-color: rgba(black , .3);
+  background-color: rgba(black , .06);
   display: flex;
   align-items: center;
   justify-content: center;

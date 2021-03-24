@@ -81,6 +81,7 @@
 .service__list {
   grid-area: list;
   font-size: .9rem;
+  letter-spacing: 2px;
 
   @include mediaQuery(){
     grid-column: 2 / 5;
@@ -113,7 +114,7 @@
   }
 }
 
-.slider {
+.service .slider {
   grid-area: slider;
   color: $accent;
 

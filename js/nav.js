@@ -70,6 +70,7 @@ navDots.addEventListener('click', evt => {
 })
 
 
+//full screen nav show and hide on scroll
 let prevScrollPos = window.pageYOffset;
 window.onscroll = function() {
     let currentScrollPos = window.pageYOffset;

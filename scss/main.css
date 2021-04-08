@@ -391,6 +391,11 @@ template {
   box-sizing: inherit;
 }
 
+html {
+  scroll-behavior: smooth;
+  transition: scroll 2500ms;
+}
+
 body {
   font-family: "Inconsolata", "monospace";
   line-height: 1.2;
@@ -1373,6 +1378,8 @@ div[class^=effect] {
   justify-content: center;
   margin-bottom: 0;
   transition-delay: 0ms;
+  color: #ffffff;
+  cursor: initial;
 }
 .dot.active > * {
   margin: 0 0 1.3rem 0;
@@ -1415,14 +1422,14 @@ div[class^=effect] {
   padding-left: 3px;
 }
 .dot.active .page__name span {
+  background: #737373;
   height: 1em;
   width: 1em;
   border-radius: 50%;
-  background: #ffffff;
   display: inline-block;
 }
 .dot.active span.line {
-  background: #ffffff;
+  background: #737373;
   height: 3.5625em;
   border-radius: initial;
   width: 3px;

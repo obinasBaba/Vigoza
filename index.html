@@ -21,33 +21,33 @@
     <a href="#" class="humberger"></a>
 </div>
 
-<div class="welcome">
+<section id="welcome" class="welcome">
 
-    <section class="welcome-text">
+    <div class="welcome-text">
         <h1>VIGOZA</h1>
         <p>Powered By Vigoza Stuido</p>
         <a href="#" class="read-more">Read More</a>
-    </section>
+    </div>
 
-    <section class="social-icons">
+    <div class="social-icons">
         <!--        <img src="img/twitter.svg" alt="twitter">-->
         <i class="no material-icons">facebook</i>
         <i class="small material-icons">code</i>
         <i class="small material-icons">link</i>
         <i class="small material-icons">explore</i>
-    </section>
+    </div>
 
-    <section class="scroll-down">
+    <div class="scroll-down">
         <span class="mouse"></span>
         <p> SCROLL DOWN</p>
-    </section>
+    </div>
 
-    <section class="effect">
+    <div class="effect">
         VIGOZA
-    </section>
-</div>
+    </div>
+</section>
 
-<section class="about__me">
+<section id="about" class="about__me">
     <div class="effect-A">A</div>
     <div class="effect-about">ABOUT</div>
 
@@ -111,7 +111,7 @@
 
 </section>
 
-<section class="service">
+<section id="service" class="service">
 
     <div class="headline">
         <p class="service__effect">SERVICE</p>
@@ -164,7 +164,7 @@
 
 </section>
 
-<section class="portfolio">
+<section id="portfolio" class="portfolio">
     <h1 class="portfolio__effect p">P</h1>
     <h1 class="portfolio__effect design">DESIGN</h1>
 
@@ -243,7 +243,7 @@
 
 </section>
 
-<section class="blog">
+<section id="blog" class="blog">
 
     <h1 class="blog__headline">Recent Blog</h1>
     <h1 class="blog__effect blog">Blog</h1>
@@ -275,7 +275,7 @@
 
 </section>
 
-<section class="contact">
+<section id="contact" class="contact">
 
     <div class="contact-div">
         <h1 class="contact-headline">CONTACT</h1>
@@ -347,9 +347,8 @@
 <div class="pagination__nav">
     <!--    <p class="page__name">About <br> Us</p>-->
     <!--    <p class="page__name">Home</p>-->
-
-
-    <div data-name="welcome" class="dot active">
+    <div data-name="welcome"
+         class="dot active active-black ">
 
         <h1 class="page__no">01</h1>
         <div class="page__name">
@@ -367,10 +366,9 @@
         </div>
         <span class="line"></span>
     </div>
-
-    <div data-name="About us" class="dot"></div>
-    <div data-name="Services" class="dot"></div>
-    <div data-name="Portfolio" class="dot"></div>
+    <div data-name="about" class="dot"></div>
+    <div data-name="service" class="dot"></div>
+    <div data-name="portfolio" class="dot"></div>
     <div data-name="blog" class="dot"></div>
     <div data-name="contact" class="dot"></div>
 </div>
@@ -393,10 +391,10 @@
 <!--JavaScript at end of body for optimized loading-->
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="module" src="js/initializeComponent.js"></script>
-//wait until HTML is ready
 <script type="module" src="js/sliderNav.js"></script>
 <script type="module" src="js/nav.js"></script>
 <script type="module" src="js/projectPagination.js"></script>
+<script type="module" src="js/intersectionObservers.js"></script>
 
 
 </body>

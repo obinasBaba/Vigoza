@@ -17,9 +17,7 @@ const slideTo = (track, current, target) => {
     track.style.transform = "translateY(-" + (target.style.top) + ")";
 };
 
-
-
-navDots.addEventListener('click', evt => {
+const dotsClickEvent = evt => {
     if (!evt.target.classList.contains('dot')) return;
 
     if (evt.target.classList.contains('active')) return;
@@ -47,12 +45,16 @@ navDots.addEventListener('click', evt => {
         clickedDot.classList.add('active');
         activeDot.classList.remove('active');
 
+        // scrolling to the clicked section
+        //dynamically adding a 'anchor' and removing it after...
+        scrollToClicked(clickedDot);
+
         //return to the initial visibility
         activeDot.style.opacity = '1';
-        clickedDot.style.opacity = '1'
+        clickedDot.style.opacity = '1';
 
         //we have to remove the callback for the next time so that it keep the cycle
-        activeDot.removeEventListener('transitionend', insertElements)
+        activeDot.removeEventListener('transitionend', insertElements);
     }
 
     //add the callback after the transition end;
@@ -61,13 +63,31 @@ navDots.addEventListener('click', evt => {
 
     //run the slide animation after everything run (async)
     // for the transition effect to tack place
-   setTimeout(() => {
-       const activeTrackName =
-           trackChildren.find(elems => elems.classList.contains('active_name'))
-       slideTo(track, activeTrackName, trackChildren[clickedIndex]);
-   }, 0)
+    setTimeout(() => {
+        const activeTrackName =
+            trackChildren.find(elems => elems.classList.contains('active_name'))
+        slideTo(track, activeTrackName, trackChildren[clickedIndex]);
+    }, 0)
 
-})
+}
+
+
+function scrollToClicked(clickedDot) {
+    new Promise(((resolve, reject) => {
+        let link = document.createElement('a',);
+        link.href = `#${clickedDot.dataset.name}`
+        console.log(link)
+        document.body.append(link);
+        link.click();
+        resolve(link);
+    })).then(v => {
+        document.body.removeChild(v);
+    })
+}
+
+
+
+navDots.addEventListener('click', dotsClickEvent)
 
 
 //full screen nav show and hide on scroll

@@ -8,12 +8,17 @@
   box-sizing: inherit;
 }
 
+html{
+  scroll-behavior: smooth;
+  transition: scroll 2500ms;
+}
 
 
 body{
   font-family: $ff-inconsolata;
   line-height: 1.2;
   font-size: calc(.875rem + 1vw);
+
 
 
   @include mediaQuery(20em){

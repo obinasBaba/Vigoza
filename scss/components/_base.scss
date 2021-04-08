@@ -1,4 +1,6 @@
-
+@use "../modules/typography" as *;
+@use "../modules/colors" as *;
+@use "../modules/breakPoints" as *;
 
 :root{
   box-sizing: border-box;

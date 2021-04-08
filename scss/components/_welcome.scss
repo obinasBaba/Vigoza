@@ -1,3 +1,7 @@
+@use "../modules/typography" as *;
+@use "../modules/colors" as *;
+@use "../modules/breakPoints" as *;
+
 .welcome {
   background-image: url("../img/hero.jpg");
   background-size: cover;
@@ -140,7 +144,7 @@
   flex-flow: column;
 
   & :last-child{
-    margin-bottom: 0em;
+    margin-bottom: 0;
   }
 
   > * {
@@ -221,7 +225,7 @@
 .effect {
   position: absolute;
   bottom: 1%;
-  left: 0%;
+  left: 0;
   font-weight: 900;
   font-family: $ff-poppins;
   letter-spacing: 20px;

@@ -1,1 +1,0 @@
-export const navDots = document.body.querySelector('.pagination__nav');

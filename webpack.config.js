@@ -8,10 +8,11 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: "[name].[contenthash].js",
+        filename: "js/[name].[contenthash].js",
+        assetModuleFilename: 'images/[hash][ext]',
         clean: true,
     },
-    devtool: 'inline-source-map',
+    // devtool: 'inline-source-map',
     plugins: [
         new HtmlWebpackPlugin({
             template: "./template.html"
@@ -21,15 +22,32 @@ module.exports = {
         }),
     ],
 
-    optimization: {},
+    optimization: {
+        moduleIds: 'deterministic',
+        runtimeChunk: 'single',
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: "all"
+                }
+            }
+        }
+    },
 
     module: {
         rules: [
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: "asset/resource",
+                type: "asset",
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 150 * 1024 // 100kb
+                    }
+                },
                 generator: {
-                    filename: "images/[name][ext]",
+                    filename: "static/[name][ext][query]",
                 }
             },
 

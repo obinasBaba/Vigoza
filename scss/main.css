@@ -1029,7 +1029,7 @@ div[class^=effect] {
   grid-column-gap: 1em;
   grid-template-rows: auto;
 }
-@media (min-width: 58.5em) {
+@media (min-width: 58.5e m) {
   .portfolio {
     grid-template-columns: 11em 0.8fr 0.8fr 1fr 0;
   }
@@ -1069,10 +1069,16 @@ div[class^=effect] {
   height: 100%;
   text-align: start;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   justify-items: center;
   gap: 20px;
+}
+@media (min-width: 50em) {
+  .carousel .project__wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
 }
 .carousel .project__wrapper #materialbox-overlay {
   opacity: 0.6 !important;

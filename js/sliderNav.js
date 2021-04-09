@@ -4,7 +4,7 @@ const hamburger = document.body.querySelector('.nav__bar .humberger');
 const nav_slider = document.body.querySelector('.slider__nav__wrapper');
 
     // Full Screen Navigation
-(() => {
+
     hamburger.addEventListener('click', e => {
         e.preventDefault();
         nav_slider.classList.add('show');
@@ -15,4 +15,3 @@ const nav_slider = document.body.querySelector('.slider__nav__wrapper');
             nav_slider.classList.remove('show');
         }
     })
-})()

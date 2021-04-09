@@ -1,7 +1,4 @@
-let instance = M.Tabs.init(
-    document.body.querySelector('ul.tabs'), {
-        swipeable: true
-    });
+
 
 let elems = document.querySelectorAll('.materialboxed');
 let instances = M.Materialbox.init(elems, {}, true, false, 'photototo');

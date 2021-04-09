@@ -1,13 +1,29 @@
-const navDots = document.body.querySelector('.pagination__nav');
-const track = navDots.querySelector('.name__track');
+import {navDots} from "./elments.js";
 
-let trackChildren = Array.from(track.children);
+
+const track = navDots.querySelector('.name__track');
+let trackChildren = stackTrack(track);
+
+function stackTrack(track){
+    //the height of single active-page-name
+    const singleNameSize = track.getBoundingClientRect();
+    const trackHeight = singleNameSize.height;
+
+    let trackChildren = Array.from(track.children);
+    trackChildren.forEach((name, index) => {
+        //stacking each active-page-name one after the other
+        // the overflow hidden property will hide them
+        name.style.top = (trackHeight * index) + `px`;
+    })
+
+    return trackChildren;
+}
 
 
 //function to slide(transform) them on click
-const slideTo = (track, current, target) => {
+function slideTo (track, current, target) {
     track.style.transform = "translateY(-" + (target.style.top) + ")";
-};
+}
 
 function scrollToClicked(clickedDot) {
     new Promise(((resolve, reject) => {
@@ -29,7 +45,7 @@ export function insert(activeDot, clickedDot, scroll){
 
     //the transition will start here
     activeDot.style.opacity = '0';
-    clickedDot.style.opacity = '0'
+    clickedDot.style.opacity = '0';
 
     //function to run after the above(opacity) transition end;
     const insertElements = () => {
@@ -74,3 +90,4 @@ export function insert(activeDot, clickedDot, scroll){
         slideTo(track, activeTrackName, trackChildren[clickedIndex]);
     }, 0)
 }
+

@@ -1,6 +1,7 @@
 import {insert} from "./util.js";
+import {navDots} from "./elments.js";
 
-const paginationNav = document.body.querySelector('.pagination__nav');
+
 let options = {
     root: null,
     rootMargin: '0px 0px 0px 0px',
@@ -9,10 +10,12 @@ let options = {
 
 let callback = (el, ib) => {
 
+    console.log(el[0].target)
+
     if (el[0].isIntersecting) {
-        let active = Array.from(paginationNav.children)
+        let active = Array.from(navDots.children)
                           .find(e => e.classList.contains('active'))
-        let clicked = Array.from(paginationNav.children)
+        let clicked = Array.from(navDots.children)
             .find(e => e.dataset.name === el[0].target.id)
 
         if (active === clicked)

@@ -1,20 +1,5 @@
 import {insert} from "./util.js";
-
-const navDots = document.body.querySelector('.pagination__nav');
-const track = navDots.querySelector('.name__track');
-
-//the height of single active-page-name
-const singleNameSize = track.getBoundingClientRect();
-const trackHeight = singleNameSize.height;
-
-let trackChildren = Array.from(track.children);
-trackChildren.forEach((name, index) => {
-    //stacking each active-page-name one after the other
-    // the overflow hidden property will hide them
-    name.style.top = (trackHeight * index) + `px`;
-})
-
-
+import {navDots} from "./elments.js";
 
 
 const dotsClickEvent = evt => {

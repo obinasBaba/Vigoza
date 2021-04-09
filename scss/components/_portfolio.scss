@@ -19,7 +19,7 @@
   grid-column-gap: 1em;
   grid-template-rows: auto;
 
-  @include mediaQuery(58.5em) { //840px
+  @include mediaQuery(58.5e m) { //840px
     grid-template-columns: 11em .8fr .8fr 1fr 0;
   }
 }
@@ -62,16 +62,23 @@
 
     text-align: start;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     justify-items: center;
     gap: 20px;
+
+    @include mediaQuery(){
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    }
 
     #materialbox-overlay{
       opacity: .6 !important;
     }
 
     img {
+
       object-fit: cover !important;
       //height: 100% !important;
       //width: 100% ;

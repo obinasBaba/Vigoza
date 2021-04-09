@@ -1363,11 +1363,21 @@ div[class^=effect] {
 
 .dot {
   padding: 0.5em;
-  background-color: #737373;
+  background-color: #b3b3b3;
   border-radius: 50%;
   cursor: pointer;
   transition: opacity 600ms;
   transition-delay: 120ms;
+}
+
+.dot.active.active-black {
+  color: #737373;
+}
+.dot.active.active-black span.line {
+  background: #737373;
+}
+.dot.active.active-black .page__name span {
+  background: #737373;
 }
 
 .dot.active {
@@ -1397,6 +1407,13 @@ div[class^=effect] {
     transform: translateX(calc(50% - .5em));
   }
 }
+.dot.active .page__name span {
+  background: #ffffff;
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  display: inline-block;
+}
 .dot.active .page__name .page_name_wrapper {
   overflow: hidden;
   position: relative;
@@ -1421,15 +1438,8 @@ div[class^=effect] {
   padding-top: 6px;
   padding-left: 3px;
 }
-.dot.active .page__name span {
-  background: #737373;
-  height: 1em;
-  width: 1em;
-  border-radius: 50%;
-  display: inline-block;
-}
 .dot.active span.line {
-  background: #737373;
+  background: #ffffff;
   height: 3.5625em;
   border-radius: initial;
   width: 3px;

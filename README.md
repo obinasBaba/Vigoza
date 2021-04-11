@@ -1,2 +1,2 @@
 # Vigoza
-Crazy Portfolio
+SimplePortfolio

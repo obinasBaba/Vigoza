@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    mode: "development",
     entry: './src/js/App.js',
 
     output: {
@@ -12,7 +11,6 @@ module.exports = {
         assetModuleFilename: 'images/[hash][ext]',
         clean: true,
     },
-    // devtool: 'inline-source-map',
     plugins: [
         new HtmlWebpackPlugin({
             template: "./template.html"
@@ -47,7 +45,7 @@ module.exports = {
                     }
                 },
                 generator: {
-                    filename: "static/[name][ext][query]",
+                    filename: "images/[name][ext][query]",
                 }
             },
 

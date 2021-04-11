@@ -25,16 +25,23 @@ function slideTo (track, current, target) {
     track.style.transform = "translateY(-" + (target.style.top) + ")";
 }
 
-function scrollToClicked(clickedDot) {
+export function scrollToClickedSection(clickedDot) {
+    if (!clickedDot.dataset.name)
+        return;
+
+    window.intersect = false;
+
+
     new Promise(((resolve, reject) => {
         let link = document.createElement('a',);
         link.href = `#${clickedDot.dataset.name}`
-        console.log(link)
         document.body.append(link);
         link.click();
         resolve(link);
     })).then(v => {
         document.body.removeChild(v);
+        window.intersect = true;
+
     })
 }
 
@@ -65,7 +72,7 @@ export function insert(activeDot, clickedDot, scroll){
 
         // scrolling to the clicked section
         //dynamically adding a 'anchor' and removing it after...
-        scroll && scrollToClicked(clickedDot);
+        scroll && scrollToClickedSection(clickedDot);
 
 
         //return to the initial visibility

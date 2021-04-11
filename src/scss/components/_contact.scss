@@ -121,17 +121,18 @@
   flex-grow: 1;
 
   display: grid;
-  grid-template-columns: 5em auto 1em;
+  grid-template-columns: 0em auto 1em;
   width: 100%;
 
   @include mediaQuery(40em){
-    grid-template-columns: 3em auto 1em;
+    grid-template-columns: 0 1fr 1em;
 
     form{
-      max-width: 70%;
-      align-self: flex-end;
-      margin-bottom: 3em;
-      //border: thin solid rgba($accent, .6);
+      max-width: 100%;
+      align-self: center;
+      justify-self: start;
+
+      margin: 1em 0;
       background: rgba($white, .4);
       padding: 1em !important;
 
@@ -145,6 +146,7 @@
     color: black;
     grid-column: 2/ 3;
     padding: .5em 0 0 0;
+    justify-self: center;
 
     .name{
       display: flex;
@@ -154,11 +156,6 @@
         display: none;
       }
     }
-
-
-
-    //background: rgba($light-gray, .4);
-
 
     button {
       border: none;
@@ -210,6 +207,7 @@
         max-width: 50%;
         font-size: initial;
         color: $gray;
+        white-space: nowrap;
       }
     }
 

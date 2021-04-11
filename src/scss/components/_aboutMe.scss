@@ -17,7 +17,7 @@
 
 
   @include mediaQuery(){
-    grid-template-rows: 2em repeat(6, 1fr) 3em;
+    grid-template-rows: 2em repeat(6, 1fr) 4em;
     grid-template-columns: 2em repeat(7, 1fr);
 
   }
@@ -35,8 +35,10 @@
 
     @include mediaQuery(){
       align-self: center;
-      width: calc(25.5em + 15vw);
-      grid-row: 2 / 6;
+      width: calc(27.5em + 15vw);
+      grid-row: 1 / 6;
+      grid-column: 3 / -1;
+      justify-self: start;
     }
     //border: thin solid crimson;
 
@@ -44,34 +46,8 @@
       display: none;
     }
     svg {
-
       height: 100%;
       width: 100%;
-
-    }
-
-    &::after {
-      position: absolute;
-      //content: '';
-      width: 1.5px;
-      height: 3.5em;
-      margin-left: 18%;
-      background: $accent;
-
-      transform: translateY(-50%);
-    }
-
-    .img-overlay {
-      position: absolute;
-      //background: rgba($white, .0);
-      top: 0;
-      @include mediaQuery(){
-        background: rgba($white, .4);
-        top: 90%;
-      }
-      left: 0;
-      bottom: 0;
-      right: 0;
     }
   }
 
@@ -93,12 +69,12 @@
 
     @include mediaQuery(){
       padding-top: 2em;
-      color: rgba($accent, .8);
+      color: rgba($accent, .6);
       grid-column: 3 / 6;
       grid-row: 5 / 7;
       align-self: end;
-      justify-self: center;
-      font-size: 2.27em; //todo media
+      justify-self: start;
+      font-size: 4.27em; //todo media
     }
 
     span{
@@ -122,22 +98,23 @@
 
     & :last-child{
       text-align: right;
-      margin: 2em 0 .8em 0
+      margin: 2em 0 .8em 0;
+      font-size: initial;
+
     }
 
     @include mediaQuery(){
       grid-column: 4 / 8;
       grid-row: 5 / 8;
-      padding: 2em 0 0 3em;
+      padding: 1em 0 0 3em;
+      font-size: 1.7em;
+
 
       & :last-child{
         text-align: right;
         margin: 2em 0 .8em 0
       }
     }
-
-
-
     p {
       margin: 0 0 .8em 0
     }
@@ -152,19 +129,19 @@ div[class^='effect'] {
 }
 
 .effect-A {
-  font-size: 22em;
+  font-size: 24em;
   color: rgba($accent, .1);
   line-height: 70%;
   right: 7%;
-  bottom: -4%;
+  bottom: -1%;
 }
 
 .effect-about {
-  font-size: 24em;
+  font-size: 27em;
   letter-spacing: 1px;
   line-height: 60%;
   color: rgba($accent, .12);
 
   top: 7%;
-  left: -13%;
+  right: -1%;
 }
